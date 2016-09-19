@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="UtilizationTrackerData" StorageEntityContainer="UtilizationTrackerDataStore">
+    <EntitySetMapping Name="AssignProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AssignProject)">
+        <MappingFragment StoreEntitySet="AssignProjects">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmpRole" ColumnName="EmpRole" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvgUtilizations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AvgUtilization)">
+        <MappingFragment StoreEntitySet="AvgUtilizations">
+          <ScalarProperty Name="AvgUtilization1" ColumnName="AvgUtilization" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.CompanyProject)">
+        <MappingFragment StoreEntitySet="CompanyProjects">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpRole" ColumnName="EmpRole" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyTeamProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.CompanyTeamProject)">
+        <MappingFragment StoreEntitySet="CompanyTeamProjects">
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ComplexityDifficultyLevel" ColumnName="ComplexityDifficultyLevel" />
+          <ScalarProperty Name="ComplexityScope" ColumnName="ComplexityScope" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ComplexityAvg" ColumnName="ComplexityAvg" />
+          <ScalarProperty Name="QualityPMRating" ColumnName="QualityPMRating" />
+          <ScalarProperty Name="QualityPeerReview" ColumnName="QualityPeerReview" />
+          <ScalarProperty Name="QualityProjectDuration" ColumnName="QualityProjectDuration" />
+          <ScalarProperty Name="QualityAverage" ColumnName="QualityAverage" />
+          <ScalarProperty Name="AssignProjectID" ColumnName="AssignProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplexityandQualityShares">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ComplexityandQualityShare)">
+        <MappingFragment StoreEntitySet="ComplexityandQualityShares">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="ProjectShare" ColumnName="ProjectShare" />
+          <ScalarProperty Name="ComplexityShare" ColumnName="ComplexityShare" />
+          <ScalarProperty Name="QualityShare" ColumnName="QualityShare" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectScore" ColumnName="ProjectScore" />
+          <ScalarProperty Name="ComplexityAvg" ColumnName="ComplexityAvg" />
+          <ScalarProperty Name="QualityAverage" ColumnName="QualityAverage" />
+          <ScalarProperty Name="ComplexityDifficultyLevel" ColumnName="ComplexityDifficultyLevel" />
+          <ScalarProperty Name="ComplexityScope" ColumnName="ComplexityScope" />
+          <ScalarProperty Name="QualityPMRating" ColumnName="QualityPMRating" />
+          <ScalarProperty Name="QualityPeerReview" ColumnName="QualityPeerReview" />
+          <ScalarProperty Name="QualityProjectDuration" ColumnName="QualityProjectDuration" />
+          <ScalarProperty Name="TotalofallProjects" ColumnName="TotalofallProjects" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistinctProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.DistinctProject)">
+        <MappingFragment StoreEntitySet="DistinctProjects">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectManagerID" ColumnName="ProjectManagerID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="ComplexityDifficultyLevel" ColumnName="ComplexityDifficultyLevel" />
+          <ScalarProperty Name="ComplexityScope" ColumnName="ComplexityScope" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ComplexityAvg" ColumnName="ComplexityAvg" />
+          <ScalarProperty Name="QualityPMRating" ColumnName="QualityPMRating" />
+          <ScalarProperty Name="QualityPeerReview" ColumnName="QualityPeerReview" />
+          <ScalarProperty Name="QualityProjectDuration" ColumnName="QualityProjectDuration" />
+          <ScalarProperty Name="QualityAverage" ColumnName="QualityAverage" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailDropdowns">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmailDropdown)">
+        <MappingFragment StoreEntitySet="EmailDropdowns">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmployeeDetail)">
+        <MappingFragment StoreEntitySet="EmployeeDetails">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeMonths">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmployeeMonth)">
+        <MappingFragment StoreEntitySet="EmployeeMonths">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="NoOfLeaves" ColumnName="NoOfLeaves" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeProjectHours">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmployeeProjectHour)">
+        <MappingFragment StoreEntitySet="EmployeeProjectHours">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="c_Date" ColumnName="Date" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.EmployeeProject)">
+        <MappingFragment StoreEntitySet="EmployeeProjects">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+          <ScalarProperty Name="c_Date" ColumnName="Date" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetDateParameters">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.GetDateParameter)">
+        <MappingFragment StoreEntitySet="GetDateParameters">
+          <ScalarProperty Name="c_Date" ColumnName="Date" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoursPerDays">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.HoursPerDay)">
+        <MappingFragment StoreEntitySet="HoursPerDays">
+          <ScalarProperty Name="c_Date" ColumnName="Date" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Months)">
+        <MappingFragment StoreEntitySet="Months">
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="WeekDays" ColumnName="WeekDays" />
+          <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMTeamProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.PMTeamProject)">
+        <MappingFragment StoreEntitySet="PMTeamProjects">
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectDetail)">
+        <MappingFragment StoreEntitySet="ProjectDetails">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ComplexityDifficultyLevel" ColumnName="ComplexityDifficultyLevel" />
+          <ScalarProperty Name="ComplexityScope" ColumnName="ComplexityScope" />
+          <ScalarProperty Name="ComplexityAvg" ColumnName="ComplexityAvg" />
+          <ScalarProperty Name="QualityPMRating" ColumnName="QualityPMRating" />
+          <ScalarProperty Name="QualityPeerReview" ColumnName="QualityPeerReview" />
+          <ScalarProperty Name="QualityProjectDuration" ColumnName="QualityProjectDuration" />
+          <ScalarProperty Name="QualityAverage" ColumnName="QualityAverage" />
+          <ScalarProperty Name="AssignProjectID" ColumnName="AssignProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectManagerViewTeamHours">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectManagerViewTeamHour)">
+        <MappingFragment StoreEntitySet="ProjectManagerViewTeamHours">
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectReports">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectReport)">
+        <MappingFragment StoreEntitySet="ProjectReports">
+          <ScalarProperty Name="TotalWorkedHours" ColumnName="TotalWorkedHours" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="MgrID" ColumnName="MgrID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectsInCompanies">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectsInCompany)">
+        <MappingFragment StoreEntitySet="ProjectsInCompanies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectsInDays">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ProjectsInDay)">
+        <MappingFragment StoreEntitySet="ProjectsInDays">
+          <ScalarProperty Name="c_Date" ColumnName="Date" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+          <ScalarProperty Name="SubProject" ColumnName="SubProject" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TeamProject)">
+        <MappingFragment StoreEntitySet="TeamProjects">
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="emprole1" ColumnName="emprole1" />
+          <ScalarProperty Name="emprole2" ColumnName="emprole2" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamProjectsLists">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TeamProjectsList)">
+        <MappingFragment StoreEntitySet="TeamProjectsLists">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="KeyField" ColumnName="KeyField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHours">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHour)">
+        <MappingFragment StoreEntitySet="TotalHours">
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHoursAllMonthsForProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHoursAllMonthsForProject)">
+        <MappingFragment StoreEntitySet="TotalHoursAllMonthsForProjects">
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHoursandProjectShares">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHoursandProjectShare)">
+        <MappingFragment StoreEntitySet="TotalHoursandProjectShares">
+          <ScalarProperty Name="ProjectShare" ColumnName="ProjectShare" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="TotalofallProjects" ColumnName="TotalofallProjects" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ComplexityAvg" ColumnName="ComplexityAvg" />
+          <ScalarProperty Name="QualityAverage" ColumnName="QualityAverage" />
+          <ScalarProperty Name="ComplexityDifficultyLevel" ColumnName="ComplexityDifficultyLevel" />
+          <ScalarProperty Name="ComplexityScope" ColumnName="ComplexityScope" />
+          <ScalarProperty Name="QualityPMRating" ColumnName="QualityPMRating" />
+          <ScalarProperty Name="QualityPeerReview" ColumnName="QualityPeerReview" />
+          <ScalarProperty Name="QualityProjectDuration" ColumnName="QualityProjectDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHoursofAllProjects">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHoursofAllProject)">
+        <MappingFragment StoreEntitySet="TotalHoursofAllProjects">
+          <ScalarProperty Name="TotalofallProjects" ColumnName="TotalofallProjects" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHoursProjectwiseforMonths">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHoursProjectwiseforMonth)">
+        <MappingFragment StoreEntitySet="TotalHoursProjectwiseforMonths">
+          <ScalarProperty Name="Total_Hours" ColumnName="Total Hours" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHoursTeamMonthwises">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalHoursTeamMonthwise)">
+        <MappingFragment StoreEntitySet="TotalHoursTeamMonthwises">
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalProjectScores">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TotalProjectScore)">
+        <MappingFragment StoreEntitySet="TotalProjectScores">
+          <ScalarProperty Name="ProjectScore" ColumnName="ProjectScore" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UtilizationCalculations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.UtilizationCalculation)">
+        <MappingFragment StoreEntitySet="UtilizationCalculations">
+          <ScalarProperty Name="UtilizationPercentage" ColumnName="UtilizationPercentage" />
+          <ScalarProperty Name="WeekDays" ColumnName="WeekDays" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UtilizationTrackers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.UtilizationTracker)">
+        <MappingFragment StoreEntitySet="UtilizationTrackers">
+          <ScalarProperty Name="WorkedHours" ColumnName="WorkedHours" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="MonthID" ColumnName="MonthID" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="WeekDays" ColumnName="WeekDays" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="MonthName" ColumnName="MonthName" />
+          <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

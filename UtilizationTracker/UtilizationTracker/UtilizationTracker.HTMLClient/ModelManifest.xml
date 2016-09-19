@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Properties\Client.lsml" Checksum="FD96EE4C060DD2157A8C7AC04CD8D0EC0048E8F2258E03FA5D9C85F648C4A5EF" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Screens\Home.lsml" Checksum="D4340F5FA17BE403507E5E3F7639FE77593A400295A87953E178BC775B06704C" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Properties\Proxies.lsml" Checksum="4EA11B15A5B5499B0042BC4F60FCA317158CA0788BC4BC1B7CDC4FE3A819F1C5" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Screens\EmployeeDetails\AddEditEmployeeDetail.lsml" Checksum="61E37C48636A271A3DF138BC37C49B448263A8548AD8646AC52CBBF5748E09DF" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Screens\EmployeeDetails\ViewEmployeeDetail.lsml" Checksum="76F674E3C1A47B523C5004FDB1EE19C174930FC693FEF4524D30CEBC500DDE55" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Properties\UtilizationTrackerData\EmployeeDetails.lsml" Checksum="5B33D28C08A053BCFEE28E7CAEE48406C23AF08D437657F18987FCE55300E8C6" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\12-5-16 Final\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\Screens\EmployeeDetails\BrowseEmployeeDetails.lsml" Checksum="EDDCAB1AE5B9BFBE62242A5CC22C90CBF41211255F96F518920C94A01D86903C" />
+  </Documents>
+</ModelDocumentManifest>

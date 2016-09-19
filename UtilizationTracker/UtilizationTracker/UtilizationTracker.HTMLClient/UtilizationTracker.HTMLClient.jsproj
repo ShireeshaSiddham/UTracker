@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' != 'Release' ">
+    <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46940f4a-aebc-4207-a0b1-5d07152f14b6}</ProjectGuid>
+    <LightSwitchVersion>v5.0</LightSwitchVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.props" />
+  <PropertyGroup>
+    <!--TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion-->
+    <LightSwitchProjectTypeV45>Client</LightSwitchProjectTypeV45>
+    <LightSwitchProjectSubType>JScript</LightSwitchProjectSubType>
+    <ProjectTypeGuids>{8BB0C5E8-0616-4F60-8E55-A43933E57E9C};{262852c6-cd72-467d-83fe-5eeb1973a190}</ProjectTypeGuids>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultPlatform>AnyCPU</DefaultPlatform>
+    <ClientProjectName>HTMLClient</ClientProjectName>
+    <ServerProjectReference>..\UtilizationTracker.Server\UtilizationTracker.Server.csproj</ServerProjectReference>
+    <LightSwitchDisplayName>HTMLClient</LightSwitchDisplayName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Content\dark-theme-2.5.3.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\Back.png" />
+    <Content Include="Content\Images\dmr.png" />
+    <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-18-white.png" />
+    <Content Include="Content\Images\icons-36-black.png" />
+    <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\logout.png" />
+    <Content Include="Content\Images\msls-black-icons-18.png" />
+    <Content Include="Content\Images\msls-black-icons-36.png" />
+    <Content Include="Content\Images\msls-loader-dark.gif" />
+    <Content Include="Content\Images\msls-loader-light.gif" />
+    <Content Include="Content\Images\msls-white-icons-18.png" />
+    <Content Include="Content\Images\msls-white-icons-36.png" />
+    <Content Include="Content\Images\msls-blue-icons-36.png" />
+    <Content Include="Content\Images\user-logo.png" />
+    <Content Include="Content\Images\View.png" />
+    <Content Include="Content\jquery.mobile-1.3.0.css" />
+    <Content Include="Content\jquery.mobile-1.3.0.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.3.0.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.3.0.min.css" />
+    <Content Include="Content\light-theme-2.5.3.css" />
+    <Content Include="Content\msls-2.5.3.css" />
+    <Content Include="Content\msls-2.5.3.min.css" />
+    <Content Include="Content\msls-dark-2.5.3.css" />
+    <Content Include="Content\msls-light-2.5.3.css" />
+    <Content Include="default.htm" />
+    <Content Include="Content\user-customization.css" />
+    <Content Include="Content\Images\user-logo.ico" />
+    <Content Include="Content\Images\user-logo-144.png" />
+    <Content Include="Content\Images\user-splash-screen.png" />
+    <Content Include="Content\Web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Screens\AssignProjects\AddEditAssignProject.lsml.js">
+      <DependentUpon>AddEditAssignProject.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AssignProjects\BrowseAssignProjects.lsml.js">
+      <DependentUpon>BrowseAssignProjects.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\AssignProjects\ViewAssignProject.lsml.js">
+      <DependentUpon>ViewAssignProject.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseCompanySelfProjects.lsml.js">
+      <DependentUpon>BrowseCompanySelfProjects.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseCompanyTeamMembers.lsml.js">
+      <DependentUpon>BrowseCompanyTeamMembers.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseEmployeeProjectHours.lsml.js">
+      <DependentUpon>BrowseEmployeeProjectHours.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseHoursPerDays.lsml.js">
+      <DependentUpon>BrowseHoursPerDays.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseProjectsInDays.lsml.js">
+      <DependentUpon>BrowseProjectsInDays.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseTracker.lsml.js">
+      <DependentUpon>BrowseTracker.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseUtilization.lsml.js">
+      <DependentUpon>BrowseUtilization.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeDetails\AddEditEmployeeDetail.lsml.js">
+      <DependentUpon>AddEditEmployeeDetail.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeDetails\BrowseEmployeeDetails.lsml.js">
+      <DependentUpon>BrowseEmployeeDetails.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeDetails\ViewEmployeeDetail.lsml.js">
+      <DependentUpon>ViewEmployeeDetail.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeMonths\AddEditEmployeeMonth.lsml.js">
+      <DependentUpon>AddEditEmployeeMonth.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeMonths\BrowseEmployeeMonths.lsml.js">
+      <DependentUpon>BrowseEmployeeMonths.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeMonths\ViewEmployeeMonth.lsml.js">
+      <DependentUpon>ViewEmployeeMonth.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeProjects\AddEditEmployeeProject.lsml.js">
+      <DependentUpon>AddEditEmployeeProject.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeProjects\BrowseEmployeeProjects.lsml.js">
+      <DependentUpon>BrowseEmployeeProjects.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\EmployeeProjects\ViewEmployeeProject.lsml.js">
+      <DependentUpon>ViewEmployeeProject.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Home.lsml.js">
+      <DependentUpon>Home.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Months\AddEditMonths.lsml.js">
+      <DependentUpon>AddEditMonths.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Months\BrowseMonths.lsml.js">
+      <DependentUpon>BrowseMonths.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Months\ViewMonths.lsml.js">
+      <DependentUpon>ViewMonths.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ParametersSearch\ViewParametersSearchItem.lsml.js">
+      <DependentUpon>ViewParametersSearchItem.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectDetails\AddEditProjectDetail.lsml.js">
+      <DependentUpon>AddEditProjectDetail.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectDetails\BrowseProjectDetails.lsml.js">
+      <DependentUpon>BrowseProjectDetails.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectDetails\BrowseProjectDetails1.lsml.js">
+      <DependentUpon>BrowseProjectDetails1.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectDetails\ViewProjectDetail.lsml.js">
+      <DependentUpon>ViewProjectDetail.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectDetails\ViewProjectDetail1.lsml.js">
+      <DependentUpon>ViewProjectDetail1.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectReports\BrowseProjectReports.lsml.js">
+      <DependentUpon>BrowseProjectReports.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectReports\ViewProjectReport.lsml.js">
+      <DependentUpon>ViewProjectReport.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectScore.lsml.js">
+      <DependentUpon>ProjectScore.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectsInCompanies\BrowseProjectsInCompanies.lsml.js">
+      <DependentUpon>BrowseProjectsInCompanies.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ProjectsInCompanies\ViewProjectsInCompany.lsml.js">
+      <DependentUpon>ViewProjectsInCompany.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Reports.lsml.js">
+      <DependentUpon>Reports.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\SessionManager.cs" />
+    <Content Include="Screens\TotalHoursProjectWise\BrowseTotalHoursProjectWise.lsml.js">
+      <DependentUpon>BrowseTotalHoursProjectWise.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\TotalHoursProjectWise\ViewTotalHoursProjectWiseItem.lsml.js">
+      <DependentUpon>ViewTotalHoursProjectWiseItem.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\UtilizationScore.lsml.js">
+      <DependentUpon>UtilizationScore.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewReporteeDetailsbyManager.lsml.js">
+      <DependentUpon>ViewReporteeDetailsbyManager.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewReportees\AddEditViewReportee.lsml.js">
+      <DependentUpon>AddEditViewReportee.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewReportees\BrowseViewReportees.lsml.js">
+      <DependentUpon>BrowseViewReportees.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ViewReportees\ViewViewReportee.lsml.js">
+      <DependentUpon>ViewViewReportee.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\WeeklyHours.lsml.js">
+      <DependentUpon>WeeklyHours.lsml</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datajs-1.1.3.js" />
+    <Content Include="Scripts\datajs-1.1.3.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.0-vsdoc.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.3.0.min.js" />
+    <Content Include="Scripts\msls.js" />
+    <Content Include="Scripts\msls-2.5.3-vsdoc.js" />
+    <Content Include="Scripts\msls-2.5.3.js" />
+    <Content Include="Scripts\msls-2.5.3.min.js" />
+    <Content Include="Scripts\winjs-1.0.js" />
+    <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\EmployeeDetail.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\EmployeeMonth.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\EmployeeProject.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\Months.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\ProjectDetail.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceMetadataReference Include="..\UtilizationTracker.Server\UtilizationTracker.Server.csproj">
+      <Visible>false</Visible>
+    </ServiceMetadataReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LightSwitchModel Include="Properties\Client.lsml">
+      <ProjectCritical>true</ProjectCritical>
+    </LightSwitchModel>
+    <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\AssignProjects.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\EmployeeDetails.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\EmployeeMonths.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\EmployeeProjects.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\Months.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\ProjectDetails.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\ProjectReports.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\ProjectsInCompanies.lsml" />
+    <LightSwitchModel Include="Properties\UtilizationTrackerData\TotalHoursProjectwiseforMonths.lsml" />
+    <LightSwitchModel Include="Screens\AssignProjects\AddEditAssignProject.lsml" />
+    <LightSwitchModel Include="Screens\AssignProjects\BrowseAssignProjects.lsml" />
+    <LightSwitchModel Include="Screens\AssignProjects\ViewAssignProject.lsml" />
+    <LightSwitchModel Include="Screens\BrowseCompanySelfProjects.lsml" />
+    <LightSwitchModel Include="Screens\BrowseCompanyTeamMembers.lsml" />
+    <LightSwitchModel Include="Screens\BrowseEmployeeProjectHours.lsml" />
+    <LightSwitchModel Include="Screens\BrowseHoursPerDays.lsml" />
+    <LightSwitchModel Include="Screens\BrowseProjectsInDays.lsml" />
+    <LightSwitchModel Include="Screens\BrowseTracker.lsml" />
+    <LightSwitchModel Include="Screens\BrowseUtilization.lsml" />
+    <LightSwitchModel Include="Screens\DetailsforProjectScore.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeDetails\AddEditEmployeeDetail.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeDetails\BrowseEmployeeDetails.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeDetails\ViewEmployeeDetail.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeMonths\AddEditEmployeeMonth.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeMonths\BrowseEmployeeMonths.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeMonths\ViewEmployeeMonth.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeProjects\AddEditEmployeeProject.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeProjects\BrowseEmployeeProjects.lsml" />
+    <LightSwitchModel Include="Screens\EmployeeProjects\ViewEmployeeProject.lsml" />
+    <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\Months\AddEditMonths.lsml" />
+    <LightSwitchModel Include="Screens\Months\AddEditMonths1.lsml" />
+    <LightSwitchModel Include="Screens\Months\BrowseMonths.lsml" />
+    <LightSwitchModel Include="Screens\Months\ViewMonths.lsml" />
+    <LightSwitchModel Include="Screens\ParametersSearch\AddEditParametersSearchItem.lsml" />
+    <LightSwitchModel Include="Screens\ParametersSearch\BrowseParametersSearch.lsml" />
+    <LightSwitchModel Include="Screens\ParametersSearch\ViewParametersSearchItem.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\AddEditProjectDetail.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\AddEditProjectDetail1.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\BrowseProjectDetails.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\BrowseProjectDetails1.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\ViewProjectDetail.lsml" />
+    <LightSwitchModel Include="Screens\ProjectDetails\ViewProjectDetail1.lsml" />
+    <LightSwitchModel Include="Screens\ProjectReports\BrowseProjectReports.lsml" />
+    <LightSwitchModel Include="Screens\ProjectReports\ViewProjectReport.lsml" />
+    <LightSwitchModel Include="Screens\ProjectScore.lsml" />
+    <LightSwitchModel Include="Screens\ProjectsInCompanies\AddEditProjectsInCompany.lsml" />
+    <LightSwitchModel Include="Screens\ProjectsInCompanies\BrowseProjectsInCompanies.lsml" />
+    <LightSwitchModel Include="Screens\ProjectsInCompanies\ViewProjectsInCompany.lsml" />
+    <LightSwitchModel Include="Screens\Reports.lsml" />
+    <LightSwitchModel Include="Screens\TotalHoursProjectWise\BrowseTotalHoursProjectWise.lsml" />
+    <LightSwitchModel Include="Screens\TotalHoursProjectWise\ViewTotalHoursProjectWiseItem.lsml" />
+    <LightSwitchModel Include="Screens\UtilizationScore.lsml" />
+    <LightSwitchModel Include="Screens\ViewReporteeDetailsbyManager.lsml" />
+    <LightSwitchModel Include="Screens\ViewReportees\AddEditViewReportee.lsml" />
+    <LightSwitchModel Include="Screens\ViewReportees\BrowseViewReportees.lsml" />
+    <LightSwitchModel Include="Screens\ViewReportees\ViewViewReportee.lsml" />
+    <LightSwitchModel Include="Screens\WeeklyHours.lsml" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ClientBuildFile Include="GeneratedArtifacts\model.json">
+      <SubFolder>Content\Resources\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\data.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\viewModel.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\usercode.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+    <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
+      <SubFolder>Scripts\Generated</SubFolder>
+    </_ClientBuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\ApplicationData\" />
+    <Folder Include="Properties\LS_UTData\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\LightSwitch\v5.0\Microsoft.LightSwitch.Build.Tasks.targets" />
+  <!-- Redefine the targets to be empty -->
+  <Target Name="GetXapOutputFile" />
+  <PropertyGroup>
+    <AppxPackage>false</AppxPackage>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

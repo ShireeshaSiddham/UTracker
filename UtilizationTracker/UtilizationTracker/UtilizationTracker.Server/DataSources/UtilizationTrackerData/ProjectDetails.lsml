@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="ProjectDetail">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="EmpID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="ProjectID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="ProjectName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProjectType"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+          <Required />
+          <SupportedValue
+            Value="None" />
+          <SupportedValue
+            DisplayName="Internal Project"
+            Value="Internal Project" />
+          <SupportedValue
+            DisplayName="External Project"
+            Value="External Project" />
+          <SupportedValue
+            DisplayName="Development Goal"
+            Value="Development Goal" />
+          <SupportedValue
+            DisplayName="Others"
+            Value="Others" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProjectStatus"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+          <Required />
+          <SupportedValue
+            DisplayName="None"
+            Value="None" />
+          <SupportedValue
+            DisplayName="Not-Started"
+            Value="Not-Started" />
+          <SupportedValue
+            DisplayName="In-Progress"
+            Value="In-Progress" />
+          <SupportedValue
+            DisplayName="Completed"
+            Value="Completed" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="StartDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EndDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="EmployeeProjects"
+        Association="FK_EmployeeProject_ProjectDetails"
+        FromEnd="ProjectDetails"
+        ToEnd="EmployeeProject" />
+      <EntityProperty
+        Name="ComplexityDifficultyLevel"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ComplexityScope"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ComplexityAvg"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QualityPMRating"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QualityPeerReview"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QualityProjectDuration"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="QualityAverage"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="6"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ProjectsInCompany"
+        Association="FK_ProjectDetails_ProjectsInCompany"
+        FromEnd="ProjectDetails"
+        ToEnd="ProjectsInCompany" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_EmployeeProject_ProjectDetails">
+    <AssociationEnd
+      Name="ProjectDetails"
+      Multiplicity="One"
+      EntityType="ProjectDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EmployeeProject"
+      Multiplicity="Many"
+      EntityType="EmployeeProject" />
+  </Association>
+  <EntityContainer
+    Name="UtilizationTrackerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="ProjectDetails"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ProjectDetail" />
+    <AssociationSet
+      Name="FK_EmployeeProject_ProjectDetails"
+      Association="FK_EmployeeProject_ProjectDetails">
+      <AssociationSetEnd
+        Name="ProjectDetails"
+        EntitySet="ProjectDetails" />
+      <AssociationSetEnd
+        Name="EmployeeProject"
+        EntitySet="EmployeeProjects" />
+    </AssociationSet>
+    <QueryOperation
+      Name="ProjectDetails_Single"
+      ReturnType="ProjectDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ProjectID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="ProjectID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="EmpID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="EmpID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ProjectDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmpID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'EmpID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="ProjectID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'ProjectID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ProjectDetails_SingleOrDefault"
+      ReturnType="ProjectDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ProjectID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="ProjectID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="EmpID" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="EmpID" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ProjectDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmpID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'EmpID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="ProjectID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'ProjectID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="UtilizationTrackerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="ProjectDetails">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="ProjectDetails" />
+        <SsdlProperty
+          Name="EmpID"
+          Nullable="False"
+          Type="int"
+          Property="ProjectDetail/Properties[EmpID]" />
+        <SsdlProperty
+          Name="ProjectID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="ProjectDetail/Properties[ProjectID]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="ProjectName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="ProjectDetail/Properties[ProjectName]" />
+        <SsdlProperty
+          Name="ComplexityDifficultyLevel"
+          Nullable="False"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[ComplexityDifficultyLevel]" />
+        <SsdlProperty
+          Name="ComplexityScope"
+          Nullable="False"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[ComplexityScope]" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="ProjectType"
+          Nullable="False"
+          Type="nvarchar"
+          Property="ProjectDetail/Properties[ProjectType]" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="ProjectStatus"
+          Nullable="False"
+          Type="nvarchar"
+          Property="ProjectDetail/Properties[ProjectStatus]" />
+        <SsdlProperty
+          Name="StartDate"
+          Nullable="False"
+          Type="date"
+          Property="ProjectDetail/Properties[StartDate]" />
+        <SsdlProperty
+          Name="EndDate"
+          Nullable="True"
+          Type="date"
+          Property="ProjectDetail/Properties[EndDate]" />
+        <SsdlProperty
+          Name="ComplexityAvg"
+          Nullable="True"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[ComplexityAvg]" />
+        <SsdlProperty
+          Name="QualityPMRating"
+          Nullable="True"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[QualityPMRating]" />
+        <SsdlProperty
+          Name="QualityPeerReview"
+          Nullable="True"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[QualityPeerReview]" />
+        <SsdlProperty
+          MaxLength="30"
+          Name="QualityProjectDuration"
+          Nullable="True"
+          Type="nvarchar"
+          Property="ProjectDetail/Properties[QualityProjectDuration]" />
+        <SsdlProperty
+          Name="QualityAverage"
+          Nullable="True"
+          Precision="6"
+          Scale="2"
+          Type="decimal"
+          Property="ProjectDetail/Properties[QualityAverage]" />
+        <SsdlForeignKeyProperty
+          Name="AssignProjectID"
+          Nullable="True"
+          Type="int"
+          PropertyName="AssignProjectID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_EmployeeProject_ProjectDetails">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_EmployeeProject_ProjectDetails" />
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeProject_ProjectDetails]/Members[ProjectDetails]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+            <SsdlPropertyRef
+              Name="ProjectID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeProject_ProjectDetails]/Members[EmployeeProject]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+            <SsdlPropertyRef
+              Name="ProjectID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

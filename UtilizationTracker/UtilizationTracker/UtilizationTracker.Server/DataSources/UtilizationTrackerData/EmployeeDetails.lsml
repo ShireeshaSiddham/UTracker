@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="EmployeeDetail">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="EmpID"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="EmpName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Designation"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <Required />
+          <SupportedValue
+            DisplayName="Director"
+            Value="Director" />
+          <SupportedValue
+            DisplayName="Admin"
+            Value="Admin" />
+          <SupportedValue
+            DisplayName="HR"
+            Value="HR" />
+          <SupportedValue
+            DisplayName="Principal Consultant"
+            Value="Principal Consultant" />
+          <SupportedValue
+            DisplayName="Lead Consultant"
+            Value="Lead Consultant" />
+          <SupportedValue
+            DisplayName="Sr. Consultant"
+            Value="Sr. Consultant" />
+          <SupportedValue
+            DisplayName="Consultant"
+            Value="Consultant" />
+          <SupportedValue
+            DisplayName="Data Analyst"
+            Value="Data Analyst" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Email"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="EmployeeDetails"
+        Association="FK_EmployeeDetails_ManagerID"
+        FromEnd="EmployeeDetails"
+        ToEnd="EmployeeDetails1" />
+      <NavigationProperty
+        Name="EmployeeDetail1"
+        Association="FK_EmployeeDetails_ManagerID"
+        FromEnd="EmployeeDetails1"
+        ToEnd="EmployeeDetails" />
+      <NavigationProperty
+        Name="EmployeeMonths"
+        Association="FK_EmployeeMonth_EmployeeDetails"
+        FromEnd="EmployeeDetails"
+        ToEnd="EmployeeMonth" />
+      <EntityProperty
+        Name="Role"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+          <SupportedValue
+            DisplayName="Admin"
+            Value="Admin" />
+          <SupportedValue
+            Value="Manager" />
+          <SupportedValue
+            DisplayName="Employee"
+            Value="Employee" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="AssignProjects"
+        Association="FK_AssignProjects_EmployeeDetails"
+        FromEnd="EmployeeDetails"
+        ToEnd="AssignProjects" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_EmployeeDetails_ManagerID">
+    <AssociationEnd
+      Name="EmployeeDetails"
+      Multiplicity="One"
+      EntityType="EmployeeDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EmployeeDetails1"
+      Multiplicity="Many"
+      EntityType="EmployeeDetail" />
+  </Association>
+  <Association
+    Name="FK_EmployeeMonth_EmployeeDetails">
+    <AssociationEnd
+      Name="EmployeeDetails"
+      Multiplicity="One"
+      EntityType="EmployeeDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="EmployeeMonth"
+      Multiplicity="Many"
+      EntityType="EmployeeMonth" />
+  </Association>
+  <EntityContainer
+    Name="UtilizationTrackerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="EmployeeDetails"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="EmployeeDetail" />
+    <AssociationSet
+      Name="FK_EmployeeDetails_ManagerID"
+      Association="FK_EmployeeDetails_ManagerID">
+      <AssociationSetEnd
+        Name="EmployeeDetails"
+        EntitySet="EmployeeDetails" />
+      <AssociationSetEnd
+        Name="EmployeeDetails1"
+        EntitySet="EmployeeDetails" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_EmployeeMonth_EmployeeDetails"
+      Association="FK_EmployeeMonth_EmployeeDetails">
+      <AssociationSetEnd
+        Name="EmployeeDetails"
+        EntitySet="EmployeeDetails" />
+      <AssociationSetEnd
+        Name="EmployeeMonth"
+        EntitySet="EmployeeMonths" />
+    </AssociationSet>
+    <QueryOperation
+      Name="EmployeeDetails_Single"
+      ReturnType="EmployeeDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="EmpID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="EmpID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EmployeeDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmpID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'EmpID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EmployeeDetails_SingleOrDefault"
+      ReturnType="EmployeeDetail">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="EmpID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="EmpID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EmployeeDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="EmpID"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'EmpID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="FK_AssignProjects_EmployeeDetails"
+      Association="FK_AssignProjects_EmployeeDetails">
+      <AssociationSetEnd
+        Name="EmployeeDetails"
+        EntitySet="EmployeeDetails" />
+      <AssociationSetEnd
+        Name="AssignProjects"
+        EntitySet="AssignProjects" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="FK_AssignProjects_EmployeeDetails">
+    <AssociationEnd
+      Name="EmployeeDetails"
+      EntityType="EmployeeDetail">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="AssignProjects"
+      Multiplicity="Many"
+      EntityType="AssignProject" />
+  </Association>
+  <DataService
+    Name="UtilizationTrackerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="EmployeeDetails">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="EmployeeDetails" />
+        <SsdlProperty
+          Name="EmpID"
+          Nullable="False"
+          Type="int"
+          Property="EmployeeDetail/Properties[EmpID]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="EmpName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="EmployeeDetail/Properties[EmpName]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="Designation"
+          Nullable="False"
+          Type="nvarchar"
+          Property="EmployeeDetail/Properties[Designation]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="Email"
+          Nullable="False"
+          Type="nvarchar"
+          Property="EmployeeDetail/Properties[Email]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="UserName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="EmployeeDetail/Properties[UserName]" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="Role"
+          Nullable="False"
+          Type="nvarchar"
+          Property="EmployeeDetail/Properties[Role]" />
+        <SsdlForeignKeyProperty
+          Name="ManagerID"
+          Nullable="False"
+          Type="int"
+          PropertyName="ManagerID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_AssignProjects_EmployeeDetails">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_AssignProjects_EmployeeDetails" />
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_AssignProjects_EmployeeDetails]/Members[EmployeeDetails]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_AssignProjects_EmployeeDetails]/Members[AssignProjects]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_EmployeeDetails_ManagerID">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_EmployeeDetails_EmployeeDetails" />
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeDetails_ManagerID]/Members[EmployeeDetails]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeDetails_ManagerID]/Members[EmployeeDetails1]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ManagerID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_EmployeeMonth_EmployeeDetails">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_EmployeeMonth_EmployeeDetails" />
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeMonth_EmployeeDetails]/Members[EmployeeDetails]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="UtilizationTrackerData/Members[FK_EmployeeMonth_EmployeeDetails]/Members[EmployeeMonth]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="EmpID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

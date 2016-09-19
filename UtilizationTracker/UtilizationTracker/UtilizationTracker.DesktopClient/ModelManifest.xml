@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\19-9-16 UT\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.DesktopClient\Properties\Client.lsml" Checksum="AE48238F3C295AA907793000DF1F7A97E49CC7D008C306926E09D72F28A335B4" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\19-9-16 UT\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.DesktopClient\Properties\Proxies.lsml" Checksum="D12C5DBF9C831B6875DF9068465EBD9AE1FD4D9BBB1111433A28CAE2D75D2D3F" />
+    <Document FullPath="C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\19-9-16 UT\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.DesktopClient\Properties\UtilizationTrackerData\Months.lsml" Checksum="F36EEA99B269AA402DE03B64EDD6DC2889FC450089D0B390BA113E2A42738C04" />
+  </Documents>
+</ModelDocumentManifest>

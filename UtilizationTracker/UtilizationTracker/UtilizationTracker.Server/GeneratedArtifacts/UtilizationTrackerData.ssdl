@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="UtilizationTrackerDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="UtilizationTrackerDataStore">
+    <EntitySet Name="AssignProjects" EntityType="UtilizationTrackerDataStore.AssignProject" store:Type="Tables" Schema="dbo" Table="AssignProjects" />
+    <EntitySet Name="AvgUtilizations" EntityType="UtilizationTrackerDataStore.AvgUtilization" store:Type="Tables" Schema="dbo" Table="AvgUtilization" />
+    <EntitySet Name="CompanyProjects" EntityType="UtilizationTrackerDataStore.CompanyProject" store:Type="Tables" Schema="dbo" Table="CompanyProjects" />
+    <EntitySet Name="CompanyTeamProjects" EntityType="UtilizationTrackerDataStore.CompanyTeamProject" store:Type="Tables" Schema="dbo" Table="CompanyTeamProjects" />
+    <EntitySet Name="ComplexityandQualityShares" EntityType="UtilizationTrackerDataStore.ComplexityandQualityShare" store:Type="Tables" Schema="dbo" Table="ComplexityandQualityShare" />
+    <EntitySet Name="DistinctProjects" EntityType="UtilizationTrackerDataStore.DistinctProject" store:Type="Tables" Schema="dbo" Table="DistinctProjects" />
+    <EntitySet Name="EmailDropdowns" EntityType="UtilizationTrackerDataStore.EmailDropdown" store:Type="Tables" Schema="dbo" Table="EmailDropdown" />
+    <EntitySet Name="EmployeeDetails" EntityType="UtilizationTrackerDataStore.EmployeeDetail" store:Type="Tables" Schema="dbo" Table="EmployeeDetails" />
+    <EntitySet Name="EmployeeMonths" EntityType="UtilizationTrackerDataStore.EmployeeMonth" store:Type="Tables" Schema="dbo" Table="EmployeeMonth" />
+    <EntitySet Name="EmployeeProjectHours" EntityType="UtilizationTrackerDataStore.EmployeeProjectHour" store:Type="Tables" Schema="dbo" Table="EmployeeProjectHours" />
+    <EntitySet Name="EmployeeProjects" EntityType="UtilizationTrackerDataStore.EmployeeProject" store:Type="Tables" Schema="dbo" Table="EmployeeProject" />
+    <EntitySet Name="GetDateParameters" EntityType="UtilizationTrackerDataStore.GetDateParameter" store:Type="Tables" Schema="dbo" Table="GetDateParameter" />
+    <EntitySet Name="HoursPerDays" EntityType="UtilizationTrackerDataStore.HoursPerDay" store:Type="Tables" Schema="dbo" Table="HoursPerDay" />
+    <EntitySet Name="Months" EntityType="UtilizationTrackerDataStore.Months" store:Type="Tables" Schema="dbo" Table="Month" />
+    <EntitySet Name="PMTeamProjects" EntityType="UtilizationTrackerDataStore.PMTeamProject" store:Type="Tables" Schema="dbo" Table="PMTeamProjects" />
+    <EntitySet Name="ProjectDetails" EntityType="UtilizationTrackerDataStore.ProjectDetail" store:Type="Tables" Schema="dbo" Table="ProjectDetails" />
+    <EntitySet Name="ProjectManagerViewTeamHours" EntityType="UtilizationTrackerDataStore.ProjectManagerViewTeamHour" store:Type="Tables" Schema="dbo" Table="ProjectManagerViewTeamHours" />
+    <EntitySet Name="ProjectReports" EntityType="UtilizationTrackerDataStore.ProjectReport" store:Type="Tables" Schema="dbo" Table="ProjectReport" />
+    <EntitySet Name="Projects" EntityType="UtilizationTrackerDataStore.Project" store:Type="Tables" Schema="dbo" Table="Projects" />
+    <EntitySet Name="ProjectsInCompanies" EntityType="UtilizationTrackerDataStore.ProjectsInCompany" store:Type="Tables" Schema="dbo" Table="ProjectsInCompany" />
+    <EntitySet Name="ProjectsInDays" EntityType="UtilizationTrackerDataStore.ProjectsInDay" store:Type="Tables" Schema="dbo" Table="ProjectsInDay" />
+    <EntitySet Name="TeamProjects" EntityType="UtilizationTrackerDataStore.TeamProject" store:Type="Tables" Schema="dbo" Table="TeamProject" />
+    <EntitySet Name="TeamProjectsLists" EntityType="UtilizationTrackerDataStore.TeamProjectsList" store:Type="Tables" Schema="dbo" Table="TeamProjectsList" />
+    <EntitySet Name="TotalHours" EntityType="UtilizationTrackerDataStore.TotalHour" store:Type="Tables" Schema="dbo" Table="TotalHours" />
+    <EntitySet Name="TotalHoursAllMonthsForProjects" EntityType="UtilizationTrackerDataStore.TotalHoursAllMonthsForProject" store:Type="Tables" Schema="dbo" Table="TotalHoursAllMonthsForProject" />
+    <EntitySet Name="TotalHoursandProjectShares" EntityType="UtilizationTrackerDataStore.TotalHoursandProjectShare" store:Type="Tables" Schema="dbo" Table="TotalHoursandProjectShare" />
+    <EntitySet Name="TotalHoursofAllProjects" EntityType="UtilizationTrackerDataStore.TotalHoursofAllProject" store:Type="Tables" Schema="dbo" Table="TotalHoursofAllProjects" />
+    <EntitySet Name="TotalHoursProjectwiseforMonths" EntityType="UtilizationTrackerDataStore.TotalHoursProjectwiseforMonth" store:Type="Tables" Schema="dbo" Table="TotalHoursProjectwiseforMonths" />
+    <EntitySet Name="TotalHoursTeamMonthwises" EntityType="UtilizationTrackerDataStore.TotalHoursTeamMonthwise" store:Type="Tables" Schema="dbo" Table="TotalHoursTeamMonthwise" />
+    <EntitySet Name="TotalProjectScores" EntityType="UtilizationTrackerDataStore.TotalProjectScore" store:Type="Tables" Schema="dbo" Table="TotalProjectScore" />
+    <EntitySet Name="UtilizationCalculations" EntityType="UtilizationTrackerDataStore.UtilizationCalculation" store:Type="Tables" Schema="dbo" Table="UtilizationCalculation" />
+    <EntitySet Name="UtilizationTrackers" EntityType="UtilizationTrackerDataStore.UtilizationTracker" store:Type="Tables" Schema="dbo" Table="UtilizationTracker" />
+    <AssociationSet Name="FK_EmployeeDetails_ManagerID" Association="UtilizationTrackerDataStore.FK_EmployeeDetails_ManagerID">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="EmployeeDetails1" EntitySet="EmployeeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeMonth_EmployeeDetails" Association="UtilizationTrackerDataStore.FK_EmployeeMonth_EmployeeDetails">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="EmployeeMonth" EntitySet="EmployeeMonths" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignProjects_EmployeeDetails" Association="UtilizationTrackerDataStore.FK_AssignProjects_EmployeeDetails">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="AssignProjects" EntitySet="AssignProjects" />
+    </AssociationSet>
+    <AssociationSet Name="Months_EmployeeMonth" Association="UtilizationTrackerDataStore.Months_EmployeeMonth">
+      <End Role="Months" EntitySet="Months" />
+      <End Role="EmployeeMonth" EntitySet="EmployeeMonths" />
+    </AssociationSet>
+    <AssociationSet Name="Months_EmployeeProject" Association="UtilizationTrackerDataStore.Months_EmployeeProject">
+      <End Role="Months" EntitySet="Months" />
+      <End Role="EmployeeProject" EntitySet="EmployeeProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeProject_ProjectDetails" Association="UtilizationTrackerDataStore.FK_EmployeeProject_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="EmployeeProject" EntitySet="EmployeeProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignProjects_ProjectsInCompany" Association="UtilizationTrackerDataStore.FK_AssignProjects_ProjectsInCompany">
+      <End Role="ProjectsInCompany" EntitySet="ProjectsInCompanies" />
+      <End Role="AssignProjects" EntitySet="AssignProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_ProjectsInCompany" Association="UtilizationTrackerDataStore.FK_ProjectDetails_ProjectsInCompany">
+      <End Role="ProjectsInCompany" EntitySet="ProjectsInCompanies" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AssignProject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmpRole" Type="nvarchar" MaxLength="30" />
+    <Property Name="ProjectType" Type="nvarchar" MaxLength="30" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="ProjectID" Type="int" />
+  </EntityType>
+  <EntityType Name="AvgUtilization">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="AvgUtilization" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="EmpRole" Type="nvarchar" MaxLength="30" />
+    <Property Name="ProjectType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyTeamProject">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="ProjectStatus" />
+      <PropertyRef Name="StartDate" />
+    </Key>
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ComplexityDifficultyLevel" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ProjectType" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectStatus" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ComplexityAvg" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPeerReview" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityProjectDuration" Type="nvarchar" MaxLength="30" />
+    <Property Name="QualityAverage" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="AssignProjectID" Type="int" />
+  </EntityType>
+  <EntityType Name="ComplexityandQualityShare">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+    </Key>
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TotalHours" Type="decimal" Nullable="false" Precision="38" />
+    <Property Name="ProjectShare" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="ComplexityShare" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="QualityShare" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectScore" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="ComplexityAvg" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityAverage" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ComplexityDifficultyLevel" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPeerReview" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityProjectDuration" Type="nvarchar" MaxLength="30" />
+    <Property Name="TotalofallProjects" Type="decimal" Precision="38" />
+  </EntityType>
+  <EntityType Name="DistinctProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="ProjectStatus" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="ProjectManagerID" Type="int" />
+    <Property Name="Expr1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="ComplexityDifficultyLevel" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ProjectType" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectStatus" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ComplexityAvg" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPeerReview" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityProjectDuration" Type="nvarchar" MaxLength="30" />
+    <Property Name="QualityAverage" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmailDropdown">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="EmpID" Type="int" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="ManagerName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Designation" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Role" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ManagerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeMonth">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+    <Property Name="NoOfLeaves" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeProjectHour">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="SubProject" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="TaskID" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Hours" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SubProject" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Hours" Type="decimal" Nullable="false" Precision="5" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmployeeProject">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="TaskID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubProject" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Hours" Type="decimal" Nullable="false" Precision="5" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GetDateParameter">
+    <Key>
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoursPerDay">
+    <Key>
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="Expr1" Type="decimal" Precision="38" />
+  </EntityType>
+  <EntityType Name="Months">
+    <Key>
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="MonthID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="NoOfDays" Type="int" Nullable="false" />
+    <Property Name="WeekDays" Type="int" Nullable="false" />
+    <Property Name="Holidays" Type="int" Nullable="false" />
+    <Property Name="TotalHours" Type="int" />
+    <Property Name="WorkingDays" Type="int" />
+    <Property Name="Year" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PMTeamProject">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="KeyField" />
+    </Key>
+    <Property Name="ManagerName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="KeyField" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ProjectDetail">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectType" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectStatus" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ComplexityDifficultyLevel" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityAvg" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPeerReview" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityProjectDuration" Type="nvarchar" MaxLength="30" />
+    <Property Name="QualityAverage" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="AssignProjectID" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectManagerViewTeamHour">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+    </Key>
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Expr1" Type="decimal" Precision="38" />
+  </EntityType>
+  <EntityType Name="ProjectReport">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="MonthName" />
+    </Key>
+    <Property Name="TotalWorkedHours" Type="decimal" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="EmpID" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MgrID" Type="int" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectsInCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
+  <EntityType Name="ProjectsInDay">
+    <Key>
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Hours" />
+      <PropertyRef Name="SubProject" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Hours" Type="decimal" Nullable="false" Precision="5" />
+    <Property Name="SubProject" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamProject">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="emprole1" Type="nvarchar" MaxLength="30" />
+    <Property Name="emprole2" Type="nvarchar" MaxLength="30" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamProjectsList">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="KeyField" />
+    </Key>
+    <Property Name="Expr1" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManagerName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="KeyField" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TotalHour">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalHours" Type="decimal" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursAllMonthsForProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalHours" Type="decimal" Nullable="false" Precision="38" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursandProjectShare">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+    </Key>
+    <Property Name="ProjectShare" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="TotalHours" Type="decimal" Nullable="false" Precision="38" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TotalofallProjects" Type="decimal" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ComplexityAvg" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityAverage" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="ComplexityDifficultyLevel" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityPeerReview" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="QualityProjectDuration" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TotalHoursofAllProject">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalofallProjects" Type="decimal" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursProjectwiseforMonth">
+    <Key>
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="Total Hours" Type="decimal" Precision="38" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursTeamMonthwise">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="MonthName" />
+    </Key>
+    <Property Name="EmpName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Expr1" Type="decimal" Precision="38" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TotalProjectScore">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="ProjectScore" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UtilizationCalculation">
+    <Key>
+      <PropertyRef Name="WeekDays" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="Holidays" />
+    </Key>
+    <Property Name="UtilizationPercentage" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="WeekDays" Type="int" Nullable="false" />
+    <Property Name="WorkingDays" Type="int" />
+    <Property Name="WorkedHours" Type="decimal" Nullable="false" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Holidays" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UtilizationTracker">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="WeekDays" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="Holidays" />
+    </Key>
+    <Property Name="WorkedHours" Type="decimal" Nullable="false" Precision="38" />
+    <Property Name="EmpID" Type="int" Nullable="false" />
+    <Property Name="MonthID" Type="int" Nullable="false" />
+    <Property Name="TotalHours" Type="int" />
+    <Property Name="WeekDays" Type="int" Nullable="false" />
+    <Property Name="WorkingDays" Type="int" />
+    <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Holidays" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmployeeDetails_ManagerID">
+    <End Role="EmployeeDetails" Type="UtilizationTrackerDataStore.EmployeeDetail" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmployeeDetails1" Type="UtilizationTrackerDataStore.EmployeeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeDetails1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeMonth_EmployeeDetails">
+    <End Role="EmployeeDetails" Type="UtilizationTrackerDataStore.EmployeeDetail" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmployeeMonth" Type="UtilizationTrackerDataStore.EmployeeMonth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeMonth">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignProjects_EmployeeDetails">
+    <End Role="EmployeeDetails" Type="UtilizationTrackerDataStore.EmployeeDetail" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AssignProjects" Type="UtilizationTrackerDataStore.AssignProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="AssignProjects">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Months_EmployeeMonth">
+    <End Role="Months" Type="UtilizationTrackerDataStore.Months" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmployeeMonth" Type="UtilizationTrackerDataStore.EmployeeMonth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Months">
+        <PropertyRef Name="MonthID" />
+      </Principal>
+      <Dependent Role="EmployeeMonth">
+        <PropertyRef Name="MonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Months_EmployeeProject">
+    <End Role="Months" Type="UtilizationTrackerDataStore.Months" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmployeeProject" Type="UtilizationTrackerDataStore.EmployeeProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Months">
+        <PropertyRef Name="MonthID" />
+      </Principal>
+      <Dependent Role="EmployeeProject">
+        <PropertyRef Name="MonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeProject_ProjectDetails">
+    <End Role="ProjectDetails" Type="UtilizationTrackerDataStore.ProjectDetail" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="EmployeeProject" Type="UtilizationTrackerDataStore.EmployeeProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="EmpID" />
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="EmployeeProject">
+        <PropertyRef Name="EmpID" />
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignProjects_ProjectsInCompany">
+    <End Role="ProjectsInCompany" Type="UtilizationTrackerDataStore.ProjectsInCompany" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AssignProjects" Type="UtilizationTrackerDataStore.AssignProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectsInCompany">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AssignProjects">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_ProjectsInCompany">
+    <End Role="ProjectsInCompany" Type="UtilizationTrackerDataStore.ProjectsInCompany" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ProjectDetails" Type="UtilizationTrackerDataStore.ProjectDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectsInCompany">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="AssignProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

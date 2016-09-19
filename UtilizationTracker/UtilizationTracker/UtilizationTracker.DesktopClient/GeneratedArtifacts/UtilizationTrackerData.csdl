@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="AssignProject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpRole" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectType" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeDetail" Relationship="LightSwitchApplication.FK_AssignProjects_EmployeeDetails" ToRole="EmployeeDetails" FromRole="AssignProjects" />
+    <NavigationProperty Name="ProjectsInCompany" Relationship="LightSwitchApplication.FK_AssignProjects_ProjectsInCompany" ToRole="ProjectsInCompany" FromRole="AssignProjects" />
+  </EntityType>
+  <EntityType Name="AvgUtilization">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="AvgUtilization1" Type="Edm.Decimal" Precision="38" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="EmpRole" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectType" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Expr1" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyTeamProject">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="ProjectStatus" />
+      <PropertyRef Name="StartDate" />
+    </Key>
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ComplexityDifficultyLevel" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ProjectType" Type="Edm.String" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectStatus" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityAvg" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPMRating" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPeerReview" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityProjectDuration" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="QualityAverage" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="AssignProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="ComplexityandQualityShare">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+    </Key>
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="TotalHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectShare" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityShare" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="QualityShare" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectScore" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityAvg" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityAverage" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityDifficultyLevel" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPeerReview" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityProjectDuration" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="TotalofallProjects" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="DistinctProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+      <PropertyRef Name="ProjectType" />
+      <PropertyRef Name="ProjectStatus" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectManagerID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Expr1" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="Expr2" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Expr3" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ComplexityDifficultyLevel" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ProjectType" Type="Edm.String" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectStatus" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityAvg" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPMRating" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPeerReview" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityProjectDuration" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="QualityAverage" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmailDropdown">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ManagerID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ManagerName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="Designation" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="ManagerID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Role" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeDetails" Relationship="LightSwitchApplication.FK_EmployeeDetails_ManagerID" ToRole="EmployeeDetails1" FromRole="EmployeeDetails" />
+    <NavigationProperty Name="EmployeeDetail1" Relationship="LightSwitchApplication.FK_EmployeeDetails_ManagerID" ToRole="EmployeeDetails" FromRole="EmployeeDetails1" />
+    <NavigationProperty Name="EmployeeMonths" Relationship="LightSwitchApplication.FK_EmployeeMonth_EmployeeDetails" ToRole="EmployeeMonth" FromRole="EmployeeDetails" />
+    <NavigationProperty Name="AssignProjects" Relationship="LightSwitchApplication.FK_AssignProjects_EmployeeDetails" ToRole="AssignProjects" FromRole="EmployeeDetails" />
+  </EntityType>
+  <EntityType Name="EmployeeMonth">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="NoOfLeaves" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeDetail" Relationship="LightSwitchApplication.FK_EmployeeMonth_EmployeeDetails" ToRole="EmployeeDetails" FromRole="EmployeeMonth" />
+    <NavigationProperty Name="Months" Relationship="LightSwitchApplication.Months_EmployeeMonth" ToRole="Months" FromRole="EmployeeMonth" />
+  </EntityType>
+  <EntityType Name="EmployeeProjectHour">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="SubProject" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="TaskID" />
+      <PropertyRef Name="c_Date" />
+      <PropertyRef Name="Hours" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="EmpName" />
+    </Key>
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="SubProject" Type="Edm.String" Nullable="false" MaxLength="300" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="TaskID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="Hours" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EmployeeProject">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="TaskID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubProject" Type="Edm.String" Nullable="false" MaxLength="300" ConcurrencyMode="Fixed" />
+    <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="Hours" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Months" Relationship="LightSwitchApplication.Months_EmployeeProject" ToRole="Months" FromRole="EmployeeProject" />
+    <NavigationProperty Name="ProjectDetail" Relationship="LightSwitchApplication.FK_EmployeeProject_ProjectDetails" ToRole="ProjectDetails" FromRole="EmployeeProject" />
+  </EntityType>
+  <EntityType Name="GetDateParameter">
+    <Key>
+      <PropertyRef Name="c_Date" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoursPerDay">
+    <Key>
+      <PropertyRef Name="c_Date" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Expr1" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="Months">
+    <Key>
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="NoOfDays" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="WeekDays" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Holidays" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="TotalHours" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="WorkingDays" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Year" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeMonths" Relationship="LightSwitchApplication.Months_EmployeeMonth" ToRole="EmployeeMonth" FromRole="Months" />
+    <NavigationProperty Name="EmployeeProjects" Relationship="LightSwitchApplication.Months_EmployeeProject" ToRole="EmployeeProject" FromRole="Months" />
+  </EntityType>
+  <EntityType Name="PMTeamProject">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="KeyField" />
+    </Key>
+    <Property Name="ManagerName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectName" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ManagerID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="KeyField" Type="Edm.String" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ProjectDetail">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectType" Type="Edm.String" Nullable="false" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectStatus" Type="Edm.String" Nullable="false" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="EndDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityDifficultyLevel" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityScope" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityAvg" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPMRating" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPeerReview" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityProjectDuration" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="QualityAverage" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="AssignProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="EmployeeProjects" Relationship="LightSwitchApplication.FK_EmployeeProject_ProjectDetails" ToRole="EmployeeProject" FromRole="ProjectDetails" />
+    <NavigationProperty Name="ProjectsInCompany" Relationship="LightSwitchApplication.FK_ProjectDetails_ProjectsInCompany" ToRole="ProjectsInCompany" FromRole="ProjectDetails" />
+  </EntityType>
+  <EntityType Name="ProjectManagerViewTeamHour">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+    </Key>
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="Expr1" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="ProjectReport">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="MonthName" />
+    </Key>
+    <Property Name="TotalWorkedHours" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="MgrID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectsInCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectType" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="StartDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="EndDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="AssignProject" Relationship="LightSwitchApplication.FK_AssignProjects_ProjectsInCompany" ToRole="AssignProjects" FromRole="ProjectsInCompany" />
+    <NavigationProperty Name="ProjectDetails" Relationship="LightSwitchApplication.FK_ProjectDetails_ProjectsInCompany" ToRole="ProjectDetails" FromRole="ProjectsInCompany" />
+  </EntityType>
+  <EntityType Name="ProjectsInDay">
+    <Key>
+      <PropertyRef Name="c_Date" />
+      <PropertyRef Name="Hours" />
+      <PropertyRef Name="SubProject" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" />
+    <Property Name="Hours" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" />
+    <Property Name="SubProject" Type="Edm.String" Nullable="false" MaxLength="300" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamProject">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="ManagerID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="emprole1" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="emprole2" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+    <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Expr1" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamProjectsList">
+    <Key>
+      <PropertyRef Name="ManagerName" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="KeyField" />
+    </Key>
+    <Property Name="Expr1" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectName" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="ManagerName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ManagerID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectID" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="KeyField" Type="Edm.String" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TotalHour">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalHours" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursAllMonthsForProject">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursandProjectShare">
+    <Key>
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ComplexityDifficultyLevel" />
+      <PropertyRef Name="ComplexityScope" />
+    </Key>
+    <Property Name="ProjectShare" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="TotalHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="TotalofallProjects" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ComplexityAvg" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityAverage" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="ComplexityDifficultyLevel" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="ComplexityScope" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" />
+    <Property Name="QualityPMRating" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityPeerReview" Type="Edm.Decimal" Precision="6" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="QualityProjectDuration" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="TotalHoursofAllProject">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="TotalofallProjects" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursProjectwiseforMonth">
+    <Key>
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="MonthID" />
+    </Key>
+    <Property Name="Total_Hours" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotalHoursTeamMonthwise">
+    <Key>
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="ProjectID" />
+      <PropertyRef Name="ProjectName" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="MonthName" />
+    </Key>
+    <Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="Expr1" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TotalProjectScore">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="ProjectScore" Type="Edm.Decimal" Precision="38" Scale="6" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UtilizationCalculation">
+    <Key>
+      <PropertyRef Name="WeekDays" />
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="Holidays" />
+    </Key>
+    <Property Name="UtilizationPercentage" Type="Edm.Decimal" Precision="10" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="WeekDays" Type="Edm.Int32" Nullable="false" />
+    <Property Name="WorkingDays" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="WorkedHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="Holidays" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UtilizationTracker">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="MonthID" />
+      <PropertyRef Name="WeekDays" />
+      <PropertyRef Name="MonthName" />
+      <PropertyRef Name="Holidays" />
+    </Key>
+    <Property Name="WorkedHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
+    <Property Name="TotalHours" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="WeekDays" Type="Edm.Int32" Nullable="false" />
+    <Property Name="WorkingDays" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
+    <Property Name="Holidays" Type="Edm.Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmployeeDetails_ManagerID">
+    <End Role="EmployeeDetails" Type="LightSwitchApplication.EmployeeDetail" Multiplicity="1" />
+    <End Role="EmployeeDetails1" Type="LightSwitchApplication.EmployeeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeDetails1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeMonth_EmployeeDetails">
+    <End Role="EmployeeDetails" Type="LightSwitchApplication.EmployeeDetail" Multiplicity="1" />
+    <End Role="EmployeeMonth" Type="LightSwitchApplication.EmployeeMonth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeMonth">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignProjects_EmployeeDetails">
+    <End Role="EmployeeDetails" Type="LightSwitchApplication.EmployeeDetail" Multiplicity="0..1" />
+    <End Role="AssignProjects" Type="LightSwitchApplication.AssignProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeDetails">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="AssignProjects">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Months_EmployeeMonth">
+    <End Role="Months" Type="LightSwitchApplication.Months" Multiplicity="1" />
+    <End Role="EmployeeMonth" Type="LightSwitchApplication.EmployeeMonth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Months">
+        <PropertyRef Name="MonthID" />
+      </Principal>
+      <Dependent Role="EmployeeMonth">
+        <PropertyRef Name="MonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Months_EmployeeProject">
+    <End Role="Months" Type="LightSwitchApplication.Months" Multiplicity="1" />
+    <End Role="EmployeeProject" Type="LightSwitchApplication.EmployeeProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Months">
+        <PropertyRef Name="MonthID" />
+      </Principal>
+      <Dependent Role="EmployeeProject">
+        <PropertyRef Name="MonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeProject_ProjectDetails">
+    <End Role="ProjectDetails" Type="LightSwitchApplication.ProjectDetail" Multiplicity="1" />
+    <End Role="EmployeeProject" Type="LightSwitchApplication.EmployeeProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectDetails">
+        <PropertyRef Name="EmpID" />
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="EmployeeProject">
+        <PropertyRef Name="EmpID" />
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AssignProjects_ProjectsInCompany">
+    <End Role="ProjectsInCompany" Type="LightSwitchApplication.ProjectsInCompany" Multiplicity="0..1" />
+    <End Role="AssignProjects" Type="LightSwitchApplication.AssignProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectsInCompany">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AssignProjects">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDetails_ProjectsInCompany">
+    <End Role="ProjectsInCompany" Type="LightSwitchApplication.ProjectsInCompany" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="LightSwitchApplication.ProjectDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectsInCompany">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="AssignProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UtilizationTrackerData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="AssignProjects" EntityType="LightSwitchApplication.AssignProject" />
+    <EntitySet Name="AvgUtilizations" EntityType="LightSwitchApplication.AvgUtilization" />
+    <EntitySet Name="CompanyProjects" EntityType="LightSwitchApplication.CompanyProject" />
+    <EntitySet Name="CompanyTeamProjects" EntityType="LightSwitchApplication.CompanyTeamProject" />
+    <EntitySet Name="ComplexityandQualityShares" EntityType="LightSwitchApplication.ComplexityandQualityShare" />
+    <EntitySet Name="DistinctProjects" EntityType="LightSwitchApplication.DistinctProject" />
+    <EntitySet Name="EmailDropdowns" EntityType="LightSwitchApplication.EmailDropdown" />
+    <EntitySet Name="EmployeeDetails" EntityType="LightSwitchApplication.EmployeeDetail" />
+    <EntitySet Name="EmployeeMonths" EntityType="LightSwitchApplication.EmployeeMonth" />
+    <EntitySet Name="EmployeeProjectHours" EntityType="LightSwitchApplication.EmployeeProjectHour" />
+    <EntitySet Name="EmployeeProjects" EntityType="LightSwitchApplication.EmployeeProject" />
+    <EntitySet Name="GetDateParameters" EntityType="LightSwitchApplication.GetDateParameter" />
+    <EntitySet Name="HoursPerDays" EntityType="LightSwitchApplication.HoursPerDay" />
+    <EntitySet Name="Months" EntityType="LightSwitchApplication.Months" />
+    <EntitySet Name="PMTeamProjects" EntityType="LightSwitchApplication.PMTeamProject" />
+    <EntitySet Name="ProjectDetails" EntityType="LightSwitchApplication.ProjectDetail" />
+    <EntitySet Name="ProjectManagerViewTeamHours" EntityType="LightSwitchApplication.ProjectManagerViewTeamHour" />
+    <EntitySet Name="ProjectReports" EntityType="LightSwitchApplication.ProjectReport" />
+    <EntitySet Name="Projects" EntityType="LightSwitchApplication.Project" />
+    <EntitySet Name="ProjectsInCompanies" EntityType="LightSwitchApplication.ProjectsInCompany" />
+    <EntitySet Name="ProjectsInDays" EntityType="LightSwitchApplication.ProjectsInDay" />
+    <EntitySet Name="TeamProjects" EntityType="LightSwitchApplication.TeamProject" />
+    <EntitySet Name="TeamProjectsLists" EntityType="LightSwitchApplication.TeamProjectsList" />
+    <EntitySet Name="TotalHours" EntityType="LightSwitchApplication.TotalHour" />
+    <EntitySet Name="TotalHoursAllMonthsForProjects" EntityType="LightSwitchApplication.TotalHoursAllMonthsForProject" />
+    <EntitySet Name="TotalHoursandProjectShares" EntityType="LightSwitchApplication.TotalHoursandProjectShare" />
+    <EntitySet Name="TotalHoursofAllProjects" EntityType="LightSwitchApplication.TotalHoursofAllProject" />
+    <EntitySet Name="TotalHoursProjectwiseforMonths" EntityType="LightSwitchApplication.TotalHoursProjectwiseforMonth" />
+    <EntitySet Name="TotalHoursTeamMonthwises" EntityType="LightSwitchApplication.TotalHoursTeamMonthwise" />
+    <EntitySet Name="TotalProjectScores" EntityType="LightSwitchApplication.TotalProjectScore" />
+    <EntitySet Name="UtilizationCalculations" EntityType="LightSwitchApplication.UtilizationCalculation" />
+    <EntitySet Name="UtilizationTrackers" EntityType="LightSwitchApplication.UtilizationTracker" />
+    <AssociationSet Name="FK_EmployeeDetails_ManagerID" Association="LightSwitchApplication.FK_EmployeeDetails_ManagerID">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="EmployeeDetails1" EntitySet="EmployeeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeMonth_EmployeeDetails" Association="LightSwitchApplication.FK_EmployeeMonth_EmployeeDetails">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="EmployeeMonth" EntitySet="EmployeeMonths" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignProjects_EmployeeDetails" Association="LightSwitchApplication.FK_AssignProjects_EmployeeDetails">
+      <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+      <End Role="AssignProjects" EntitySet="AssignProjects" />
+    </AssociationSet>
+    <AssociationSet Name="Months_EmployeeMonth" Association="LightSwitchApplication.Months_EmployeeMonth">
+      <End Role="Months" EntitySet="Months" />
+      <End Role="EmployeeMonth" EntitySet="EmployeeMonths" />
+    </AssociationSet>
+    <AssociationSet Name="Months_EmployeeProject" Association="LightSwitchApplication.Months_EmployeeProject">
+      <End Role="Months" EntitySet="Months" />
+      <End Role="EmployeeProject" EntitySet="EmployeeProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeProject_ProjectDetails" Association="LightSwitchApplication.FK_EmployeeProject_ProjectDetails">
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+      <End Role="EmployeeProject" EntitySet="EmployeeProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AssignProjects_ProjectsInCompany" Association="LightSwitchApplication.FK_AssignProjects_ProjectsInCompany">
+      <End Role="ProjectsInCompany" EntitySet="ProjectsInCompanies" />
+      <End Role="AssignProjects" EntitySet="AssignProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDetails_ProjectsInCompany" Association="LightSwitchApplication.FK_ProjectDetails_ProjectsInCompany">
+      <End Role="ProjectsInCompany" EntitySet="ProjectsInCompanies" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <FunctionImport Name="AvgUtilization" ReturnType="Collection(LightSwitchApplication.AvgUtilization)" EntitySet="AvgUtilizations" m:HttpMethod="GET" />
+    <FunctionImport Name="CompanySelfProjects" ReturnType="Collection(LightSwitchApplication.CompanyProject)" EntitySet="CompanyProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="ProjectScore" ReturnType="Collection(LightSwitchApplication.ComplexityandQualityShare)" EntitySet="ComplexityandQualityShares" m:HttpMethod="GET" />
+    <FunctionImport Name="DistinctProjectList" ReturnType="Collection(LightSwitchApplication.DistinctProject)" EntitySet="DistinctProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="EmailList" ReturnType="Collection(LightSwitchApplication.EmailDropdown)" EntitySet="EmailDropdowns" m:HttpMethod="GET" />
+    <FunctionImport Name="GetManagers" ReturnType="Collection(LightSwitchApplication.EmployeeDetail)" EntitySet="EmployeeDetails" m:HttpMethod="GET" />
+    <FunctionImport Name="UserName" ReturnType="Collection(LightSwitchApplication.EmployeeDetail)" EntitySet="EmployeeDetails" m:HttpMethod="GET" />
+    <FunctionImport Name="ViewReportees" ReturnType="Collection(LightSwitchApplication.EmployeeDetail)" EntitySet="EmployeeDetails" m:HttpMethod="GET" />
+    <FunctionImport Name="CandidateMonthDetails" ReturnType="Collection(LightSwitchApplication.EmployeeMonth)" EntitySet="EmployeeMonths" m:HttpMethod="GET" />
+    <FunctionImport Name="Parameters" ReturnType="Collection(LightSwitchApplication.EmployeeProject)" EntitySet="EmployeeProjects" m:HttpMethod="GET">
+      <Parameter Name="MonthName" Type="Edm.String" Mode="In" />
+      <Parameter Name="ProjectName" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+    <FunctionImport Name="Tracker" ReturnType="Collection(LightSwitchApplication.EmployeeProject)" EntitySet="EmployeeProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="ViewReporteeProjects" ReturnType="Collection(LightSwitchApplication.EmployeeProject)" EntitySet="EmployeeProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="NoOfHoursPerDay" ReturnType="Collection(LightSwitchApplication.HoursPerDay)" EntitySet="HoursPerDays" m:HttpMethod="GET" />
+    <FunctionImport Name="CandidateProject" ReturnType="Collection(LightSwitchApplication.ProjectDetail)" EntitySet="ProjectDetails" m:HttpMethod="GET" />
+    <FunctionImport Name="GetSelfProjects" ReturnType="Collection(LightSwitchApplication.ProjectDetail)" EntitySet="ProjectDetails" m:HttpMethod="GET" />
+    <FunctionImport Name="ProjectReportsforUser" ReturnType="Collection(LightSwitchApplication.ProjectReport)" EntitySet="ProjectReports" m:HttpMethod="GET" />
+    <FunctionImport Name="TotalWorkedHours" ReturnType="Collection(LightSwitchApplication.TotalHour)" EntitySet="TotalHours" m:HttpMethod="GET" />
+    <FunctionImport Name="TotalHoursForaProject" ReturnType="Collection(LightSwitchApplication.TotalHoursAllMonthsForProject)" EntitySet="TotalHoursAllMonthsForProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="TotalHoursProjectWise" ReturnType="Collection(LightSwitchApplication.TotalHoursProjectwiseforMonth)" EntitySet="TotalHoursProjectwiseforMonths" m:HttpMethod="GET" />
+    <FunctionImport Name="CandidateProjectScore" ReturnType="Collection(LightSwitchApplication.TotalProjectScore)" EntitySet="TotalProjectScores" m:HttpMethod="GET" />
+    <FunctionImport Name="Utilization" ReturnType="Collection(LightSwitchApplication.UtilizationCalculation)" EntitySet="UtilizationCalculations" m:HttpMethod="GET" />
+    <FunctionImport Name="PMTeamProjectList" ReturnType="Collection(LightSwitchApplication.PMTeamProject)" EntitySet="PMTeamProjects" m:HttpMethod="GET" />
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
