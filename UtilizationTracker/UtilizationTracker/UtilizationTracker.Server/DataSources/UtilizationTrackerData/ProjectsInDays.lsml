@@ -52,7 +52,7 @@
         <KeyProperty.Attributes>
           <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <KeyProperty
@@ -408,7 +408,7 @@
           Type="nvarchar"
           Property="ProjectsInDay/Properties[SubProject]" />
         <SsdlProperty
-          MaxLength="50"
+          MaxLength="100"
           Name="ProjectName"
           Nullable="False"
           Type="nvarchar"

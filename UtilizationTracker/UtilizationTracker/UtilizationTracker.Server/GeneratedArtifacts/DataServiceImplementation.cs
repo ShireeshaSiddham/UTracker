@@ -191,6 +191,13 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.PMTeamProject> PMTeamProjectList()
+        {
+            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.PMTeamProject> query;
+            query = this.GetQuery<global::LightSwitchApplication.Implementation.PMTeamProject>("PMTeamProjects");
+            return query;
+        }
+    
         public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.ProjectDetail> CandidateProject()
         {
             global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.ProjectDetail> query;
@@ -248,13 +255,6 @@ namespace LightSwitchApplication.Implementation
         {
             global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.UtilizationCalculation> query;
             query = this.GetQuery<global::LightSwitchApplication.Implementation.UtilizationCalculation>("UtilizationCalculations");
-            return query;
-        }
-    
-        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.PMTeamProject> PMTeamProjectList()
-        {
-            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.PMTeamProject> query;
-            query = this.GetQuery<global::LightSwitchApplication.Implementation.PMTeamProject>("PMTeamProjects");
             return query;
         }
     

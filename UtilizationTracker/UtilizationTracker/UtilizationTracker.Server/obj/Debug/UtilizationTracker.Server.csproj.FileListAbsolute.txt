@@ -1994,3 +1994,40 @@ C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTr
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\UtilizationTracker.Server.csprojResolveAssemblyReference.cache
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\Application.Server.dll
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\Application.Server.pdb
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\LSSvcGeneratorsTask.mcs
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\LSServerCodeGeneratorsTask.mcs
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Application.Server.dll.config
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Application.Server.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Application.Server.pdb
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.Data.Edm.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.Data.OData.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.Data.Services.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.AppBridge.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.CodeMarker.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.ExportProvider.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.Extensions.Server.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.ManifestService.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.Model.Xaml.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.Server.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.Server.Host.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.EntityFramework.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.OData.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Server.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.PollingDuplex.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.Spatial.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.WindowsAzure.ServiceRuntime.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\Microsoft.LightSwitch.Server.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.EntityFramework.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Hosting.OData.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\bin\Debug\System.ServiceModel.DomainServices.Server.xml
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\UtilizationTracker.Server.csprojResolveAssemblyReference.cache
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\Application.Server.dll
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.Server\obj\Debug\Application.Server.pdb

@@ -5002,7 +5002,7 @@
               ":@Required": { },
               ":@MaxLength":
               {
-                "value": 50
+                "value": 100
               }
             },
             {
@@ -5197,7 +5197,7 @@
               ":@Required": { },
               ":@MaxLength":
               {
-                "value": 50
+                "value": 100
               }
             },
             {
@@ -8800,7 +8800,7 @@
               ":@Required": { },
               ":@MaxLength":
               {
-                "value": 50
+                "value": 100
               }
             },
             {
@@ -12683,19 +12683,46 @@
                                 ]
                               },
                               {
-                                "displayName": "Months",
-                                "name": "Months",
+                                "displayName": "Property1",
+                                "name": "Property1",
                                 "kind": "Details",
                                 "view": { "__id": ":DetailsModalPicker" },
+                                "choicesSource":
+                                {
+                                  "member": { "__id": "AddEditEmployeeProject/Properties[Months]" }
+                                },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "EmployeeProject/Properties[Months]" }
+                                  "member": { "__id": "AddEditEmployeeProject/Properties[Property1]" }
                                 },
                                 "childContentItems":
                                 [
                                   {
                                     "displayName": "Months",
-                                    "name": "Months1",
+                                    "name": "Months",
+                                    "kind": "Value",
+                                    "view": { "__id": ":Text" },
+                                    "dataSource":
+                                    {
+                                      "member": { "__id": "Months/Properties[MonthName]" }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "Months",
+                                "name": "Months1",
+                                "kind": "Collection",
+                                "view": { "__id": ":List" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "AddEditEmployeeProject/Properties[Months]" }
+                                },
+                                "childContentItems":
+                                [
+                                  {
+                                    "displayName": "Months",
+                                    "name": "Months1Template",
                                     "kind": "Value",
                                     "view": { "__id": ":Text" },
                                     "dataSource":
@@ -12803,6 +12830,51 @@
               "source":
               {
                 "target": { "__id": "AddEditEmployeeProject/Properties[GetSelfProjects]/Query" }
+              }
+            },
+            {
+              "id": "AddEditEmployeeProject/Properties[Property1]",
+              "name": "Property1",
+              "elementType": { "__id": "Months" },
+              "propertyType": { "__id": "Months" }
+            },
+            {
+              "id": "AddEditEmployeeProject/Properties[Months]",
+              "name": "Months",
+              "pageSize": 45,
+              "elementType": { "__id": "Months" },
+              "propertyType": { "__id": "CollectionView$Months" },
+              "query":
+              {
+                "id": "AddEditEmployeeProject/Properties[Months]/Query",
+                "name": "MonthsQuery",
+                "elementType": { "__id": "Months" },
+                "returnType": { "__id": "Months*" },
+                "filterExpression":
+                {
+                  "nodeType": "Equal",
+                  "left":
+                  {
+                    "links":
+                    [
+                      {
+                        "member": { "__id": "Months/Properties[MonthName]" }
+                      }
+                    ]
+                  },
+                  "right":
+                  {
+                    "value": "April"
+                  }
+                },
+                "source":
+                {
+                  "member": { "__id": "UtilizationTrackerData/Members[Months]" }
+                }
+              },
+              "source":
+              {
+                "target": { "__id": "AddEditEmployeeProject/Properties[Months]/Query" }
               }
             }
           ]
@@ -13634,12 +13706,12 @@
                               },
                               {
                                 "displayName": "No Of Days",
-                                "name": "NoOfDays",
+                                "name": "NoOfDay",
                                 "kind": "Value",
-                                "view": { "__id": ":TextBox" },
+                                "view": { "__id": ":Text" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Months/Properties[NoOfDays]" }
+                                  "member": { "__id": "AddEditMonths/Properties[NoOfDay]" }
                                 }
                               },
                               {
@@ -13683,7 +13755,7 @@
                             "childContentItems":
                             [
                               {
-                                "displayName": "Month",
+                                "displayName": "Month Name",
                                 "name": "MonthName",
                                 "kind": "Value",
                                 "view": { "__id": ":ValueDropdown" },
@@ -13800,6 +13872,13 @@
             {
               "id": "AddEditMonths/Properties[TotalHour]",
               "name": "TotalHour",
+              "elementType": { "__id": ":String" },
+              "propertyType": { "__id": ":String" },
+              ":@Required": { }
+            },
+            {
+              "id": "AddEditMonths/Properties[NoOfDay]",
+              "name": "NoOfDay",
               "elementType": { "__id": ":String" },
               "propertyType": { "__id": ":String" },
               ":@Required": { }

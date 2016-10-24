@@ -228,6 +228,12 @@
         /// <field name="GetSelfProjects" type="msls.VisualCollection" elementType="msls.application.ProjectDetail">
         /// Gets the getSelfProjects for this screen.
         /// </field>
+        /// <field name="Property1" type="msls.application.Months">
+        /// Gets or sets the property1 for this screen.
+        /// </field>
+        /// <field name="Months" type="msls.VisualCollection" elementType="msls.application.Months">
+        /// Gets the months for this screen.
+        /// </field>
         /// <field name="details" type="msls.application.AddEditEmployeeProject.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -311,6 +317,9 @@
         /// </field>
         /// <field name="TotalHour" type="String">
         /// Gets or sets the totalHour for this screen.
+        /// </field>
+        /// <field name="NoOfDay" type="String">
+        /// Gets or sets the noOfDay for this screen.
         /// </field>
         /// <field name="details" type="msls.application.AddEditMonths.Details">
         /// Gets the details for this screen.
@@ -1348,6 +1357,13 @@
                 createQuery: function () {
                     return this.dataWorkspace.UtilizationTrackerData.GetSelfProjects();
                 }
+            },
+            { name: "Property1", kind: "local", type: lightSwitchApplication.Months },
+            {
+                name: "Months", kind: "collection", elementType: lightSwitchApplication.Months,
+                createQuery: function () {
+                    return this.dataWorkspace.UtilizationTrackerData.Months.filter("MonthName eq 'April'");
+                }
             }
         ], [
             { name: "Back" }
@@ -1388,7 +1404,8 @@
         AddEditMonths: $defineScreen(AddEditMonths, [
             { name: "Months", kind: "local", type: lightSwitchApplication.Months },
             { name: "WorkingDay", kind: "local", type: String },
-            { name: "TotalHour", kind: "local", type: String }
+            { name: "TotalHour", kind: "local", type: String },
+            { name: "NoOfDay", kind: "local", type: String }
         ], [
             { name: "Back" }
         ]),

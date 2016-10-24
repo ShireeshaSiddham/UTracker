@@ -4,9 +4,9 @@
     <EnableENC>False</EnableENC>
     <ProjectView>ProjectFiles</ProjectView>
     <StartUpClientProject>UtilizationTracker.HTMLClient</StartUpClientProject>
-    <SchemaManagementSchemaBuildState>1</SchemaManagementSchemaBuildState>
+    <SchemaManagementSchemaBuildState>0</SchemaManagementSchemaBuildState>
     <SchemaManagementDatabaseIncludesSecurityObjects>True</SchemaManagementDatabaseIncludesSecurityObjects>
     <GrantedPermissions>Microsoft.LightSwitch.Security:SecurityAdministration,LightSwitchApplication:getProjectTables</GrantedPermissions>
-    <SchemaManagementLastSsdlWriteTime>636057314933441788</SchemaManagementLastSsdlWriteTime>
+    <SchemaManagementLastSsdlWriteTime>636099071670856304</SchemaManagementLastSsdlWriteTime>
   </PropertyGroup>
 </Project>

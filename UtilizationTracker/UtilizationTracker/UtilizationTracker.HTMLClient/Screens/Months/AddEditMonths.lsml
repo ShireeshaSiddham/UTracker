@@ -77,14 +77,19 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="NoOfDays"
+                  Name="NoOfDay"
                   Kind="Value"
-                  DataType=":Int32">
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="No Of Days" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Months/Properties[NoOfDays]" />
+                          Member="AddEditMonths/Properties[NoOfDay]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -150,10 +155,6 @@
                   Name="MonthName"
                   Kind="Value"
                   DataType=":String">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Month" />
-                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -291,6 +292,13 @@
       </ScreenProperty>
       <ScreenProperty
         Name="TotalHour"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="NoOfDay"
         PropertyType=":String">
         <ScreenProperty.Attributes>
           <Required />

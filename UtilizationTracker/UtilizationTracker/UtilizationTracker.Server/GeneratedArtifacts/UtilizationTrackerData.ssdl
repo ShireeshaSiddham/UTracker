@@ -334,7 +334,7 @@
     </Key>
     <Property Name="TotalWorkedHours" Type="decimal" Precision="38" />
     <Property Name="EmpID" Type="int" Nullable="false" />
-    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
   </EntityType>
   <EntityType Name="Project">
@@ -369,7 +369,7 @@
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Hours" Type="decimal" Nullable="false" Precision="5" />
     <Property Name="SubProject" Type="nvarchar" Nullable="false" MaxLength="300" />
-    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="EmpID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TeamProject">
@@ -453,7 +453,7 @@
     </Key>
     <Property Name="Total Hours" Type="decimal" Precision="38" />
     <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
-    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="EmpID" Type="int" Nullable="false" />
     <Property Name="ProjectID" Type="int" Nullable="false" />
     <Property Name="MonthID" Type="int" Nullable="false" />

@@ -1864,6 +1864,16 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <QueryOperation
+      Name="PMTeamProjectList"
+      ReturnType="PMTeamProject*">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="PMTeamProjects" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
     <EntitySet
       Name="ProjectDetails"
       CanDelete="True"
@@ -3355,16 +3365,6 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <QueryOperation
-      Name="PMTeamProjectList"
-      ReturnType="PMTeamProject*">
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="PMTeamProjects" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="EmployeeDetail">
@@ -3723,7 +3723,7 @@
         <KeyProperty.Attributes>
           <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <KeyProperty
@@ -3787,7 +3787,7 @@
         <KeyProperty.Attributes>
           <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <KeyProperty
@@ -3900,7 +3900,7 @@
         <KeyProperty.Attributes>
           <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <KeyProperty

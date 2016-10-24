@@ -39,7 +39,7 @@
         <KeyProperty.Attributes>
           <Required />
           <MaxLength
-            Value="50" />
+            Value="100" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <KeyProperty
@@ -278,7 +278,7 @@
           Type="int"
           Property="ProjectReport/Properties[EmpID]" />
         <SsdlProperty
-          MaxLength="50"
+          MaxLength="100"
           Name="ProjectName"
           Nullable="False"
           Type="nvarchar"

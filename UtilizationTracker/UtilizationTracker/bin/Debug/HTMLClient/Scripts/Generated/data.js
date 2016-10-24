@@ -1814,6 +1814,14 @@ window.myapp = msls.application;
                 }
             },
             {
+                name: "PMTeamProjectList", value: function () {
+                    return new $DataServiceQuery({ _entitySet: this.PMTeamProjects },
+                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/PMTeamProjectList()",
+                        {
+                        });
+                }
+            },
+            {
                 name: "ProjectDetails_SingleOrDefault", value: function (EmpID, ProjectID) {
                     return new $DataServiceQuery({ _entitySet: this.ProjectDetails },
                         lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/ProjectDetails(" + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "ProjectID=" + $toODataString(ProjectID, "Int32?") + ")"
@@ -1994,14 +2002,6 @@ window.myapp = msls.application;
                     return new $DataServiceQuery({ _entitySet: this.UtilizationTrackers },
                         lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/UtilizationTrackers(" + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "MonthID=" + $toODataString(MonthID, "Int32?") + "," + "WeekDays=" + $toODataString(WeekDays, "Int32?") + "," + "MonthName=" + $toODataString(MonthName, "String?") + "," + "Holidays=" + $toODataString(Holidays, "Int32?") + ")"
                     );
-                }
-            },
-            {
-                name: "PMTeamProjectList", value: function () {
-                    return new $DataServiceQuery({ _entitySet: this.PMTeamProjects },
-                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/PMTeamProjectList()",
-                        {
-                        });
                 }
             }
         ]),

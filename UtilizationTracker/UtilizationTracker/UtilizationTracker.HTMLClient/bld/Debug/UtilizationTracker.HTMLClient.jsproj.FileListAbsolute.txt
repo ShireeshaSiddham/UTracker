@@ -108,3 +108,5 @@ C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\28-7-16\UtilizationT
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\28-7-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
 C:\Users\DMR-Sireesha\Documents\Visual Studio 2015\Projects\1-8-16\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\DMR-Sireesha\Documents\GitHub\UTracker\UtilizationTracker\UtilizationTracker\UtilizationTracker.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs

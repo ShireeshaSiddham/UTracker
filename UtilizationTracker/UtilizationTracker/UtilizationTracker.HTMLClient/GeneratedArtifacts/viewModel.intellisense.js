@@ -1547,18 +1547,40 @@
             data: lightSwitchApplication.Months,
             value: lightSwitchApplication.Months
         },
-        Months: {
+        Property1: {
             _$class: msls.ContentItem,
-            _$name: "Months",
+            _$name: "Property1",
             _$parentName: "right",
             screen: lightSwitchApplication.AddEditEmployeeProject,
             data: lightSwitchApplication.EmployeeProject,
             value: lightSwitchApplication.Months
         },
+        Months: {
+            _$class: msls.ContentItem,
+            _$name: "Months",
+            _$parentName: "Property1",
+            screen: lightSwitchApplication.AddEditEmployeeProject,
+            data: lightSwitchApplication.Months,
+            value: lightSwitchApplication.Months
+        },
         Months1: {
             _$class: msls.ContentItem,
             _$name: "Months1",
-            _$parentName: "Months",
+            _$parentName: "right",
+            screen: lightSwitchApplication.AddEditEmployeeProject,
+            data: lightSwitchApplication.EmployeeProject,
+            value: {
+                _$class: msls.VisualCollection,
+                screen: lightSwitchApplication.AddEditEmployeeProject,
+                _$entry: {
+                    elementType: lightSwitchApplication.Months
+                }
+            }
+        },
+        Months1Template: {
+            _$class: msls.ContentItem,
+            _$name: "Months1Template",
+            _$parentName: "Months1",
             screen: lightSwitchApplication.AddEditEmployeeProject,
             data: lightSwitchApplication.Months,
             value: lightSwitchApplication.Months
@@ -1663,6 +1685,11 @@
         /// </field>
         MonthTemplate_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("MonthTemplate"); }],
         /// <field>
+        /// Called after the Property1 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Property1_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Property1"); }],
+        /// <field>
         /// Called after the Months content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -1671,7 +1698,12 @@
         /// Called after the Months1 content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        Months1_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months1"); }]
+        Months1_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months1"); }],
+        /// <field>
+        /// Called after the Months1Template content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Months1Template_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months1Template"); }]
     });
 
     lightSwitchApplication.BrowseEmployeeProjects.prototype._$contentItems = {
@@ -2179,13 +2211,13 @@
             data: lightSwitchApplication.Months,
             value: Number
         },
-        NoOfDays: {
+        NoOfDay: {
             _$class: msls.ContentItem,
-            _$name: "NoOfDays",
+            _$name: "NoOfDay",
             _$parentName: "left",
             screen: lightSwitchApplication.AddEditMonths,
             data: lightSwitchApplication.Months,
-            value: Number
+            value: String
         },
         Holidays: {
             _$class: msls.ContentItem,
@@ -2290,10 +2322,10 @@
         /// </field>
         Year_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("Year"); }],
         /// <field>
-        /// Called after the NoOfDays content item has been rendered.
+        /// Called after the NoOfDay content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        NoOfDays_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("NoOfDays"); }],
+        NoOfDay_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("NoOfDay"); }],
         /// <field>
         /// Called after the Holidays content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

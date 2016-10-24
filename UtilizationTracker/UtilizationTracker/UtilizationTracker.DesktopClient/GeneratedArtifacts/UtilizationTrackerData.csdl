@@ -282,7 +282,7 @@
     </Key>
     <Property Name="TotalWorkedHours" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
     <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
-    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
     <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
   </EntityType>
   <EntityType Name="Project">
@@ -319,7 +319,7 @@
     <Property Name="c_Date" Type="Edm.DateTime" Nullable="false" Precision="0" />
     <Property Name="Hours" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" />
     <Property Name="SubProject" Type="Edm.String" Nullable="false" MaxLength="300" />
-    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
     <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="TeamProject">
@@ -403,7 +403,7 @@
     </Key>
     <Property Name="Total_Hours" Type="Edm.Decimal" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
     <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
-    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectName" Type="Edm.String" Nullable="false" MaxLength="100" />
     <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
     <Property Name="ProjectID" Type="Edm.Int32" Nullable="false" />
     <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
@@ -643,6 +643,7 @@
     <FunctionImport Name="Tracker" ReturnType="Collection(LightSwitchApplication.EmployeeProject)" EntitySet="EmployeeProjects" m:HttpMethod="GET" />
     <FunctionImport Name="ViewReporteeProjects" ReturnType="Collection(LightSwitchApplication.EmployeeProject)" EntitySet="EmployeeProjects" m:HttpMethod="GET" />
     <FunctionImport Name="NoOfHoursPerDay" ReturnType="Collection(LightSwitchApplication.HoursPerDay)" EntitySet="HoursPerDays" m:HttpMethod="GET" />
+    <FunctionImport Name="PMTeamProjectList" ReturnType="Collection(LightSwitchApplication.PMTeamProject)" EntitySet="PMTeamProjects" m:HttpMethod="GET" />
     <FunctionImport Name="CandidateProject" ReturnType="Collection(LightSwitchApplication.ProjectDetail)" EntitySet="ProjectDetails" m:HttpMethod="GET" />
     <FunctionImport Name="GetSelfProjects" ReturnType="Collection(LightSwitchApplication.ProjectDetail)" EntitySet="ProjectDetails" m:HttpMethod="GET" />
     <FunctionImport Name="ProjectReportsforUser" ReturnType="Collection(LightSwitchApplication.ProjectReport)" EntitySet="ProjectReports" m:HttpMethod="GET" />
@@ -651,7 +652,6 @@
     <FunctionImport Name="TotalHoursProjectWise" ReturnType="Collection(LightSwitchApplication.TotalHoursProjectwiseforMonth)" EntitySet="TotalHoursProjectwiseforMonths" m:HttpMethod="GET" />
     <FunctionImport Name="CandidateProjectScore" ReturnType="Collection(LightSwitchApplication.TotalProjectScore)" EntitySet="TotalProjectScores" m:HttpMethod="GET" />
     <FunctionImport Name="Utilization" ReturnType="Collection(LightSwitchApplication.UtilizationCalculation)" EntitySet="UtilizationCalculations" m:HttpMethod="GET" />
-    <FunctionImport Name="PMTeamProjectList" ReturnType="Collection(LightSwitchApplication.PMTeamProject)" EntitySet="PMTeamProjects" m:HttpMethod="GET" />
     <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
       <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
     </FunctionImport>
