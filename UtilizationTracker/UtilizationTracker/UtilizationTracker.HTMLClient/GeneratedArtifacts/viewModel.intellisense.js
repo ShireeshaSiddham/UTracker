@@ -2251,13 +2251,13 @@
             data: lightSwitchApplication.Months,
             value: String
         },
-        WeekDays: {
+        WeekDay: {
             _$class: msls.ContentItem,
-            _$name: "WeekDays",
+            _$name: "WeekDay",
             _$parentName: "right",
             screen: lightSwitchApplication.AddEditMonths,
             data: lightSwitchApplication.Months,
-            value: Number
+            value: String
         },
         TotalHour: {
             _$class: msls.ContentItem,
@@ -2347,10 +2347,10 @@
         /// </field>
         MonthName_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("MonthName"); }],
         /// <field>
-        /// Called after the WeekDays content item has been rendered.
+        /// Called after the WeekDay content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        WeekDays_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("WeekDays"); }],
+        WeekDay_postRender: [$element, function () { return new lightSwitchApplication.AddEditMonths().findContentItem("WeekDay"); }],
         /// <field>
         /// Called after the TotalHour content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

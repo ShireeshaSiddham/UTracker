@@ -25,4 +25,4 @@
     <ExtensionAssembly>Microsoft.LightSwitch.Cosmopolitan.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
     <ExtensionAssembly>Microsoft.LightSwitch.Extensions.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
   <ExtensionAssembly>Microsoft.LightSwitch.Extensions.Design.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</ExtensionAssembly></ExtensionAssemblies>
-<ApplicationCulture>en-US</ApplicationCulture><SupportedCultures>en-US</SupportedCultures><ManifestTimeStamp>131215900590571144</ManifestTimeStamp><ApplicationName>UtilizationTracker</ApplicationName><Version>1.0.0.0</Version><RootProjectGuid>{f95cd607-dee8-4ce5-9fcd-e6178c2d8c2d}</RootProjectGuid></Configuration>
+<ApplicationCulture>en-US</ApplicationCulture><SupportedCultures>en-US</SupportedCultures><ManifestTimeStamp>131218776144841911</ManifestTimeStamp><ApplicationName>UtilizationTracker</ApplicationName><Version>1.0.0.0</Version><RootProjectGuid>{f95cd607-dee8-4ce5-9fcd-e6178c2d8c2d}</RootProjectGuid></Configuration>

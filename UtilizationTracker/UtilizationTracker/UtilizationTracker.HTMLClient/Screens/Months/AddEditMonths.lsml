@@ -165,14 +165,15 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="WeekDays"
+                  Name="WeekDay"
                   Kind="Value"
-                  DataType=":Int32">
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Months/Properties[WeekDays]" />
+                          Member="AddEditMonths/Properties[WeekDay]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -299,6 +300,13 @@
       </ScreenProperty>
       <ScreenProperty
         Name="NoOfDay"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="WeekDay"
         PropertyType=":String">
         <ScreenProperty.Attributes>
           <Required />

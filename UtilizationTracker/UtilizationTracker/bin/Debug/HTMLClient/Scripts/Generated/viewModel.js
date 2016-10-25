@@ -321,6 +321,9 @@
         /// <field name="NoOfDay" type="String">
         /// Gets or sets the noOfDay for this screen.
         /// </field>
+        /// <field name="WeekDay" type="String">
+        /// Gets or sets the weekDay for this screen.
+        /// </field>
         /// <field name="details" type="msls.application.AddEditMonths.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -1405,7 +1408,8 @@
             { name: "Months", kind: "local", type: lightSwitchApplication.Months },
             { name: "WorkingDay", kind: "local", type: String },
             { name: "TotalHour", kind: "local", type: String },
-            { name: "NoOfDay", kind: "local", type: String }
+            { name: "NoOfDay", kind: "local", type: String },
+            { name: "WeekDay", kind: "local", type: String }
         ], [
             { name: "Back" }
         ]),

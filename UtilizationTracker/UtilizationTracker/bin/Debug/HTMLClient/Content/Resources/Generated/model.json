@@ -13765,13 +13765,13 @@
                                 }
                               },
                               {
-                                "displayName": "Week Days",
-                                "name": "WeekDays",
+                                "displayName": "Week Day",
+                                "name": "WeekDay",
                                 "kind": "Value",
-                                "view": { "__id": ":TextBox" },
+                                "view": { "__id": ":Text" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Months/Properties[WeekDays]" }
+                                  "member": { "__id": "AddEditMonths/Properties[WeekDay]" }
                                 }
                               },
                               {
@@ -13879,6 +13879,13 @@
             {
               "id": "AddEditMonths/Properties[NoOfDay]",
               "name": "NoOfDay",
+              "elementType": { "__id": ":String" },
+              "propertyType": { "__id": ":String" },
+              ":@Required": { }
+            },
+            {
+              "id": "AddEditMonths/Properties[WeekDay]",
+              "name": "WeekDay",
               "elementType": { "__id": ":String" },
               "propertyType": { "__id": ":String" },
               ":@Required": { }
