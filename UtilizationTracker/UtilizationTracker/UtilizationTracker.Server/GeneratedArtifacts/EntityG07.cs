@@ -772,6 +772,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "14.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string MonthYear
+        {
+            get
+            {
+                return global::LightSwitchApplication.Months.DetailsClass.GetValue(this, global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties.MonthYear);
+            }
+            set
+            {
+                global::LightSwitchApplication.Months.DetailsClass.SetValue(this, global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties.MonthYear, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MonthYear_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MonthYear_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MonthYear_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "14.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.EmployeeMonth> EmployeeMonths
         {
             get
@@ -975,6 +999,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string> MonthYear
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties.MonthYear) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, global::LightSwitchApplication.EmployeeMonth> EmployeeMonths
                 {
                     get
@@ -1005,6 +1037,7 @@ namespace LightSwitchApplication
                 new global::System.Nullable<int> TotalHours { get; set; }
                 new global::System.Nullable<int> WorkingDays { get; set; }
                 new int Year { get; set; }
+                new string MonthYear { get; set; }
                 new global::System.Collections.IEnumerable EmployeeMonths { get; }
                 new global::System.Collections.IEnumerable EmployeeProjects { get; }
             }
@@ -1357,6 +1390,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string>.Entry
+                    MonthYear = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string>.Entry(
+                        "MonthYear",
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_Stub,
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_Validate,
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_GetImplementationValue,
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_SetImplementationValue,
+                        global::LightSwitchApplication.Months.DetailsClass.PropertySetProperties._MonthYear_OnValueChanged);
+                private static void _MonthYear_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Months.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string>.Data> c, global::LightSwitchApplication.Months.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MonthYear, sf);
+                }
+                private static bool _MonthYear_ComputeIsReadOnly(global::LightSwitchApplication.Months e)
+                {
+                    bool result = false;
+                    e.MonthYear_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _MonthYear_Validate(global::LightSwitchApplication.Months e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.MonthYear_Validate(r);
+                }
+                private static string _MonthYear_GetImplementationValue(global::LightSwitchApplication.Months.DetailsClass d)
+                {
+                    return d.ImplementationEntity.MonthYear;
+                }
+                private static void _MonthYear_SetImplementationValue(global::LightSwitchApplication.Months.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.MonthYear = v;
+                }
+                private static void _MonthYear_OnValueChanged(global::LightSwitchApplication.Months e)
+                {
+                    e.MonthYear_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, global::LightSwitchApplication.EmployeeMonth>.Entry
                     EmployeeMonths = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, global::LightSwitchApplication.EmployeeMonth>.Entry(
                         "EmployeeMonths",
@@ -1427,6 +1497,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, int>.Data _TotalHour;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, string>.Data _MonthYear;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Months, global::LightSwitchApplication.Months.DetailsClass, global::LightSwitchApplication.EmployeeMonth>.Data _EmployeeMonths;

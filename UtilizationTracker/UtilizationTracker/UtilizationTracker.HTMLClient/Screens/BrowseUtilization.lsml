@@ -245,54 +245,32 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="Property1"
-                Kind="Details"
-                DataType="Months"
-                View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Select Month" />
-                </ContentItem.Attributes>
+                Name="MonthDropDown"
+                Kind="Value"
+                DataType=":String"
+                View="Microsoft.LightSwitch.MobileWeb:ValueDropdown">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="BrowseUtilization/Properties[Property1]" />
+                        Member="BrowseUtilization/Properties[MonthDropDown]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="Property1Template"
-                  Kind="Details"
-                  DataType="Months">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Months2"
-                    Kind="Details"
-                    DataType="Months">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="FitToContent"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="YearDropDown"
+                Kind="Value"
+                DataType=":Int32"
+                View="Microsoft.LightSwitch.MobileWeb:ValueDropdown">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="BrowseUtilization/Properties[YearDropDown]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
             <ContentItem
@@ -692,6 +670,19 @@
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Year"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="UtilizationCalculation/Properties[Year]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="WeekDays"
@@ -1340,16 +1331,36 @@
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
-                  NodeType="Equal">
+                  NodeType="And">
                   <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="UtilizationCalculation/Properties[MonthID]" />
-                    </ChainExpression>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UtilizationCalculation/Properties[MonthName]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="MonthName" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
                   </BinaryExpression.Left>
                   <BinaryExpression.Right>
-                    <ParameterExpression
-                      Parameter="MonthID" />
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UtilizationCalculation/Properties[Year]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="Year" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
                   </BinaryExpression.Right>
                 </BinaryExpression>
               </QueryFilterExpressionTree>
@@ -1362,10 +1373,22 @@
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
               <QueryParameter
-                Name="MonthID"
+                Name="MonthName"
+                IsOptional="True"
+                ParameterType=":String?" />
+              <QueryParameter
+                Name="Year"
                 IsOptional="True"
                 ParameterType=":Int32?" />
             </ScreenQueryDefinition.Parameters>
+            <ScreenQueryDefinition.SortCriteria>
+              <SortCriterion>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="MonthID" />
+                </ChainExpression>
+              </SortCriterion>
+            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
@@ -1373,12 +1396,17 @@
             <CallExpression
               Target="BrowseUtilization/Properties[Utilization]/Query">
               <ArgumentExpression
-                Parameter="MonthID">
+                Parameter="MonthName">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseUtilization/Properties[Property1]" />
+                    Member="BrowseUtilization/Properties[MonthDropDown]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Year">
+                <ChainExpression>
                   <MemberExpression
-                    Member="MonthID" />
+                    Member="BrowseUtilization/Properties[YearDropDown]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -1395,23 +1423,89 @@
             ReturnType="EmployeeProject*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
-                <TernaryExpression
-                  NodeType="Between">
-                  <TernaryExpression.First>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="EmployeeProject/Properties[c_Date]" />
-                    </ChainExpression>
-                  </TernaryExpression.First>
-                  <TernaryExpression.Second>
-                    <ParameterExpression
-                      Parameter="c_Date" />
-                  </TernaryExpression.Second>
-                  <TernaryExpression.Third>
-                    <ParameterExpression
-                      Parameter="c_Date1" />
-                  </TernaryExpression.Third>
-                </TernaryExpression>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="And">
+                          <BinaryExpression.Left>
+                            <TernaryExpression
+                              NodeType="Between">
+                              <TernaryExpression.First>
+                                <ChainExpression>
+                                  <MemberExpression
+                                    Member="EmployeeProject/Properties[c_Date]" />
+                                </ChainExpression>
+                              </TernaryExpression.First>
+                              <TernaryExpression.Second>
+                                <ParameterExpression
+                                  Parameter="c_Date" />
+                              </TernaryExpression.Second>
+                              <TernaryExpression.Third>
+                                <ParameterExpression
+                                  Parameter="c_Date1" />
+                              </TernaryExpression.Third>
+                            </TernaryExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <BinaryExpression
+                              NodeType="Equal">
+                              <BinaryExpression.Left>
+                                <ChainExpression>
+                                  <MemberExpression
+                                    Member="EmployeeProject/Properties[Months]" />
+                                  <MemberExpression
+                                    Member="Year" />
+                                </ChainExpression>
+                              </BinaryExpression.Left>
+                              <BinaryExpression.Right>
+                                <ParameterExpression
+                                  Parameter="Year" />
+                              </BinaryExpression.Right>
+                            </BinaryExpression>
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="Equal">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="EmployeeProject/Properties[Months]" />
+                              <MemberExpression
+                                Member="MonthName" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="MonthName" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="EmployeeProject/Properties[ProjectDetail]" />
+                          <MemberExpression
+                            Member="ProjectName" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="ProjectName" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
               </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
@@ -1429,13 +1523,18 @@
                 Name="c_Date1"
                 IsOptional="True"
                 ParameterType=":Date?" />
+              <QueryParameter
+                Name="Year"
+                IsOptional="True"
+                ParameterType=":Int32?" />
             </ScreenQueryDefinition.Parameters>
             <ScreenQueryDefinition.SortCriteria>
-              <SortCriterion
-                Direction="Descending">
+              <SortCriterion>
                 <ChainExpression>
                   <MemberExpression
-                    Member="c_Date" />
+                    Member="Months" />
+                  <MemberExpression
+                    Member="MonthID" />
                 </ChainExpression>
               </SortCriterion>
             </ScreenQueryDefinition.SortCriteria>
@@ -1449,9 +1548,7 @@
                 Parameter="MonthName">
                 <ChainExpression>
                   <MemberExpression
-                    Member="BrowseUtilization/Properties[Property1]" />
-                  <MemberExpression
-                    Member="MonthName" />
+                    Member="BrowseUtilization/Properties[MonthDropDown]" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
@@ -1475,6 +1572,13 @@
                 <ChainExpression>
                   <MemberExpression
                     Member="BrowseUtilization/Properties[ToDate]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Year">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseUtilization/Properties[YearDropDown]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -1585,6 +1689,60 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="MonthDropDown"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+          <SupportedValue
+            DisplayName="January"
+            Value="January" />
+          <SupportedValue
+            DisplayName="February"
+            Value="February" />
+          <SupportedValue
+            DisplayName="March"
+            Value="March" />
+          <SupportedValue
+            DisplayName="April"
+            Value="April" />
+          <SupportedValue
+            Value="May" />
+          <SupportedValue
+            DisplayName="June"
+            Value="June" />
+          <SupportedValue
+            DisplayName="July"
+            Value="July" />
+          <SupportedValue
+            DisplayName="August"
+            Value="August" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="YearDropDown"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <Required />
+          <SupportedValue
+            DisplayName="2015"
+            Value="2015" />
+          <SupportedValue
+            DisplayName="2016"
+            Value="2016" />
+          <SupportedValue
+            DisplayName="2017"
+            Value="2017" />
+          <SupportedValue
+            DisplayName="2018"
+            Value="2018" />
+          <SupportedValue
+            Value="2019" />
+          <SupportedValue
+            DisplayName="2020"
+            Value="2020" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

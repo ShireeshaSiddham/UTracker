@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 10/25/2016 7:29:59 PM
+// Generation date: 12/5/2016 9:52:20 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -1035,313 +1035,332 @@ namespace LightSwitchApplication.Implementation
                 "Property Name=\"Holidays\" Type=\"Edm.Int32\" Nullable=\"false\" ConcurrencyMode=\"Fixe" +
                 "d\" /><Property Name=\"TotalHours\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Pro" +
                 "perty Name=\"WorkingDays\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Na" +
-                "me=\"Year\" Type=\"Edm.Int32\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" /><Navigatio" +
-                "nProperty Name=\"EmployeeMonths\" Relationship=\"LightSwitchApplication.Months_Empl" +
-                "oyeeMonth\" ToRole=\"EmployeeMonth\" FromRole=\"Months\" /><NavigationProperty Name=\"" +
-                "EmployeeProjects\" Relationship=\"LightSwitchApplication.Months_EmployeeProject\" T" +
-                "oRole=\"EmployeeProject\" FromRole=\"Months\" /></EntityType><EntityType Name=\"PMTea" +
-                "mProject\"><Key><PropertyRef Name=\"ManagerName\" /><PropertyRef Name=\"EmpName\" /><" +
-                "PropertyRef Name=\"KeyField\" /></Key><Property Name=\"ManagerName\" Type=\"Edm.Strin" +
-                "g\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"ProjectName\" Type=\"Edm.Str" +
-                "ing\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpName\" Type=\"Edm" +
-                ".String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"Edm.Int" +
-                "32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ManagerID\" Type=\"Edm.Int32\" Concur" +
-                "rencyMode=\"Fixed\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=" +
-                "\"Fixed\" /><Property Name=\"KeyField\" Type=\"Edm.String\" Nullable=\"false\" MaxLength" +
-                "=\"250\" /></EntityType><EntityType Name=\"ProjectDetail\"><Key><PropertyRef Name=\"E" +
-                "mpID\" /><PropertyRef Name=\"ProjectID\" /></Key><Property Name=\"EmpID\" Type=\"Edm.I" +
-                "nt32\" Nullable=\"false\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Nullable=\"f" +
-                "alse\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"ProjectName\"" +
-                " Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" ConcurrencyMode=\"Fixed\" /><P" +
-                "roperty Name=\"ProjectType\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"30\" Con" +
-                "currencyMode=\"Fixed\" /><Property Name=\"ProjectStatus\" Type=";
+                "me=\"Year\" Type=\"Edm.Int32\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" /><Property " +
+                "Name=\"MonthYear\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Nav" +
+                "igationProperty Name=\"EmployeeMonths\" Relationship=\"LightSwitchApplication.Month" +
+                "s_EmployeeMonth\" ToRole=\"EmployeeMonth\" FromRole=\"Months\" /><NavigationProperty " +
+                "Name=\"EmployeeProjects\" Relationship=\"LightSwitchApplication.Months_EmployeeProj" +
+                "ect\" ToRole=\"EmployeeProject\" FromRole=\"Months\" /></EntityType><EntityType Name=" +
+                "\"PMTeamProject\"><Key><PropertyRef Name=\"ManagerName\" /><PropertyRef Name=\"EmpNam" +
+                "e\" /><PropertyRef Name=\"KeyField\" /></Key><Property Name=\"ManagerName\" Type=\"Edm" +
+                ".String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"ProjectName\" Type=\"E" +
+                "dm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpName\" Typ" +
+                "e=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"E" +
+                "dm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ManagerID\" Type=\"Edm.Int32\" " +
+                "ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Concurrenc" +
+                "yMode=\"Fixed\" /><Property Name=\"KeyField\" Type=\"Edm.String\" Nullable=\"false\" Max" +
+                "Length=\"250\" /></EntityType><EntityType Name=\"ProjectDetail\"><Key><PropertyRef N" +
+                "ame=\"EmpID\" /><PropertyRef Name=\"ProjectID\" /></Key><Property Name=\"EmpID\" Type=" +
+                "\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Nulla" +
+                "ble=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Projec" +
+                "tName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" ConcurrencyMode=\"Fixed" +
+                "\" /><Property Name=\"ProjectType\" Type=\"Edm.String\" Nullable";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart2 = "\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" ConcurrencyMode=\"Fixed\" /><Property " +
-                "Name=\"StartDate\" Type=\"Edm.DateTime\" Nullable=\"false\" Precision=\"0\" ConcurrencyM" +
-                "ode=\"Fixed\" /><Property Name=\"EndDate\" Type=\"Edm.DateTime\" Precision=\"0\" Concurr" +
-                "encyMode=\"Fixed\" /><Property Name=\"ComplexityDifficultyLevel\" Type=\"Edm.Decimal\"" +
-                " Nullable=\"false\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Na" +
-                "me=\"ComplexityScope\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"6\" Scale=\"2\"" +
-                " ConcurrencyMode=\"Fixed\" /><Property Name=\"ComplexityAvg\" Type=\"Edm.Decimal\" Pre" +
-                "cision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityPMRating\" " +
-                "Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property N" +
-                "ame=\"QualityPeerReview\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMo" +
-                "de=\"Fixed\" /><Property Name=\"QualityProjectDuration\" Type=\"Edm.String\" MaxLength" +
-                "=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityAverage\" Type=\"Edm.Decima" +
-                "l\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"AssignProje" +
-                "ctID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"Emplo" +
-                "yeeProjects\" Relationship=\"LightSwitchApplication.FK_EmployeeProject_ProjectDeta" +
-                "ils\" ToRole=\"EmployeeProject\" FromRole=\"ProjectDetails\" /><NavigationProperty Na" +
-                "me=\"ProjectsInCompany\" Relationship=\"LightSwitchApplication.FK_ProjectDetails_Pr" +
-                "ojectsInCompany\" ToRole=\"ProjectsInCompany\" FromRole=\"ProjectDetails\" /></Entity" +
-                "Type><EntityType Name=\"ProjectManagerViewTeamHour\"><Key><PropertyRef Name=\"EmpNa" +
-                "me\" /><PropertyRef Name=\"ProjectID\" /><PropertyRef Name=\"ProjectName\" /></Key><P" +
-                "roperty Name=\"EmpName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Pro" +
-                "perty Name=\"ProjectID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Proje" +
-                "ctName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"Exp" +
-                "r1\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /></Enti" +
-                "tyType><EntityType Name=\"ProjectReport\"><Key><PropertyRef Name=\"EmpID\" /><Proper" +
-                "tyRef Name=\"ProjectName\" /><PropertyRef Name=\"MonthName\" /></Key><Property Name=" +
-                "\"TotalWorkedHours\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"" +
-                "Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Na" +
-                "me=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property " +
-                "Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /></EntityTyp" +
-                "e><EntityType Name=\"Project\"><Key><PropertyRef Name=\"ProjectName\" /><PropertyRef" +
-                " Name=\"ID\" /></Key><Property Name=\"EmpID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixe" +
-                "d\" /><Property Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"" +
-                "50\" /><Property Name=\"MgrID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Propert" +
-                "y Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ID" +
-                "\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"ProjectsInC" +
-                "ompany\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Int32\"" +
-                " Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"" +
-                "ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"50\" ConcurrencyMode=\"" +
-                "Fixed\" /><Property Name=\"ProjectType\" Type=\"Edm.String\" Nullable=\"false\" MaxLeng" +
-                "th=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"StartDate\" Type=\"Edm.DateTime\"" +
-                " Precision=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EndDate\" Type=\"Edm.Date" +
-                "Time\" Precision=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"AssignPr" +
-                "oject\" Relationship=\"LightSwitchApplication.FK_AssignProjects_ProjectsInCompany\"" +
-                " ToRole=\"AssignProjects\" FromRole=\"ProjectsInCompany\" /><NavigationProperty Name" +
-                "=\"ProjectDetails\" Relationship=\"LightSwitchApplication.FK_ProjectDetails_Project" +
-                "sInCompany\" ToRole=\"ProjectDetails\" FromRole=\"ProjectsInCompany\" /></EntityType>" +
-                "<EntityType Name=\"ProjectsInDay\"><Key><PropertyRef Name=\"c_Date\" /><PropertyRef " +
-                "Name=\"Hours\" /><PropertyRef Name=\"SubProject\" /><PropertyRef Name=\"ProjectName\" " +
-                "/><PropertyRef Name=\"EmpID\" /></Key><Property Name=\"c_Date\" Type=\"Edm.DateTime\" " +
-                "Nullable=\"false\" Precision=\"0\" /><Property Name=\"Hours\" Type=\"Edm.Decimal\" Nulla" +
-                "ble=\"false\" Precision=\"5\" Scale=\"0\" /><Property Name=\"SubProject\" Type=\"Edm.Stri" +
-                "ng\" Nullable=\"false\" MaxLength=\"300\" /><Property Name=\"ProjectName\" Type=\"Edm.St" +
-                "ring\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\"" +
-                " Nullable=\"false\" /></EntityType><EntityType Name=\"TeamProject\"><Key><PropertyRe" +
-                "f Name=\"ID\" /><PropertyRef Name=\"Expr1\" /></Key><Property Name=\"ManagerID\" Type=" +
-                "\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Co" +
-                "ncurrencyMode=\"Fixed\" /><Property Name=\"emprole1\" Type=\"Edm.String\" MaxLength=\"3" +
-                "0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"emprole2\" Type=\"Edm.String\" MaxLeng" +
-                "th=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ID\" Type=\"Edm.Int32\" Nullable=" +
-                "\"false\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" />" +
-                "<Property Name=\"Expr1\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityT" +
-                "ype Name=\"TeamProjectsList\"><Key><PropertyRef Name=\"ManagerName\" /><PropertyRef " +
-                "Name=\"EmpName\" /><PropertyRef Name=\"KeyField\" /></Key><Property Name=\"Expr1\" Typ" +
-                "e=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.S" +
-                "tring\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ManagerName\" Typ" +
-                "e=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpName\" Type=" +
-                "\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"ManagerID\" Type=" +
-                "\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Co" +
-                "ncurrencyMode=\"Fixed\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyM" +
-                "ode=\"Fixed\" /><Property Name=\"KeyField\" Type=\"Edm.String\" Nullable=\"false\" MaxLe" +
-                "ngth=\"250\" /></EntityType><EntityType Name=\"TotalHour\"><Key><PropertyRef Name=\"E" +
-                "mpID\" /></Key><Property Name=\"TotalHours\" Type=\"Edm.Decimal\" Precision=\"38\" Scal" +
-                "e=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable" +
-                "=\"false\" /></EntityType><EntityType Name=\"TotalHoursAllMonthsForProject\"><Key><P" +
-                "ropertyRef Name=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /></Key><Property Name" +
-                "=\"TotalHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\" Scale=\"0\" Concu" +
-                "rrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"fa" +
-                "lse\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" " +
-                "/></EntityType><EntityType Name=\"TotalHoursandProjectShare\"><Key><PropertyRef Na" +
-                "me=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"ComplexityDiff" +
-                "icultyLevel\" /><PropertyRef Name=\"ComplexityScope\" /></Key><Property Name=\"Proje" +
-                "ctShare\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"6\" ConcurrencyMode=\"Fixed\" /><" +
-                "Property Name=\"TotalHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\" Sc" +
-                "ale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.String\"" +
-                " Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"TotalofallProjects\" Type=\"Ed" +
-                "m.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Em" +
-                "pID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ComplexityAvg\" Type=\"Ed" +
-                "m.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Qua" +
-                "lityAverage\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" " +
-                "/><Property Name=\"ComplexityDifficultyLevel\" Type=\"Edm.Decimal\" Nullable=\"false\"" +
-                " Precision=\"6\" Scale=\"2\" /><Property Name=\"ComplexityScope\" Type=\"Edm.Decimal\" N" +
-                "ullable=\"false\" Precision=\"6\" Scale=\"2\" /><Property Name=\"QualityPMRating\" Type=" +
-                "\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixe";
+            private const string ModelPart2 = "=\"false\" MaxLength=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectStatus\" " +
+                "Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" ConcurrencyMode=\"Fixed\" /><Pro" +
+                "perty Name=\"StartDate\" Type=\"Edm.DateTime\" Nullable=\"false\" Precision=\"0\" Concur" +
+                "rencyMode=\"Fixed\" /><Property Name=\"EndDate\" Type=\"Edm.DateTime\" Precision=\"0\" C" +
+                "oncurrencyMode=\"Fixed\" /><Property Name=\"ComplexityDifficultyLevel\" Type=\"Edm.De" +
+                "cimal\" Nullable=\"false\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Prope" +
+                "rty Name=\"ComplexityScope\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"6\" Sca" +
+                "le=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ComplexityAvg\" Type=\"Edm.Decima" +
+                "l\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityPMRa" +
+                "ting\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Prop" +
+                "erty Name=\"QualityPeerReview\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" Concurr" +
+                "encyMode=\"Fixed\" /><Property Name=\"QualityProjectDuration\" Type=\"Edm.String\" Max" +
+                "Length=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityAverage\" Type=\"Edm." +
+                "Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Assig" +
+                "nProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=" +
+                "\"EmployeeProjects\" Relationship=\"LightSwitchApplication.FK_EmployeeProject_Proje" +
+                "ctDetails\" ToRole=\"EmployeeProject\" FromRole=\"ProjectDetails\" /><NavigationPrope" +
+                "rty Name=\"ProjectsInCompany\" Relationship=\"LightSwitchApplication.FK_ProjectDeta" +
+                "ils_ProjectsInCompany\" ToRole=\"ProjectsInCompany\" FromRole=\"ProjectDetails\" /></" +
+                "EntityType><EntityType Name=\"ProjectManagerViewTeamHour\"><Key><PropertyRef Name=" +
+                "\"EmpName\" /><PropertyRef Name=\"ProjectID\" /><PropertyRef Name=\"ProjectName\" /></" +
+                "Key><Property Name=\"EmpName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" " +
+                "/><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=" +
+                "\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Nam" +
+                "e=\"Expr1\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" />" +
+                "</EntityType><EntityType Name=\"ProjectReport\"><Key><PropertyRef Name=\"EmpID\" /><" +
+                "PropertyRef Name=\"ProjectName\" /><PropertyRef Name=\"MonthName\" /></Key><Property" +
+                " Name=\"TotalWorkedHours\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" Concurrency" +
+                "Mode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prope" +
+                "rty Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Pro" +
+                "perty Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /></Ent" +
+                "ityType><EntityType Name=\"Project\"><Key><PropertyRef Name=\"ProjectName\" /><Prope" +
+                "rtyRef Name=\"ID\" /></Key><Property Name=\"EmpID\" Type=\"Edm.Int32\" ConcurrencyMode" +
+                "=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLe" +
+                "ngth=\"50\" /><Property Name=\"MgrID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><P" +
+                "roperty Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Na" +
+                "me=\"ID\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"Proje" +
+                "ctsInCompany\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm." +
+                "Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Property " +
+                "Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"50\" Concurrency" +
+                "Mode=\"Fixed\" /><Property Name=\"ProjectType\" Type=\"Edm.String\" Nullable=\"false\" M" +
+                "axLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"StartDate\" Type=\"Edm.Dat" +
+                "eTime\" Precision=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EndDate\" Type=\"Ed" +
+                "m.DateTime\" Precision=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"As" +
+                "signProject\" Relationship=\"LightSwitchApplication.FK_AssignProjects_ProjectsInCo" +
+                "mpany\" ToRole=\"AssignProjects\" FromRole=\"ProjectsInCompany\" /><NavigationPropert" +
+                "y Name=\"ProjectDetails\" Relationship=\"LightSwitchApplication.FK_ProjectDetails_P" +
+                "rojectsInCompany\" ToRole=\"ProjectDetails\" FromRole=\"ProjectsInCompany\" /></Entit" +
+                "yType><EntityType Name=\"ProjectsInDay\"><Key><PropertyRef Name=\"c_Date\" /><Proper" +
+                "tyRef Name=\"Hours\" /><PropertyRef Name=\"SubProject\" /><PropertyRef Name=\"Project" +
+                "Name\" /><PropertyRef Name=\"EmpID\" /></Key><Property Name=\"c_Date\" Type=\"Edm.Date" +
+                "Time\" Nullable=\"false\" Precision=\"0\" /><Property Name=\"Hours\" Type=\"Edm.Decimal\"" +
+                " Nullable=\"false\" Precision=\"5\" Scale=\"0\" /><Property Name=\"SubProject\" Type=\"Ed" +
+                "m.String\" Nullable=\"false\" MaxLength=\"300\" /><Property Name=\"ProjectName\" Type=\"" +
+                "Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"Edm." +
+                "Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"TeamProject\"><Key><Prop" +
+                "ertyRef Name=\"ID\" /><PropertyRef Name=\"Expr1\" /></Key><Property Name=\"ManagerID\"" +
+                " Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int" +
+                "32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"emprole1\" Type=\"Edm.String\" MaxLen" +
+                "gth=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"emprole2\" Type=\"Edm.String\" M" +
+                "axLength=\"30\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ID\" Type=\"Edm.Int32\" Nul" +
+                "lable=\"false\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fix" +
+                "ed\" /><Property Name=\"Expr1\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><E" +
+                "ntityType Name=\"TeamProjectsList\"><Key><PropertyRef Name=\"ManagerName\" /><Proper" +
+                "tyRef Name=\"EmpName\" /><PropertyRef Name=\"KeyField\" /></Key><Property Name=\"Expr" +
+                "1\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=" +
+                "\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ManagerNam" +
+                "e\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"EmpName\"" +
+                " Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"ManagerID\"" +
+                " Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int" +
+                "32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Concur" +
+                "rencyMode=\"Fixed\" /><Property Name=\"KeyField\" Type=\"Edm.String\" Nullable=\"false\"" +
+                " MaxLength=\"250\" /></EntityType><EntityType Name=\"TotalHour\"><Key><PropertyRef N" +
+                "ame=\"EmpID\" /></Key><Property Name=\"TotalHours\" Type=\"Edm.Decimal\" Precision=\"38" +
+                "\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nu" +
+                "llable=\"false\" /></EntityType><EntityType Name=\"TotalHoursAllMonthsForProject\"><" +
+                "Key><PropertyRef Name=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /></Key><Propert" +
+                "y Name=\"TotalHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\" Scale=\"0\"" +
+                " ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.String\" Nullab" +
+                "le=\"false\" MaxLength=\"100\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"f" +
+                "alse\" /></EntityType><EntityType Name=\"TotalHoursandProjectShare\"><Key><Property" +
+                "Ref Name=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"Complexi" +
+                "tyDifficultyLevel\" /><PropertyRef Name=\"ComplexityScope\" /></Key><Property Name=" +
+                "\"ProjectShare\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"6\" ConcurrencyMode=\"Fixe" +
+                "d\" /><Property Name=\"TotalHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"" +
+                "38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ProjectName\" Type=\"Edm.S" +
+                "tring\" Nullable=\"false\" MaxLength=\"100\" /><Property Name=\"TotalofallProjects\" Ty" +
+                "pe=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Na" +
+                "me=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ComplexityAvg\" Ty" +
+                "pe=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Nam" +
+                "e=\"QualityAverage\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=\"F" +
+                "ixed\" /><Property Name=\"ComplexityDifficultyLevel\" Type=\"Edm.Decimal\" Nullable=\"" +
+                "false\" Precision=\"6\" Scale=\"2\" /><Property Name=\"ComplexityScope\" Type=\"Edm.Deci" +
+                "mal\" Nullable=\"false\" Precision=\"6\" Scale=\"2\" /><Property N";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart3 = "d\" /><Property Name=\"QualityPeerReview\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2" +
-                "\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityProjectDuration\" Type=\"Edm.St" +
-                "ring\" MaxLength=\"30\" ConcurrencyMode=\"Fixed\" /></EntityType><EntityType Name=\"To" +
-                "talHoursofAllProject\"><Key><PropertyRef Name=\"EmpID\" /></Key><Property Name=\"Tot" +
-                "alofallProjects\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fi" +
-                "xed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><" +
-                "EntityType Name=\"TotalHoursProjectwiseforMonth\"><Key><PropertyRef Name=\"MonthNam" +
-                "e\" /><PropertyRef Name=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /><PropertyRef " +
-                "Name=\"ProjectID\" /><PropertyRef Name=\"MonthID\" /></Key><Property Name=\"Total_Hou" +
-                "rs\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Prope" +
-                "rty Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /><Proper" +
-                "ty Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Prop" +
-                "erty Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"ProjectID\"" +
-                " Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"MonthID\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" /></EntityType><EntityType Name=\"TotalHoursTeamMonthwise\"><Key><" +
-                "PropertyRef Name=\"EmpName\" /><PropertyRef Name=\"ProjectID\" /><PropertyRef Name=\"" +
-                "ProjectName\" /><PropertyRef Name=\"MonthID\" /><PropertyRef Name=\"MonthName\" /></K" +
-                "ey><Property Name=\"EmpName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /" +
-                "><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"" +
-                "ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Property Name" +
-                "=\"Expr1\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><" +
-                "Property Name=\"MonthID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Mont" +
-                "hName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /></EntityType><EntityT" +
-                "ype Name=\"TotalProjectScore\"><Key><PropertyRef Name=\"EmpID\" /></Key><Property Na" +
-                "me=\"ProjectScore\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"6\" ConcurrencyMode=\"F" +
-                "ixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType>" +
-                "<EntityType Name=\"UtilizationCalculation\"><Key><PropertyRef Name=\"WeekDays\" /><P" +
-                "ropertyRef Name=\"EmpID\" /><PropertyRef Name=\"MonthID\" /><PropertyRef Name=\"Month" +
-                "Name\" /><PropertyRef Name=\"Holidays\" /></Key><Property Name=\"UtilizationPercenta" +
-                "ge\" Type=\"Edm.Decimal\" Precision=\"10\" Scale=\"2\" ConcurrencyMode=\"Fixed\" /><Prope" +
-                "rty Name=\"WeekDays\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"WorkingD" +
-                "ays\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"WorkedHours\" Typ" +
-                "e=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed" +
-                "\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"M" +
-                "onthID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"MonthName\" Type=\"Edm" +
-                ".String\" Nullable=\"false\" MaxLength=\"20\" /><Property Name=\"Holidays\" Type=\"Edm.I" +
-                "nt32\" Nullable=\"false\" /></EntityType><EntityType Name=\"UtilizationTracker\"><Key" +
-                "><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"MonthID\" /><PropertyRef Name=\"We" +
-                "ekDays\" /><PropertyRef Name=\"MonthName\" /><PropertyRef Name=\"Holidays\" /></Key><" +
-                "Property Name=\"WorkedHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\" S" +
-                "cale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nulla" +
-                "ble=\"false\" /><Property Name=\"MonthID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Prop" +
-                "erty Name=\"TotalHours\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name" +
-                "=\"WeekDays\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"WorkingDays\" Typ" +
-                "e=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"MonthName\" Type=\"Edm.Str" +
-                "ing\" Nullable=\"false\" MaxLength=\"20\" /><Property Name=\"Holidays\" Type=\"Edm.Int32" +
-                "\" Nullable=\"false\" /></EntityType><Association Name=\"FK_EmployeeDetails_ManagerI" +
-                "D\"><End Role=\"EmployeeDetails\" Type=\"LightSwitchApplication.EmployeeDetail\" Mult" +
-                "iplicity=\"1\" /><End Role=\"EmployeeDetails1\" Type=\"LightSwitchApplication.Employe" +
-                "eDetail\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"EmployeeDeta" +
-                "ils\"><PropertyRef Name=\"EmpID\" /></Principal><Dependent Role=\"EmployeeDetails1\">" +
-                "<PropertyRef Name=\"ManagerID\" /></Dependent></ReferentialConstraint></Associatio" +
-                "n><Association Name=\"FK_EmployeeMonth_EmployeeDetails\"><End Role=\"EmployeeDetail" +
-                "s\" Type=\"LightSwitchApplication.EmployeeDetail\" Multiplicity=\"1\" /><End Role=\"Em" +
-                "ployeeMonth\" Type=\"LightSwitchApplication.EmployeeMonth\" Multiplicity=\"*\" /><Ref" +
-                "erentialConstraint><Principal Role=\"EmployeeDetails\"><PropertyRef Name=\"EmpID\" /" +
-                "></Principal><Dependent Role=\"EmployeeMonth\"><PropertyRef Name=\"EmpID\" /></Depen" +
-                "dent></ReferentialConstraint></Association><Association Name=\"FK_AssignProjects_" +
-                "EmployeeDetails\"><End Role=\"EmployeeDetails\" Type=\"LightSwitchApplication.Employ" +
-                "eeDetail\" Multiplicity=\"0..1\" /><End Role=\"AssignProjects\" Type=\"LightSwitchAppl" +
-                "ication.AssignProject\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role" +
-                "=\"EmployeeDetails\"><PropertyRef Name=\"EmpID\" /></Principal><Dependent Role=\"Assi" +
-                "gnProjects\"><PropertyRef Name=\"EmpID\" /></Dependent></ReferentialConstraint></As" +
-                "sociation><Association Name=\"Months_EmployeeMonth\"><End Role=\"Months\" Type=\"Ligh" +
-                "tSwitchApplication.Months\" Multiplicity=\"1\" /><End Role=\"EmployeeMonth\" Type=\"Li" +
-                "ghtSwitchApplication.EmployeeMonth\" Multiplicity=\"*\" /><ReferentialConstraint><P" +
-                "rincipal Role=\"Months\"><PropertyRef Name=\"MonthID\" /></Principal><Dependent Role" +
-                "=\"EmployeeMonth\"><PropertyRef Name=\"MonthID\" /></Dependent></ReferentialConstrai" +
-                "nt></Association><Association Name=\"Months_EmployeeProject\"><End Role=\"Months\" T" +
-                "ype=\"LightSwitchApplication.Months\" Multiplicity=\"1\" /><End Role=\"EmployeeProjec" +
-                "t\" Type=\"LightSwitchApplication.EmployeeProject\" Multiplicity=\"*\" /><Referential" +
-                "Constraint><Principal Role=\"Months\"><PropertyRef Name=\"MonthID\" /></Principal><D" +
-                "ependent Role=\"EmployeeProject\"><PropertyRef Name=\"MonthID\" /></Dependent></Refe" +
-                "rentialConstraint></Association><Association Name=\"FK_EmployeeProject_ProjectDet" +
-                "ails\"><End Role=\"ProjectDetails\" Type=\"LightSwitchApplication.ProjectDetail\" Mul" +
-                "tiplicity=\"1\" /><End Role=\"EmployeeProject\" Type=\"LightSwitchApplication.Employe" +
-                "eProject\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"ProjectDeta" +
-                "ils\"><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"ProjectID\" /></Principal><De" +
-                "pendent Role=\"EmployeeProject\"><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"Pr" +
-                "ojectID\" /></Dependent></ReferentialConstraint></Association><Association Name=\"" +
-                "FK_AssignProjects_ProjectsInCompany\"><End Role=\"ProjectsInCompany\" Type=\"LightSw" +
-                "itchApplication.ProjectsInCompany\" Multiplicity=\"0..1\" /><End Role=\"AssignProjec" +
-                "ts\" Type=\"LightSwitchApplication.AssignProject\" Multiplicity=\"*\" /><ReferentialC" +
-                "onstraint><Principal Role=\"ProjectsInCompany\"><PropertyRef Name=\"ID\" /></Princip" +
-                "al><Dependent Role=\"AssignProjects\"><PropertyRef Name=\"ProjectID\" /></Dependent>" +
-                "</ReferentialConstraint></Association><Association Name=\"FK_ProjectDetails_Proje" +
-                "ctsInCompany\"><End Role=\"ProjectsInCompany\" Type=\"LightSwitchApplication.Project" +
-                "sInCompany\" Multiplicity=\"0..1\" /><End Role=\"ProjectDetails\" Type=\"LightSwitchAp" +
-                "plication.ProjectDetail\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Ro" +
-                "le=\"ProjectsInCompany\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Pro" +
-                "jectDetails\"><PropertyRef Name=\"AssignProjectID\" /></Dependent></ReferentialCons" +
-                "traint></Association><EntityContainer Name=\"UtilizationTrackerData\" m:IsDefaultE" +
-                "ntityContainer=\"true\"><EntitySet Name=\"AssignProjects\" EntityType=\"LightSwitchAp" +
-                "plication.AssignProject\" /><EntitySet Name=\"AvgUtilizations";
+            private const string ModelPart3 = "ame=\"QualityPMRating\" Type=\"Edm.Decimal\" Precision=\"6\" Scale=\"2\" ConcurrencyMode=" +
+                "\"Fixed\" /><Property Name=\"QualityPeerReview\" Type=\"Edm.Decimal\" Precision=\"6\" Sc" +
+                "ale=\"2\" ConcurrencyMode=\"Fixed\" /><Property Name=\"QualityProjectDuration\" Type=\"" +
+                "Edm.String\" MaxLength=\"30\" ConcurrencyMode=\"Fixed\" /></EntityType><EntityType Na" +
+                "me=\"TotalHoursofAllProject\"><Key><PropertyRef Name=\"EmpID\" /></Key><Property Nam" +
+                "e=\"TotalofallProjects\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMo" +
+                "de=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /></Entity" +
+                "Type><EntityType Name=\"TotalHoursProjectwiseforMonth\"><Key><PropertyRef Name=\"Mo" +
+                "nthName\" /><PropertyRef Name=\"ProjectName\" /><PropertyRef Name=\"EmpID\" /><Proper" +
+                "tyRef Name=\"ProjectID\" /><PropertyRef Name=\"MonthID\" /></Key><Property Name=\"Tot" +
+                "al_Hours\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" />" +
+                "<Property Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /><" +
+                "Property Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /" +
+                "><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Proj" +
+                "ectID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"MonthID\" Type=\"Edm.In" +
+                "t32\" Nullable=\"false\" /></EntityType><EntityType Name=\"TotalHoursTeamMonthwise\">" +
+                "<Key><PropertyRef Name=\"EmpName\" /><PropertyRef Name=\"ProjectID\" /><PropertyRef " +
+                "Name=\"ProjectName\" /><PropertyRef Name=\"MonthID\" /><PropertyRef Name=\"MonthName\"" +
+                " /></Key><Property Name=\"EmpName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"" +
+                "100\" /><Property Name=\"ProjectID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property " +
+                "Name=\"ProjectName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" /><Propert" +
+                "y Name=\"Expr1\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixe" +
+                "d\" /><Property Name=\"MonthID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name" +
+                "=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /></EntityType><E" +
+                "ntityType Name=\"TotalProjectScore\"><Key><PropertyRef Name=\"EmpID\" /></Key><Prope" +
+                "rty Name=\"ProjectScore\" Type=\"Edm.Decimal\" Precision=\"38\" Scale=\"6\" ConcurrencyM" +
+                "ode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /></Entit" +
+                "yType><EntityType Name=\"UtilizationCalculation\"><Key><PropertyRef Name=\"WeekDays" +
+                "\" /><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"MonthID\" /><PropertyRef Name=" +
+                "\"MonthName\" /><PropertyRef Name=\"Holidays\" /><PropertyRef Name=\"Year\" /></Key><P" +
+                "roperty Name=\"UtilizationPercentage\" Type=\"Edm.Decimal\" Precision=\"10\" Scale=\"2\"" +
+                " ConcurrencyMode=\"Fixed\" /><Property Name=\"WeekDays\" Type=\"Edm.Int32\" Nullable=\"" +
+                "false\" /><Property Name=\"WorkingDays\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /" +
+                "><Property Name=\"WorkedHours\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"38\"" +
+                " Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"EmpID\" Type=\"Edm.Int32\" Nul" +
+                "lable=\"false\" /><Property Name=\"MonthID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Pr" +
+                "operty Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /><Pro" +
+                "perty Name=\"Holidays\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Year\" " +
+                "Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><EntityType Name=\"UtilizationTr" +
+                "acker\"><Key><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"MonthID\" /><PropertyR" +
+                "ef Name=\"WeekDays\" /><PropertyRef Name=\"MonthName\" /><PropertyRef Name=\"Holidays" +
+                "\" /><PropertyRef Name=\"Year\" /></Key><Property Name=\"WorkedHours\" Type=\"Edm.Deci" +
+                "mal\" Nullable=\"false\" Precision=\"38\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Proper" +
+                "ty Name=\"EmpID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"MonthID\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"TotalHours\" Type=\"Edm.Int32\" Co" +
+                "ncurrencyMode=\"Fixed\" /><Property Name=\"WeekDays\" Type=\"Edm.Int32\" Nullable=\"fal" +
+                "se\" /><Property Name=\"WorkingDays\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><P" +
+                "roperty Name=\"MonthName\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"20\" /><Pr" +
+                "operty Name=\"Holidays\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Year\"" +
+                " Type=\"Edm.Int32\" Nullable=\"false\" /></EntityType><Association Name=\"FK_Employee" +
+                "Details_ManagerID\"><End Role=\"EmployeeDetails\" Type=\"LightSwitchApplication.Empl" +
+                "oyeeDetail\" Multiplicity=\"1\" /><End Role=\"EmployeeDetails1\" Type=\"LightSwitchApp" +
+                "lication.EmployeeDetail\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Ro" +
+                "le=\"EmployeeDetails\"><PropertyRef Name=\"EmpID\" /></Principal><Dependent Role=\"Em" +
+                "ployeeDetails1\"><PropertyRef Name=\"ManagerID\" /></Dependent></ReferentialConstra" +
+                "int></Association><Association Name=\"FK_EmployeeMonth_EmployeeDetails\"><End Role" +
+                "=\"EmployeeDetails\" Type=\"LightSwitchApplication.EmployeeDetail\" Multiplicity=\"1\"" +
+                " /><End Role=\"EmployeeMonth\" Type=\"LightSwitchApplication.EmployeeMonth\" Multipl" +
+                "icity=\"*\" /><ReferentialConstraint><Principal Role=\"EmployeeDetails\"><PropertyRe" +
+                "f Name=\"EmpID\" /></Principal><Dependent Role=\"EmployeeMonth\"><PropertyRef Name=\"" +
+                "EmpID\" /></Dependent></ReferentialConstraint></Association><Association Name=\"FK" +
+                "_AssignProjects_EmployeeDetails\"><End Role=\"EmployeeDetails\" Type=\"LightSwitchAp" +
+                "plication.EmployeeDetail\" Multiplicity=\"0..1\" /><End Role=\"AssignProjects\" Type=" +
+                "\"LightSwitchApplication.AssignProject\" Multiplicity=\"*\" /><ReferentialConstraint" +
+                "><Principal Role=\"EmployeeDetails\"><PropertyRef Name=\"EmpID\" /></Principal><Depe" +
+                "ndent Role=\"AssignProjects\"><PropertyRef Name=\"EmpID\" /></Dependent></Referentia" +
+                "lConstraint></Association><Association Name=\"Months_EmployeeMonth\"><End Role=\"Mo" +
+                "nths\" Type=\"LightSwitchApplication.Months\" Multiplicity=\"1\" /><End Role=\"Employe" +
+                "eMonth\" Type=\"LightSwitchApplication.EmployeeMonth\" Multiplicity=\"*\" /><Referent" +
+                "ialConstraint><Principal Role=\"Months\"><PropertyRef Name=\"MonthID\" /></Principal" +
+                "><Dependent Role=\"EmployeeMonth\"><PropertyRef Name=\"MonthID\" /></Dependent></Ref" +
+                "erentialConstraint></Association><Association Name=\"Months_EmployeeProject\"><End" +
+                " Role=\"Months\" Type=\"LightSwitchApplication.Months\" Multiplicity=\"1\" /><End Role" +
+                "=\"EmployeeProject\" Type=\"LightSwitchApplication.EmployeeProject\" Multiplicity=\"*" +
+                "\" /><ReferentialConstraint><Principal Role=\"Months\"><PropertyRef Name=\"MonthID\" " +
+                "/></Principal><Dependent Role=\"EmployeeProject\"><PropertyRef Name=\"MonthID\" /></" +
+                "Dependent></ReferentialConstraint></Association><Association Name=\"FK_EmployeePr" +
+                "oject_ProjectDetails\"><End Role=\"ProjectDetails\" Type=\"LightSwitchApplication.Pr" +
+                "ojectDetail\" Multiplicity=\"1\" /><End Role=\"EmployeeProject\" Type=\"LightSwitchApp" +
+                "lication.EmployeeProject\" Multiplicity=\"*\" /><ReferentialConstraint><Principal R" +
+                "ole=\"ProjectDetails\"><PropertyRef Name=\"EmpID\" /><PropertyRef Name=\"ProjectID\" /" +
+                "></Principal><Dependent Role=\"EmployeeProject\"><PropertyRef Name=\"EmpID\" /><Prop" +
+                "ertyRef Name=\"ProjectID\" /></Dependent></ReferentialConstraint></Association><As" +
+                "sociation Name=\"FK_AssignProjects_ProjectsInCompany\"><End Role=\"ProjectsInCompan" +
+                "y\" Type=\"LightSwitchApplication.ProjectsInCompany\" Multiplicity=\"0..1\" /><End Ro" +
+                "le=\"AssignProjects\" Type=\"LightSwitchApplication.AssignProject\" Multiplicity=\"*\"" +
+                " /><ReferentialConstraint><Principal Role=\"ProjectsInCompany\"><PropertyRef Name=" +
+                "\"ID\" /></Principal><Dependent Role=\"AssignProjects\"><PropertyRef Name=\"ProjectID" +
+                "\" /></Dependent></ReferentialConstraint></Association><Association Name=\"FK_Proj" +
+                "ectDetails_ProjectsInCompany\"><End Role=\"ProjectsInCompany\" Type=\"LightSwitchApp" +
+                "lication.ProjectsInCompany\" Multiplicity=\"0..1\" /><End Role=\"ProjectDetails\" Typ" +
+                "e=\"LightSwitchApplication.ProjectDetail\" Multiplicity=\"*\" /><ReferentialConstrai" +
+                "nt><Principal Role=\"ProjectsInCompany\"><PropertyRef Name=\"ID\" /></Principal><Dep" +
+                "endent Role=\"ProjectDetails\"><PropertyRef Name=\"AssignProje";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart4 = "\" EntityType=\"LightSwitchApplication.AvgUtilization\" /><EntitySet Name=\"CompanyPr" +
-                "ojects\" EntityType=\"LightSwitchApplication.CompanyProject\" /><EntitySet Name=\"Co" +
-                "mpanyTeamProjects\" EntityType=\"LightSwitchApplication.CompanyTeamProject\" /><Ent" +
-                "itySet Name=\"ComplexityandQualityShares\" EntityType=\"LightSwitchApplication.Comp" +
-                "lexityandQualityShare\" /><EntitySet Name=\"DistinctProjects\" EntityType=\"LightSwi" +
-                "tchApplication.DistinctProject\" /><EntitySet Name=\"EmailDropdowns\" EntityType=\"L" +
-                "ightSwitchApplication.EmailDropdown\" /><EntitySet Name=\"EmployeeDetails\" EntityT" +
-                "ype=\"LightSwitchApplication.EmployeeDetail\" /><EntitySet Name=\"EmployeeMonths\" E" +
-                "ntityType=\"LightSwitchApplication.EmployeeMonth\" /><EntitySet Name=\"EmployeeProj" +
-                "ectHours\" EntityType=\"LightSwitchApplication.EmployeeProjectHour\" /><EntitySet N" +
-                "ame=\"EmployeeProjects\" EntityType=\"LightSwitchApplication.EmployeeProject\" /><En" +
-                "titySet Name=\"GetDateParameters\" EntityType=\"LightSwitchApplication.GetDateParam" +
-                "eter\" /><EntitySet Name=\"HoursPerDays\" EntityType=\"LightSwitchApplication.HoursP" +
-                "erDay\" /><EntitySet Name=\"Months\" EntityType=\"LightSwitchApplication.Months\" /><" +
-                "EntitySet Name=\"PMTeamProjects\" EntityType=\"LightSwitchApplication.PMTeamProject" +
-                "\" /><EntitySet Name=\"ProjectDetails\" EntityType=\"LightSwitchApplication.ProjectD" +
-                "etail\" /><EntitySet Name=\"ProjectManagerViewTeamHours\" EntityType=\"LightSwitchAp" +
-                "plication.ProjectManagerViewTeamHour\" /><EntitySet Name=\"ProjectReports\" EntityT" +
-                "ype=\"LightSwitchApplication.ProjectReport\" /><EntitySet Name=\"Projects\" EntityTy" +
-                "pe=\"LightSwitchApplication.Project\" /><EntitySet Name=\"ProjectsInCompanies\" Enti" +
-                "tyType=\"LightSwitchApplication.ProjectsInCompany\" /><EntitySet Name=\"ProjectsInD" +
-                "ays\" EntityType=\"LightSwitchApplication.ProjectsInDay\" /><EntitySet Name=\"TeamPr" +
-                "ojects\" EntityType=\"LightSwitchApplication.TeamProject\" /><EntitySet Name=\"TeamP" +
-                "rojectsLists\" EntityType=\"LightSwitchApplication.TeamProjectsList\" /><EntitySet " +
-                "Name=\"TotalHours\" EntityType=\"LightSwitchApplication.TotalHour\" /><EntitySet Nam" +
-                "e=\"TotalHoursAllMonthsForProjects\" EntityType=\"LightSwitchApplication.TotalHours" +
-                "AllMonthsForProject\" /><EntitySet Name=\"TotalHoursandProjectShares\" EntityType=\"" +
-                "LightSwitchApplication.TotalHoursandProjectShare\" /><EntitySet Name=\"TotalHourso" +
-                "fAllProjects\" EntityType=\"LightSwitchApplication.TotalHoursofAllProject\" /><Enti" +
-                "tySet Name=\"TotalHoursProjectwiseforMonths\" EntityType=\"LightSwitchApplication.T" +
-                "otalHoursProjectwiseforMonth\" /><EntitySet Name=\"TotalHoursTeamMonthwises\" Entit" +
-                "yType=\"LightSwitchApplication.TotalHoursTeamMonthwise\" /><EntitySet Name=\"TotalP" +
-                "rojectScores\" EntityType=\"LightSwitchApplication.TotalProjectScore\" /><EntitySet" +
-                " Name=\"UtilizationCalculations\" EntityType=\"LightSwitchApplication.UtilizationCa" +
-                "lculation\" /><EntitySet Name=\"UtilizationTrackers\" EntityType=\"LightSwitchApplic" +
-                "ation.UtilizationTracker\" /><AssociationSet Name=\"FK_EmployeeDetails_ManagerID\" " +
-                "Association=\"LightSwitchApplication.FK_EmployeeDetails_ManagerID\"><End Role=\"Emp" +
-                "loyeeDetails\" EntitySet=\"EmployeeDetails\" /><End Role=\"EmployeeDetails1\" EntityS" +
-                "et=\"EmployeeDetails\" /></AssociationSet><AssociationSet Name=\"FK_EmployeeMonth_E" +
-                "mployeeDetails\" Association=\"LightSwitchApplication.FK_EmployeeMonth_EmployeeDet" +
-                "ails\"><End Role=\"EmployeeDetails\" EntitySet=\"EmployeeDetails\" /><End Role=\"Emplo" +
-                "yeeMonth\" EntitySet=\"EmployeeMonths\" /></AssociationSet><AssociationSet Name=\"FK" +
-                "_AssignProjects_EmployeeDetails\" Association=\"LightSwitchApplication.FK_AssignPr" +
-                "ojects_EmployeeDetails\"><End Role=\"EmployeeDetails\" EntitySet=\"EmployeeDetails\" " +
-                "/><End Role=\"AssignProjects\" EntitySet=\"AssignProjects\" /></AssociationSet><Asso" +
-                "ciationSet Name=\"Months_EmployeeMonth\" Association=\"LightSwitchApplication.Month" +
-                "s_EmployeeMonth\"><End Role=\"Months\" EntitySet=\"Months\" /><End Role=\"EmployeeMont" +
-                "h\" EntitySet=\"EmployeeMonths\" /></AssociationSet><AssociationSet Name=\"Months_Em" +
-                "ployeeProject\" Association=\"LightSwitchApplication.Months_EmployeeProject\"><End " +
-                "Role=\"Months\" EntitySet=\"Months\" /><End Role=\"EmployeeProject\" EntitySet=\"Employ" +
-                "eeProjects\" /></AssociationSet><AssociationSet Name=\"FK_EmployeeProject_ProjectD" +
-                "etails\" Association=\"LightSwitchApplication.FK_EmployeeProject_ProjectDetails\"><" +
-                "End Role=\"ProjectDetails\" EntitySet=\"ProjectDetails\" /><End Role=\"EmployeeProjec" +
-                "t\" EntitySet=\"EmployeeProjects\" /></AssociationSet><AssociationSet Name=\"FK_Assi" +
-                "gnProjects_ProjectsInCompany\" Association=\"LightSwitchApplication.FK_AssignProje" +
-                "cts_ProjectsInCompany\"><End Role=\"ProjectsInCompany\" EntitySet=\"ProjectsInCompan" +
-                "ies\" /><End Role=\"AssignProjects\" EntitySet=\"AssignProjects\" /></AssociationSet>" +
-                "<AssociationSet Name=\"FK_ProjectDetails_ProjectsInCompany\" Association=\"LightSwi" +
-                "tchApplication.FK_ProjectDetails_ProjectsInCompany\"><End Role=\"ProjectsInCompany" +
-                "\" EntitySet=\"ProjectsInCompanies\" /><End Role=\"ProjectDetails\" EntitySet=\"Projec" +
-                "tDetails\" /></AssociationSet><FunctionImport Name=\"AvgUtilization\" ReturnType=\"C" +
-                "ollection(LightSwitchApplication.AvgUtilization)\" EntitySet=\"AvgUtilizations\" m:" +
-                "HttpMethod=\"GET\" /><FunctionImport Name=\"CompanySelfProjects\" ReturnType=\"Collec" +
-                "tion(LightSwitchApplication.CompanyProject)\" EntitySet=\"CompanyProjects\" m:HttpM" +
-                "ethod=\"GET\" /><FunctionImport Name=\"ProjectScore\" ReturnType=\"Collection(LightSw" +
-                "itchApplication.ComplexityandQualityShare)\" EntitySet=\"ComplexityandQualityShare" +
-                "s\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"DistinctProjectList\" ReturnType=\"C" +
-                "ollection(LightSwitchApplication.DistinctProject)\" EntitySet=\"DistinctProjects\" " +
-                "m:HttpMethod=\"GET\" /><FunctionImport Name=\"EmailList\" ReturnType=\"Collection(Lig" +
-                "htSwitchApplication.EmailDropdown)\" EntitySet=\"EmailDropdowns\" m:HttpMethod=\"GET" +
-                "\" /><FunctionImport Name=\"GetManagers\" ReturnType=\"Collection(LightSwitchApplica" +
+            private const string ModelPart4 = "ctID\" /></Dependent></ReferentialConstraint></Association><EntityContainer Name=\"" +
+                "UtilizationTrackerData\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"Assig" +
+                "nProjects\" EntityType=\"LightSwitchApplication.AssignProject\" /><EntitySet Name=\"" +
+                "AvgUtilizations\" EntityType=\"LightSwitchApplication.AvgUtilization\" /><EntitySet" +
+                " Name=\"CompanyProjects\" EntityType=\"LightSwitchApplication.CompanyProject\" /><En" +
+                "titySet Name=\"CompanyTeamProjects\" EntityType=\"LightSwitchApplication.CompanyTea" +
+                "mProject\" /><EntitySet Name=\"ComplexityandQualityShares\" EntityType=\"LightSwitch" +
+                "Application.ComplexityandQualityShare\" /><EntitySet Name=\"DistinctProjects\" Enti" +
+                "tyType=\"LightSwitchApplication.DistinctProject\" /><EntitySet Name=\"EmailDropdown" +
+                "s\" EntityType=\"LightSwitchApplication.EmailDropdown\" /><EntitySet Name=\"Employee" +
+                "Details\" EntityType=\"LightSwitchApplication.EmployeeDetail\" /><EntitySet Name=\"E" +
+                "mployeeMonths\" EntityType=\"LightSwitchApplication.EmployeeMonth\" /><EntitySet Na" +
+                "me=\"EmployeeProjectHours\" EntityType=\"LightSwitchApplication.EmployeeProjectHour" +
+                "\" /><EntitySet Name=\"EmployeeProjects\" EntityType=\"LightSwitchApplication.Employ" +
+                "eeProject\" /><EntitySet Name=\"GetDateParameters\" EntityType=\"LightSwitchApplicat" +
+                "ion.GetDateParameter\" /><EntitySet Name=\"HoursPerDays\" EntityType=\"LightSwitchAp" +
+                "plication.HoursPerDay\" /><EntitySet Name=\"Months\" EntityType=\"LightSwitchApplica" +
+                "tion.Months\" /><EntitySet Name=\"PMTeamProjects\" EntityType=\"LightSwitchApplicati" +
+                "on.PMTeamProject\" /><EntitySet Name=\"ProjectDetails\" EntityType=\"LightSwitchAppl" +
+                "ication.ProjectDetail\" /><EntitySet Name=\"ProjectManagerViewTeamHours\" EntityTyp" +
+                "e=\"LightSwitchApplication.ProjectManagerViewTeamHour\" /><EntitySet Name=\"Project" +
+                "Reports\" EntityType=\"LightSwitchApplication.ProjectReport\" /><EntitySet Name=\"Pr" +
+                "ojects\" EntityType=\"LightSwitchApplication.Project\" /><EntitySet Name=\"ProjectsI" +
+                "nCompanies\" EntityType=\"LightSwitchApplication.ProjectsInCompany\" /><EntitySet N" +
+                "ame=\"ProjectsInDays\" EntityType=\"LightSwitchApplication.ProjectsInDay\" /><Entity" +
+                "Set Name=\"TeamProjects\" EntityType=\"LightSwitchApplication.TeamProject\" /><Entit" +
+                "ySet Name=\"TeamProjectsLists\" EntityType=\"LightSwitchApplication.TeamProjectsLis" +
+                "t\" /><EntitySet Name=\"TotalHours\" EntityType=\"LightSwitchApplication.TotalHour\" " +
+                "/><EntitySet Name=\"TotalHoursAllMonthsForProjects\" EntityType=\"LightSwitchApplic" +
+                "ation.TotalHoursAllMonthsForProject\" /><EntitySet Name=\"TotalHoursandProjectShar" +
+                "es\" EntityType=\"LightSwitchApplication.TotalHoursandProjectShare\" /><EntitySet N" +
+                "ame=\"TotalHoursofAllProjects\" EntityType=\"LightSwitchApplication.TotalHoursofAll" +
+                "Project\" /><EntitySet Name=\"TotalHoursProjectwiseforMonths\" EntityType=\"LightSwi" +
+                "tchApplication.TotalHoursProjectwiseforMonth\" /><EntitySet Name=\"TotalHoursTeamM" +
+                "onthwises\" EntityType=\"LightSwitchApplication.TotalHoursTeamMonthwise\" /><Entity" +
+                "Set Name=\"TotalProjectScores\" EntityType=\"LightSwitchApplication.TotalProjectSco" +
+                "re\" /><EntitySet Name=\"UtilizationCalculations\" EntityType=\"LightSwitchApplicati" +
+                "on.UtilizationCalculation\" /><EntitySet Name=\"UtilizationTrackers\" EntityType=\"L" +
+                "ightSwitchApplication.UtilizationTracker\" /><AssociationSet Name=\"FK_EmployeeDet" +
+                "ails_ManagerID\" Association=\"LightSwitchApplication.FK_EmployeeDetails_ManagerID" +
+                "\"><End Role=\"EmployeeDetails\" EntitySet=\"EmployeeDetails\" /><End Role=\"EmployeeD" +
+                "etails1\" EntitySet=\"EmployeeDetails\" /></AssociationSet><AssociationSet Name=\"FK" +
+                "_EmployeeMonth_EmployeeDetails\" Association=\"LightSwitchApplication.FK_EmployeeM" +
+                "onth_EmployeeDetails\"><End Role=\"EmployeeDetails\" EntitySet=\"EmployeeDetails\" />" +
+                "<End Role=\"EmployeeMonth\" EntitySet=\"EmployeeMonths\" /></AssociationSet><Associa" +
+                "tionSet Name=\"FK_AssignProjects_EmployeeDetails\" Association=\"LightSwitchApplica" +
+                "tion.FK_AssignProjects_EmployeeDetails\"><End Role=\"EmployeeDetails\" EntitySet=\"E" +
+                "mployeeDetails\" /><End Role=\"AssignProjects\" EntitySet=\"AssignProjects\" /></Asso" +
+                "ciationSet><AssociationSet Name=\"Months_EmployeeMonth\" Association=\"LightSwitchA" +
+                "pplication.Months_EmployeeMonth\"><End Role=\"Months\" EntitySet=\"Months\" /><End Ro" +
+                "le=\"EmployeeMonth\" EntitySet=\"EmployeeMonths\" /></AssociationSet><AssociationSet" +
+                " Name=\"Months_EmployeeProject\" Association=\"LightSwitchApplication.Months_Employ" +
+                "eeProject\"><End Role=\"Months\" EntitySet=\"Months\" /><End Role=\"EmployeeProject\" E" +
+                "ntitySet=\"EmployeeProjects\" /></AssociationSet><AssociationSet Name=\"FK_Employee" +
+                "Project_ProjectDetails\" Association=\"LightSwitchApplication.FK_EmployeeProject_P" +
+                "rojectDetails\"><End Role=\"ProjectDetails\" EntitySet=\"ProjectDetails\" /><End Role" +
+                "=\"EmployeeProject\" EntitySet=\"EmployeeProjects\" /></AssociationSet><AssociationS" +
+                "et Name=\"FK_AssignProjects_ProjectsInCompany\" Association=\"LightSwitchApplicatio" +
+                "n.FK_AssignProjects_ProjectsInCompany\"><End Role=\"ProjectsInCompany\" EntitySet=\"" +
+                "ProjectsInCompanies\" /><End Role=\"AssignProjects\" EntitySet=\"AssignProjects\" /><" +
+                "/AssociationSet><AssociationSet Name=\"FK_ProjectDetails_ProjectsInCompany\" Assoc" +
+                "iation=\"LightSwitchApplication.FK_ProjectDetails_ProjectsInCompany\"><End Role=\"P" +
+                "rojectsInCompany\" EntitySet=\"ProjectsInCompanies\" /><End Role=\"ProjectDetails\" E" +
+                "ntitySet=\"ProjectDetails\" /></AssociationSet><FunctionImport Name=\"AvgUtilizatio" +
+                "n\" ReturnType=\"Collection(LightSwitchApplication.AvgUtilization)\" EntitySet=\"Avg" +
+                "Utilizations\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"CompanySelfProjects\" Re" +
+                "turnType=\"Collection(LightSwitchApplication.CompanyProject)\" EntitySet=\"CompanyP" +
+                "rojects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"ProjectScore\" ReturnType=\"Co" +
+                "llection(LightSwitchApplication.ComplexityandQualityShare)\" EntitySet=\"Complexit" +
+                "yandQualityShares\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"DistinctProjectLis" +
+                "t\" ReturnType=\"Collection(LightSwitchApplication.DistinctProject)\" EntitySet=\"Di" +
+                "stinctProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"EmailList\" ReturnType" +
+                "=\"Collection(LightSwitchApplication.EmailDropdown)\" EntitySet=\"EmailDropdowns\" m" +
+                ":HttpMethod=\"GET\" /><FunctionImport Name=\"GetManagers\" ReturnType=\"Collection(Li" +
+                "ghtSwitchApplication.EmployeeDetail)\" EntitySet=\"EmployeeDetails\" m:HttpMethod=\"" +
+                "GET\" /><FunctionImport Name=\"UserName\" ReturnType=\"Collection(LightSwitchApplica" +
                 "tion.EmployeeDetail)\" EntitySet=\"EmployeeDetails\" m:HttpMethod=\"GET\" /><Function" +
-                "Import Name=\"UserName\" ReturnType=\"Collection(LightSwitchApplication.EmployeeDet" +
-                "ail)\" EntitySet=\"EmployeeDetails\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Vie" +
-                "wReportees\" ReturnType=\"Collection(LightSwitchApplication.EmployeeDetail)\" Entit" +
-                "ySet=\"EmployeeDetails\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"CandidateMonth" +
-                "Details\" ReturnType=\"Collection(LightSwitchApplication.EmployeeMonth)\" EntitySet" +
-                "=\"EmployeeMonths\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Parameters\" ReturnT" +
-                "ype=\"Collection(LightSwitchApplication.EmployeeProject)\" EntitySet=\"EmployeeProj" +
-                "ects\" m:HttpMethod=\"GET\"><Parameter Name=\"MonthName\" Type=\"Edm.String\" Mode=\"In\"" +
-                " /><Parameter Name=\"ProjectName\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport>" +
-                "<FunctionImport Name=\"Tracker\" ReturnType=\"Collection(LightSwitchApplication.Emp" +
-                "loyeeProject)\" EntitySet=\"EmployeeProjects\" m:HttpMethod=\"GET\" /><FunctionImport" +
-                " Name=\"ViewReporteeProjects\" ReturnType=\"Collection(LightSwitchApplication.Emplo" +
-                "yeeProject)\" EntitySet=\"EmployeeProjects\" m:HttpMethod=\"GET\" /><FunctionImport N" +
-                "ame=\"NoOfHoursPerDay\" ReturnType=\"Collection(LightSwitchApplication.HoursPerDay)" +
-                "\" EntitySet=\"HoursPerDays\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"PMTeamProj" +
-                "ectList\" ReturnType=\"Collection(LightSwitchApplication.PMTeamProject)\" EntitySet" +
-                "=\"PMTeamProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"CandidateProject\" R" +
-                "eturnType=\"Collection(LightSwitchApplication.ProjectDetail)\" EntitySet=\"ProjectD" +
-                "etails\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"GetSelfProjects\" ReturnType=\"" +
-                "Collection(LightSwitchApplication.ProjectDetail)\" EntitySet=\"ProjectDetails\" m:H" +
-                "ttpMethod=\"GET\" /><FunctionImport Name=\"ProjectReportsforUser\" ReturnType=\"Colle" +
-                "ction(LightSwitchApplication.ProjectReport)\" EntitySet=\"Pro";
+                "Import Name=\"ViewReportees\" ReturnType=\"Collection(LightSwitchApplication.Employ" +
+                "eeDetail)\" EntitySet=\"EmployeeDetails\" m:HttpMethod=\"GET\" /><FunctionImport Name" +
+                "=\"CandidateMonthDetails\" ReturnType=\"Collection(LightSwitchApplication.EmployeeM" +
+                "onth)\" EntitySet=\"EmployeeMonths\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Mon" +
+                "thID\" ReturnType=\"Collection(LightSwitchApplication.EmployeeProject)\" EntitySet=" +
+                "\"EmployeeProjects\" m:HttpMethod=\"GET\"><Parameter Name=\"MonthName\" Type=\"Edm.Stri" +
+                "ng\" Mode=\"In\" /></FunctionImport><FunctionImport Name=\"Parameters\" ReturnType=\"C" +
+                "ollection(LightSwitchApplication.EmployeeProject)\" EntitySet=\"EmployeeProjects\" " +
+                "m:HttpMethod=\"GET\"><Parameter Name=\"MonthName\" Type=\"Edm.String\" Mode=\"In\" /><Pa" +
+                "rameter Name=\"ProjectName\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport><Funct" +
+                "ionImport Name=\"Tracker\" ReturnType=\"Collection(LightSwitchApplication.EmployeeP" +
+                "roject)\" EntitySet=\"EmployeeProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=" +
+                "\"ViewReporteeProjects\" ReturnType=\"Collection(LightSwitchApplication.EmployeePro" +
+                "ject)\" EntitySet=\"EmployeeProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"N" +
+                "oOfHoursPerDay\" ReturnType=\"Collection(LightSwitchApplication.HoursPerDay)\" Enti" +
+                "tySet=\"HoursPerDays\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"PMTeamProjectLis" +
+                "t\" ReturnType=\"Collection(LightSwitchApplication.PMTeamProj";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart5 = @"jectReports"" m:HttpMethod=""GET"" /><FunctionImport Name=""TotalWorkedHours"" ReturnType=""Collection(LightSwitchApplication.TotalHour)"" EntitySet=""TotalHours"" m:HttpMethod=""GET"" /><FunctionImport Name=""TotalHoursForaProject"" ReturnType=""Collection(LightSwitchApplication.TotalHoursAllMonthsForProject)"" EntitySet=""TotalHoursAllMonthsForProjects"" m:HttpMethod=""GET"" /><FunctionImport Name=""TotalHoursProjectWise"" ReturnType=""Collection(LightSwitchApplication.TotalHoursProjectwiseforMonth)"" EntitySet=""TotalHoursProjectwiseforMonths"" m:HttpMethod=""GET"" /><FunctionImport Name=""CandidateProjectScore"" ReturnType=""Collection(LightSwitchApplication.TotalProjectScore)"" EntitySet=""TotalProjectScores"" m:HttpMethod=""GET"" /><FunctionImport Name=""Utilization"" ReturnType=""Collection(LightSwitchApplication.UtilizationCalculation)"" EntitySet=""UtilizationCalculations"" m:HttpMethod=""GET"" /><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart5 = "ect)\" EntitySet=\"PMTeamProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Candi" +
+                "dateProject\" ReturnType=\"Collection(LightSwitchApplication.ProjectDetail)\" Entit" +
+                "ySet=\"ProjectDetails\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"GetSelfProjects" +
+                "\" ReturnType=\"Collection(LightSwitchApplication.ProjectDetail)\" EntitySet=\"Proje" +
+                "ctDetails\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"ProjectReportsforUser\" Ret" +
+                "urnType=\"Collection(LightSwitchApplication.ProjectReport)\" EntitySet=\"ProjectRep" +
+                "orts\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"TotalWorkedHours\" ReturnType=\"C" +
+                "ollection(LightSwitchApplication.TotalHour)\" EntitySet=\"TotalHours\" m:HttpMethod" +
+                "=\"GET\" /><FunctionImport Name=\"TotalHoursForaProject\" ReturnType=\"Collection(Lig" +
+                "htSwitchApplication.TotalHoursAllMonthsForProject)\" EntitySet=\"TotalHoursAllMont" +
+                "hsForProjects\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"TotalHoursProjectWise\"" +
+                " ReturnType=\"Collection(LightSwitchApplication.TotalHoursProjectwiseforMonth)\" E" +
+                "ntitySet=\"TotalHoursProjectwiseforMonths\" m:HttpMethod=\"GET\" /><FunctionImport N" +
+                "ame=\"CandidateProjectScore\" ReturnType=\"Collection(LightSwitchApplication.TotalP" +
+                "rojectScore)\" EntitySet=\"TotalProjectScores\" m:HttpMethod=\"GET\" /><FunctionImpor" +
+                "t Name=\"Utilization\" ReturnType=\"Collection(LightSwitchApplication.UtilizationCa" +
+                "lculation)\" EntitySet=\"UtilizationCalculations\" m:HttpMethod=\"GET\" /><FunctionIm" +
+                "port Name=\"Microsoft_LightSwitch_GetCanInformation\" ReturnType=\"Edm.String\" m:Ht" +
+                "tpMethod=\"GET\"><Parameter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" " +
+                "/></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -5103,6 +5122,32 @@ namespace LightSwitchApplication.Implementation
         partial void OnYearChanging(int value);
         partial void OnYearChanged();
         /// <summary>
+        /// There are no comments for Property MonthYear in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MonthYear
+        {
+            get
+            {
+                return this._MonthYear;
+            }
+            set
+            {
+                this.OnMonthYearChanging(value);
+                if (object.Equals(this.MonthYear, value))
+                {
+                    return;
+                }
+                this._MonthYear = value;
+                this.OnMonthYearChanged();
+                this.OnPropertyChanged("MonthYear");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MonthYear;
+        partial void OnMonthYearChanging(string value);
+        partial void OnMonthYearChanged();
+        /// <summary>
         /// There are no comments for EmployeeMonths in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -8295,9 +8340,10 @@ namespace LightSwitchApplication.Implementation
     /// MonthID
     /// MonthName
     /// Holidays
+    /// Year
     /// </KeyProperties>
     [global::System.Data.Services.Common.EntitySetAttribute("UtilizationCalculations")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("WeekDays", "EmpID", "MonthID", "MonthName", "Holidays")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("WeekDays", "EmpID", "MonthID", "MonthName", "Holidays", "Year")]
     public partial class UtilizationCalculation : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -8309,8 +8355,9 @@ namespace LightSwitchApplication.Implementation
         /// <param name="monthID">Initial value of MonthID.</param>
         /// <param name="monthName">Initial value of MonthName.</param>
         /// <param name="holidays">Initial value of Holidays.</param>
+        /// <param name="year">Initial value of Year.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static UtilizationCalculation CreateUtilizationCalculation(int weekDays, decimal workedHours, int empID, int monthID, string monthName, int holidays)
+        public static UtilizationCalculation CreateUtilizationCalculation(int weekDays, decimal workedHours, int empID, int monthID, string monthName, int holidays, int year)
         {
             UtilizationCalculation utilizationCalculation = new UtilizationCalculation();
             utilizationCalculation.WeekDays = weekDays;
@@ -8319,6 +8366,7 @@ namespace LightSwitchApplication.Implementation
             utilizationCalculation.MonthID = monthID;
             utilizationCalculation.MonthName = monthName;
             utilizationCalculation.Holidays = holidays;
+            utilizationCalculation.Year = year;
             return utilizationCalculation;
         }
         /// <summary>
@@ -8529,6 +8577,32 @@ namespace LightSwitchApplication.Implementation
         private int _Holidays;
         partial void OnHolidaysChanging(int value);
         partial void OnHolidaysChanged();
+        /// <summary>
+        /// There are no comments for Property Year in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Year
+        {
+            get
+            {
+                return this._Year;
+            }
+            set
+            {
+                this.OnYearChanging(value);
+                if (object.Equals(this.Year, value))
+                {
+                    return;
+                }
+                this._Year = value;
+                this.OnYearChanged();
+                this.OnPropertyChanged("Year");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Year;
+        partial void OnYearChanging(int value);
+        partial void OnYearChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -8549,9 +8623,10 @@ namespace LightSwitchApplication.Implementation
     /// WeekDays
     /// MonthName
     /// Holidays
+    /// Year
     /// </KeyProperties>
     [global::System.Data.Services.Common.EntitySetAttribute("UtilizationTrackers")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("EmpID", "MonthID", "WeekDays", "MonthName", "Holidays")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("EmpID", "MonthID", "WeekDays", "MonthName", "Holidays", "Year")]
     public partial class UtilizationTracker : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -8563,8 +8638,9 @@ namespace LightSwitchApplication.Implementation
         /// <param name="weekDays">Initial value of WeekDays.</param>
         /// <param name="monthName">Initial value of MonthName.</param>
         /// <param name="holidays">Initial value of Holidays.</param>
+        /// <param name="year">Initial value of Year.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static UtilizationTracker CreateUtilizationTracker(decimal workedHours, int empID, int monthID, int weekDays, string monthName, int holidays)
+        public static UtilizationTracker CreateUtilizationTracker(decimal workedHours, int empID, int monthID, int weekDays, string monthName, int holidays, int year)
         {
             UtilizationTracker utilizationTracker = new UtilizationTracker();
             utilizationTracker.WorkedHours = workedHours;
@@ -8573,6 +8649,7 @@ namespace LightSwitchApplication.Implementation
             utilizationTracker.WeekDays = weekDays;
             utilizationTracker.MonthName = monthName;
             utilizationTracker.Holidays = holidays;
+            utilizationTracker.Year = year;
             return utilizationTracker;
         }
         /// <summary>
@@ -8783,6 +8860,32 @@ namespace LightSwitchApplication.Implementation
         private int _Holidays;
         partial void OnHolidaysChanging(int value);
         partial void OnHolidaysChanged();
+        /// <summary>
+        /// There are no comments for Property Year in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Year
+        {
+            get
+            {
+                return this._Year;
+            }
+            set
+            {
+                this.OnYearChanging(value);
+                if (object.Equals(this.Year, value))
+                {
+                    return;
+                }
+                this._Year = value;
+                this.OnYearChanged();
+                this.OnPropertyChanged("Year");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Year;
+        partial void OnYearChanging(int value);
+        partial void OnYearChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

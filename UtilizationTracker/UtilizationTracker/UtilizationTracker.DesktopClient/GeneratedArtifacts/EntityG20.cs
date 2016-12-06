@@ -270,6 +270,30 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Holidays_Changed();
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "14.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int Year
+        {
+            get
+            {
+                return global::LightSwitchApplication.UtilizationTracker.DetailsClass.GetValue(this, global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties.Year);
+            }
+            set
+            {
+                global::LightSwitchApplication.UtilizationTracker.DetailsClass.SetValue(this, global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties.Year, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Year_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Year_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Year_Changed();
+
         #endregion
     
         #region Details Class
@@ -416,6 +440,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int> Year
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties.Year) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -430,6 +462,7 @@ namespace LightSwitchApplication
                 new global::System.Nullable<int> WorkingDays { get; set; }
                 new string MonthName { get; set; }
                 new int Holidays { get; set; }
+                new int Year { get; set; }
             }
             #pragma warning restore 109
     
@@ -735,6 +768,43 @@ namespace LightSwitchApplication
                     e.Holidays_Changed();
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>.Entry
+                    Year = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>.Entry(
+                        "Year",
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_Stub,
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_ComputeIsReadOnly,
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_Validate,
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_GetImplementationValue,
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_SetImplementationValue,
+                        global::LightSwitchApplication.UtilizationTracker.DetailsClass.PropertySetProperties._Year_OnValueChanged);
+                private static void _Year_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.UtilizationTracker.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>.Data> c, global::LightSwitchApplication.UtilizationTracker.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Year, sf);
+                }
+                private static bool _Year_ComputeIsReadOnly(global::LightSwitchApplication.UtilizationTracker e)
+                {
+                    bool result = false;
+                    e.Year_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _Year_Validate(global::LightSwitchApplication.UtilizationTracker e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.Year_Validate(r);
+                }
+                private static int _Year_GetImplementationValue(global::LightSwitchApplication.UtilizationTracker.DetailsClass d)
+                {
+                    return d.ImplementationEntity.Year;
+                }
+                private static void _Year_SetImplementationValue(global::LightSwitchApplication.UtilizationTracker.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.Year = v;
+                }
+                private static void _Year_OnValueChanged(global::LightSwitchApplication.UtilizationTracker e)
+                {
+                    e.Year_Changed();
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -760,6 +830,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>.Data _Holidays;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.UtilizationTracker, global::LightSwitchApplication.UtilizationTracker.DetailsClass, int>.Data _Year;
             
         }
     

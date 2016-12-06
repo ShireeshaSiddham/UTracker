@@ -987,6 +987,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Year");
         }
         
+        partial void OnMonthYearChanged()
+        {
+            this.___OnPropertyChanged("MonthYear");
+        }
+        
         global::System.Collections.IEnumerable global::LightSwitchApplication.Months.DetailsClass.IImplementation.EmployeeMonths
         {
             get
@@ -1825,6 +1830,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("Holidays");
         }
         
+        partial void OnYearChanged()
+        {
+            this.___OnPropertyChanged("Year");
+        }
+        
     }
     #endregion
     
@@ -1873,6 +1883,11 @@ namespace LightSwitchApplication.Implementation
         partial void OnHolidaysChanged()
         {
             this.___OnPropertyChanged("Holidays");
+        }
+        
+        partial void OnYearChanged()
+        {
+            this.___OnPropertyChanged("Year");
         }
         
     }

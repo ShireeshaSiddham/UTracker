@@ -4703,6 +4703,15 @@
                   "value": 2025
                 }
               ]
+            },
+            {
+              "id": "Months/Properties[MonthYear]",
+              "name": "MonthYear",
+              "propertyType": { "__id": ":String?" },
+              ":@MaxLength":
+              {
+                "value": 50
+              }
             }
           ]
         },
@@ -6580,6 +6589,25 @@
               ]
             },
             {
+              "id": "UtilizationTrackerData/Members[MonthID]",
+              "name": "MonthID",
+              "elementType": { "__id": "EmployeeProject" },
+              "query": { "__id": "UtilizationTrackerData/Members[MonthID]" },
+              "returnType": { "__id": "EmployeeProject*" },
+              "source":
+              {
+                "member": { "__id": "UtilizationTrackerData/Members[EmployeeProjects]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "UtilizationTrackerData/Members[MonthID]/Parameters[MonthName]",
+                  "name": "MonthName",
+                  "parameterType": { "__id": ":String?" }
+                }
+              ]
+            },
+            {
               "id": "UtilizationTrackerData/Members[Parameters]",
               "name": "Parameters",
               "elementType": { "__id": "EmployeeProject" },
@@ -7805,6 +7833,11 @@
                   "id": "UtilizationTrackerData/Members[UtilizationCalculations_Single]/Parameters[Holidays]",
                   "name": "Holidays",
                   "parameterType": { "__id": ":Int32?" }
+                },
+                {
+                  "id": "UtilizationTrackerData/Members[UtilizationCalculations_Single]/Parameters[Year]",
+                  "name": "Year",
+                  "parameterType": { "__id": ":Int32?" }
                 }
               ]
             },
@@ -7843,6 +7876,11 @@
                 {
                   "id": "UtilizationTrackerData/Members[UtilizationCalculations_SingleOrDefault]/Parameters[Holidays]",
                   "name": "Holidays",
+                  "parameterType": { "__id": ":Int32?" }
+                },
+                {
+                  "id": "UtilizationTrackerData/Members[UtilizationCalculations_SingleOrDefault]/Parameters[Year]",
+                  "name": "Year",
                   "parameterType": { "__id": ":Int32?" }
                 }
               ]
@@ -7894,6 +7932,11 @@
                   "id": "UtilizationTrackerData/Members[UtilizationTrackers_Single]/Parameters[Holidays]",
                   "name": "Holidays",
                   "parameterType": { "__id": ":Int32?" }
+                },
+                {
+                  "id": "UtilizationTrackerData/Members[UtilizationTrackers_Single]/Parameters[Year]",
+                  "name": "Year",
+                  "parameterType": { "__id": ":Int32?" }
                 }
               ]
             },
@@ -7932,6 +7975,11 @@
                 {
                   "id": "UtilizationTrackerData/Members[UtilizationTrackers_SingleOrDefault]/Parameters[Holidays]",
                   "name": "Holidays",
+                  "parameterType": { "__id": ":Int32?" }
+                },
+                {
+                  "id": "UtilizationTrackerData/Members[UtilizationTrackers_SingleOrDefault]/Parameters[Year]",
+                  "name": "Year",
                   "parameterType": { "__id": ":Int32?" }
                 }
               ]
@@ -8084,6 +8132,14 @@
               "propertyType": { "__id": ":Int32" },
               ":@Required": { },
               ":@NotSearchable": { }
+            },
+            {
+              "__isKeyProperty": 1,
+              "id": "UtilizationCalculation/Properties[Year]",
+              "name": "Year",
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
             }
           ]
         },
@@ -8172,6 +8228,14 @@
               "__isKeyProperty": 1,
               "id": "UtilizationTracker/Properties[Holidays]",
               "name": "Holidays",
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "__isKeyProperty": 1,
+              "id": "UtilizationTracker/Properties[Year]",
+              "name": "Year",
               "propertyType": { "__id": ":Int32" },
               ":@Required": { },
               ":@NotSearchable": { }
@@ -12620,6 +12684,31 @@
                                 }
                               },
                               {
+                                "displayName": "Month",
+                                "name": "Months",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "links":
+                                  [
+                                    {
+                                      "member": { "__id": "EmployeeProject/Properties[Months]" }
+                                    },
+                                    {
+                                      "member": { "__id": "Months/Properties[MonthName]" }
+                                    }
+                                  ]
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[BrowseOnly]" },
+                                    "value": true
+                                  }
+                                ]
+                              },
+                              {
                                 "displayName": "Hours",
                                 "name": "Hours",
                                 "kind": "Value",
@@ -12658,79 +12747,6 @@
                                 {
                                   "member": { "__id": "EmployeeProject/Properties[SubProject]" }
                                 }
-                              },
-                              {
-                                "displayName": "Month",
-                                "name": "Month",
-                                "kind": "Details",
-                                "view": { "__id": ":DetailsModalPicker" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "EmployeeProject/Properties[Months]" }
-                                },
-                                "childContentItems":
-                                [
-                                  {
-                                    "displayName": "Months",
-                                    "name": "MonthTemplate",
-                                    "kind": "Value",
-                                    "view": { "__id": ":Text" },
-                                    "dataSource":
-                                    {
-                                      "member": { "__id": "Months/Properties[MonthName]" }
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "displayName": "Property1",
-                                "name": "Property1",
-                                "kind": "Details",
-                                "view": { "__id": ":DetailsModalPicker" },
-                                "choicesSource":
-                                {
-                                  "member": { "__id": "AddEditEmployeeProject/Properties[Months]" }
-                                },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "AddEditEmployeeProject/Properties[Property1]" }
-                                },
-                                "childContentItems":
-                                [
-                                  {
-                                    "displayName": "Months",
-                                    "name": "Months",
-                                    "kind": "Value",
-                                    "view": { "__id": ":Text" },
-                                    "dataSource":
-                                    {
-                                      "member": { "__id": "Months/Properties[MonthName]" }
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "displayName": "Months",
-                                "name": "Months1",
-                                "kind": "Collection",
-                                "view": { "__id": ":List" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "AddEditEmployeeProject/Properties[Months]" }
-                                },
-                                "childContentItems":
-                                [
-                                  {
-                                    "displayName": "Months",
-                                    "name": "Months1Template",
-                                    "kind": "Value",
-                                    "view": { "__id": ":Text" },
-                                    "dataSource":
-                                    {
-                                      "member": { "__id": "Months/Properties[MonthName]" }
-                                    }
-                                  }
-                                ]
                               }
                             ],
                             "propertySources":
@@ -12837,45 +12853,6 @@
               "name": "Property1",
               "elementType": { "__id": "Months" },
               "propertyType": { "__id": "Months" }
-            },
-            {
-              "id": "AddEditEmployeeProject/Properties[Months]",
-              "name": "Months",
-              "pageSize": 45,
-              "elementType": { "__id": "Months" },
-              "propertyType": { "__id": "CollectionView$Months" },
-              "query":
-              {
-                "id": "AddEditEmployeeProject/Properties[Months]/Query",
-                "name": "MonthsQuery",
-                "elementType": { "__id": "Months" },
-                "returnType": { "__id": "Months*" },
-                "filterExpression":
-                {
-                  "nodeType": "Equal",
-                  "left":
-                  {
-                    "links":
-                    [
-                      {
-                        "member": { "__id": "Months/Properties[MonthName]" }
-                      }
-                    ]
-                  },
-                  "right":
-                  {
-                    "value": "April"
-                  }
-                },
-                "source":
-                {
-                  "member": { "__id": "UtilizationTrackerData/Members[Months]" }
-                }
-              },
-              "source":
-              {
-                "target": { "__id": "AddEditEmployeeProject/Properties[Months]/Query" }
-              }
             }
           ]
         },
@@ -13813,12 +13790,12 @@
             "propertySources":
             [
               {
-                "property": { "__id": ":Screen/Properties[ScreenType]" },
-                "value": "Edit"
-              },
-              {
                 "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
                 "value": true
+              },
+              {
+                "property": { "__id": ":Screen/Properties[ScreenType]" },
+                "value": "Edit"
               }
             ]
           },
@@ -14307,12 +14284,12 @@
                             "property": { "__id": ":RootCollectionControl/Properties[ItemTap]" },
                             "source":
                             {
-                              "target": { "__id": "!module/Methods[showAddEditMonths1]" },
+                              "target": { "__id": "!module/Methods[showAddEditMonths]" },
                               ":@AssociatedCollection": { "collection": { "__id": "BrowseMonths/Properties[Months]" } },
                               "arguments":
                               [
                                 {
-                                  "parameter": { "__id": "!module/Methods[showAddEditMonths1]/Parameters[Months]" },
+                                  "parameter": { "__id": "!module/Methods[showAddEditMonths]/Parameters[Months]" },
                                   "value":
                                   {
                                     "links":
@@ -23520,34 +23497,24 @@
                             ]
                           },
                           {
-                            "displayName": "Select Month",
-                            "name": "Property1",
-                            "kind": "Details",
-                            "view": { "__id": ":DetailsModalPicker" },
+                            "displayName": "Month Drop Down",
+                            "name": "MonthDropDown",
+                            "kind": "Value",
+                            "view": { "__id": ":ValueDropdown" },
                             "dataSource":
                             {
-                              "member": { "__id": "BrowseUtilization/Properties[Property1]" }
-                            },
-                            "childContentItems":
-                            [
-                              {
-                                "displayName": "Months",
-                                "name": "Property1Template",
-                                "kind": "Value",
-                                "view": { "__id": ":Text" },
-                                "dataSource":
-                                {
-                                  "member": { "__id": "Months/Properties[MonthName]" }
-                                }
-                              }
-                            ],
-                            "propertySources":
-                            [
-                              {
-                                "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
-                                "value": "FitToContent"
-                              }
-                            ]
+                              "member": { "__id": "BrowseUtilization/Properties[MonthDropDown]" }
+                            }
+                          },
+                          {
+                            "displayName": "Year Drop Down",
+                            "name": "YearDropDown",
+                            "kind": "Value",
+                            "view": { "__id": ":ValueDropdown" },
+                            "dataSource":
+                            {
+                              "member": { "__id": "BrowseUtilization/Properties[YearDropDown]" }
+                            }
                           }
                         ]
                       },
@@ -23814,6 +23781,16 @@
                                     "value": "StretchToContainer"
                                   }
                                 ]
+                              },
+                              {
+                                "displayName": "Year",
+                                "name": "Year",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "UtilizationCalculation/Properties[Year]" }
+                                }
                               },
                               {
                                 "displayName": "Total No. of WeekDays: ",
@@ -24297,19 +24274,40 @@
                 "returnType": { "__id": "UtilizationCalculation*" },
                 "filterExpression":
                 {
-                  "nodeType": "Equal",
+                  "nodeType": "And",
                   "left":
                   {
-                    "links":
-                    [
-                      {
-                        "member": { "__id": "UtilizationCalculation/Properties[MonthID]" }
-                      }
-                    ]
+                    "nodeType": "Equal",
+                    "left":
+                    {
+                      "links":
+                      [
+                        {
+                          "member": { "__id": "UtilizationCalculation/Properties[MonthName]" }
+                        }
+                      ]
+                    },
+                    "right":
+                    {
+                      "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthName]" }
+                    }
                   },
                   "right":
                   {
-                    "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthID]" }
+                    "nodeType": "Equal",
+                    "left":
+                    {
+                      "links":
+                      [
+                        {
+                          "member": { "__id": "UtilizationCalculation/Properties[Year]" }
+                        }
+                      ]
+                    },
+                    "right":
+                    {
+                      "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[Year]" }
+                    }
                   }
                 },
                 "source":
@@ -24319,10 +24317,22 @@
                 "parameters":
                 [
                   {
-                    "id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthID]",
-                    "name": "MonthID",
+                    "id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthName]",
+                    "name": "MonthName",
+                    "isOptional": true,
+                    "parameterType": { "__id": ":String?" }
+                  },
+                  {
+                    "id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[Year]",
+                    "name": "Year",
                     "isOptional": true,
                     "parameterType": { "__id": ":Int32?" }
+                  }
+                ],
+                "sortCriteria":
+                [
+                  {
+                    "member": { "__id": "UtilizationCalculation/Properties[MonthID]" }
                   }
                 ]
               },
@@ -24332,16 +24342,25 @@
                 "arguments":
                 [
                   {
-                    "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthID]" },
+                    "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[MonthName]" },
                     "value":
                     {
                       "links":
                       [
                         {
-                          "member": { "__id": "BrowseUtilization/Properties[Property1]" }
-                        },
+                          "member": { "__id": "BrowseUtilization/Properties[MonthDropDown]" }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameter": { "__id": "BrowseUtilization/Properties[Utilization]/Query/Parameters[Year]" },
+                    "value":
+                    {
+                      "links":
+                      [
                         {
-                          "member": { "__id": "Months/Properties[MonthID]" }
+                          "member": { "__id": "BrowseUtilization/Properties[YearDropDown]" }
                         }
                       ]
                     }
@@ -24363,23 +24382,95 @@
                 "returnType": { "__id": "EmployeeProject*" },
                 "filterExpression":
                 {
-                  "nodeType": "Between",
-                  "first":
+                  "nodeType": "And",
+                  "left":
                   {
-                    "links":
-                    [
+                    "nodeType": "And",
+                    "left":
+                    {
+                      "nodeType": "And",
+                      "left":
                       {
-                        "member": { "__id": "EmployeeProject/Properties[c_Date]" }
+                        "nodeType": "Between",
+                        "first":
+                        {
+                          "links":
+                          [
+                            {
+                              "member": { "__id": "EmployeeProject/Properties[c_Date]" }
+                            }
+                          ]
+                        },
+                        "second":
+                        {
+                          "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[c_Date]" }
+                        },
+                        "third":
+                        {
+                          "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[c_Date1]" }
+                        }
+                      },
+                      "right":
+                      {
+                        "nodeType": "Equal",
+                        "left":
+                        {
+                          "links":
+                          [
+                            {
+                              "member": { "__id": "EmployeeProject/Properties[Months]" }
+                            },
+                            {
+                              "member": { "__id": "Months/Properties[Year]" }
+                            }
+                          ]
+                        },
+                        "right":
+                        {
+                          "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[Year]" }
+                        }
                       }
-                    ]
+                    },
+                    "right":
+                    {
+                      "nodeType": "Equal",
+                      "left":
+                      {
+                        "links":
+                        [
+                          {
+                            "member": { "__id": "EmployeeProject/Properties[Months]" }
+                          },
+                          {
+                            "member": { "__id": "Months/Properties[MonthName]" }
+                          }
+                        ]
+                      },
+                      "right":
+                      {
+                        "parameter": { "__id": "UtilizationTrackerData/Members[Parameters]/Parameters[MonthName]" }
+                      }
+                    }
                   },
-                  "second":
+                  "right":
                   {
-                    "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[c_Date]" }
-                  },
-                  "third":
-                  {
-                    "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[c_Date1]" }
+                    "nodeType": "Equal",
+                    "left":
+                    {
+                      "links":
+                      [
+                        {
+                          "member": { "__id": "EmployeeProject/Properties[ProjectDetail]" }
+                        },
+                        {
+                          "member": { "__id": "ProjectDetail/Properties[ProjectName]" }
+                        }
+                      ]
+                    },
+                    "right":
+                    {
+                      "parameter": { "__id": "UtilizationTrackerData/Members[Parameters]/Parameters[ProjectName]" }
+                    }
                   }
                 },
                 "source":
@@ -24399,12 +24490,26 @@
                     "name": "c_Date1",
                     "isOptional": true,
                     "parameterType": { "__id": ":Date?" }
+                  },
+                  {
+                    "id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[Year]",
+                    "name": "Year",
+                    "isOptional": true,
+                    "parameterType": { "__id": ":Int32?" }
                   }
                 ],
                 "sortCriteria":
                 [
                   {
-                    "member": { "__id": "EmployeeProject/Properties[c_Date]" }
+                    "links":
+                    [
+                      {
+                        "member": { "__id": "EmployeeProject/Properties[Months]" }
+                      },
+                      {
+                        "member": { "__id": "Months/Properties[MonthID]" }
+                      }
+                    ]
                   }
                 ]
               },
@@ -24420,10 +24525,7 @@
                       "links":
                       [
                         {
-                          "member": { "__id": "BrowseUtilization/Properties[Property1]" }
-                        },
-                        {
-                          "member": { "__id": "Months/Properties[MonthName]" }
+                          "member": { "__id": "BrowseUtilization/Properties[MonthDropDown]" }
                         }
                       ]
                     }
@@ -24463,6 +24565,18 @@
                       [
                         {
                           "member": { "__id": "BrowseUtilization/Properties[ToDate]" }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "parameter": { "__id": "BrowseUtilization/Properties[Parameters]/Query/Parameters[Year]" },
+                    "value":
+                    {
+                      "links":
+                      [
+                        {
+                          "member": { "__id": "BrowseUtilization/Properties[YearDropDown]" }
                         }
                       ]
                     }
@@ -24573,6 +24687,80 @@
               {
                 "target": { "__id": "BrowseUtilization/Properties[PMTeamProjectList]/Query" }
               }
+            },
+            {
+              "id": "BrowseUtilization/Properties[MonthDropDown]",
+              "name": "MonthDropDown",
+              "elementType": { "__id": ":String" },
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "January",
+                  "value": "January"
+                },
+                {
+                  "displayName": "February",
+                  "value": "February"
+                },
+                {
+                  "displayName": "March",
+                  "value": "March"
+                },
+                {
+                  "displayName": "April",
+                  "value": "April"
+                },
+                {
+                  "value": "May"
+                },
+                {
+                  "displayName": "June",
+                  "value": "June"
+                },
+                {
+                  "displayName": "July",
+                  "value": "July"
+                },
+                {
+                  "displayName": "August",
+                  "value": "August"
+                }
+              ]
+            },
+            {
+              "id": "BrowseUtilization/Properties[YearDropDown]",
+              "name": "YearDropDown",
+              "elementType": { "__id": ":Int32" },
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "2015",
+                  "value": 2015
+                },
+                {
+                  "displayName": "2016",
+                  "value": 2016
+                },
+                {
+                  "displayName": "2017",
+                  "value": 2017
+                },
+                {
+                  "displayName": "2018",
+                  "value": 2018
+                },
+                {
+                  "value": 2019
+                },
+                {
+                  "displayName": "2020",
+                  "value": 2020
+                }
+              ]
             }
           ]
         },

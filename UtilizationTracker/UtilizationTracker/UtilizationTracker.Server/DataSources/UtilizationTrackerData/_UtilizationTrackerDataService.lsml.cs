@@ -56,6 +56,7 @@ namespace LightSwitchApplication
             //DataSet ds = new DataSet();
             //da.Fill(ds, "Emp");
             entity.EmpID = Convert.ToInt32(SessionManager.Session["EmpID"].ToString());
+
         }
 
         partial void EmployeeProjects_Inserting(EmployeeProject entity)
@@ -68,6 +69,7 @@ namespace LightSwitchApplication
             //DataSet ds = new DataSet();
             //da.Fill(ds, "Emp");
             entity.EmpID = Convert.ToInt32(SessionManager.Session["EmpID"].ToString());
+         
             //entity.EmployeeProject.MonthID = 7;
             //entity.Months.MonthID= 7;
             //entity.Months.MonthName = "July";
@@ -248,8 +250,9 @@ namespace LightSwitchApplication
 
         partial void Months_Inserting(Months entity)
         {
-            entity.WorkingDays = entity.WeekDays - entity.Holidays;
-            entity.TotalHours = entity.WorkingDays * 8;
+            //entity.WorkingDays = entity.WeekDays - entity.Holidays;
+            //entity.TotalHours = entity.WorkingDays * 8;
+            entity.MonthYear = entity.MonthName + "-" + entity.Year;
         }
 
         partial void Utilization_PreprocessQuery(ref IQueryable<UtilizationCalculation> query)
@@ -284,8 +287,9 @@ namespace LightSwitchApplication
 
         partial void Months_Updating(Months entity)
         {
-            entity.WorkingDays = entity.WeekDays - entity.Holidays;
-            entity.TotalHours = entity.WorkingDays * 8;
+            //entity.WorkingDays = entity.WeekDays - entity.Holidays;
+            //entity.TotalHours = entity.WorkingDays * 8;
+            entity.MonthYear = entity.MonthName + "-" + entity.Year;
         }
 
         partial void TotalHoursForaProject_PreprocessQuery(ref IQueryable<TotalHoursAllMonthsForProject> query)

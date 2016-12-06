@@ -1507,6 +1507,14 @@
             data: lightSwitchApplication.EmployeeProject,
             value: Date
         },
+        Months: {
+            _$class: msls.ContentItem,
+            _$name: "Months",
+            _$parentName: "left",
+            screen: lightSwitchApplication.AddEditEmployeeProject,
+            data: lightSwitchApplication.EmployeeProject,
+            value: lightSwitchApplication.Months
+        },
         Hours: {
             _$class: msls.ContentItem,
             _$name: "Hours",
@@ -1530,60 +1538,6 @@
             screen: lightSwitchApplication.AddEditEmployeeProject,
             data: lightSwitchApplication.EmployeeProject,
             value: String
-        },
-        Month: {
-            _$class: msls.ContentItem,
-            _$name: "Month",
-            _$parentName: "right",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.EmployeeProject,
-            value: lightSwitchApplication.Months
-        },
-        MonthTemplate: {
-            _$class: msls.ContentItem,
-            _$name: "MonthTemplate",
-            _$parentName: "Month",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.Months,
-            value: lightSwitchApplication.Months
-        },
-        Property1: {
-            _$class: msls.ContentItem,
-            _$name: "Property1",
-            _$parentName: "right",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.EmployeeProject,
-            value: lightSwitchApplication.Months
-        },
-        Months: {
-            _$class: msls.ContentItem,
-            _$name: "Months",
-            _$parentName: "Property1",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.Months,
-            value: lightSwitchApplication.Months
-        },
-        Months1: {
-            _$class: msls.ContentItem,
-            _$name: "Months1",
-            _$parentName: "right",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.EmployeeProject,
-            value: {
-                _$class: msls.VisualCollection,
-                screen: lightSwitchApplication.AddEditEmployeeProject,
-                _$entry: {
-                    elementType: lightSwitchApplication.Months
-                }
-            }
-        },
-        Months1Template: {
-            _$class: msls.ContentItem,
-            _$name: "Months1Template",
-            _$parentName: "Months1",
-            screen: lightSwitchApplication.AddEditEmployeeProject,
-            data: lightSwitchApplication.Months,
-            value: lightSwitchApplication.Months
         },
         Popups: {
             _$class: msls.ContentItem,
@@ -1660,6 +1614,11 @@
         /// </field>
         c_Date_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("c_Date"); }],
         /// <field>
+        /// Called after the Months content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Months_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months"); }],
+        /// <field>
         /// Called after the Hours content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -1673,37 +1632,7 @@
         /// Called after the SubProject content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        SubProject_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("SubProject"); }],
-        /// <field>
-        /// Called after the Month content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        Month_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Month"); }],
-        /// <field>
-        /// Called after the MonthTemplate content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        MonthTemplate_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("MonthTemplate"); }],
-        /// <field>
-        /// Called after the Property1 content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        Property1_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Property1"); }],
-        /// <field>
-        /// Called after the Months content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        Months_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months"); }],
-        /// <field>
-        /// Called after the Months1 content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        Months1_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months1"); }],
-        /// <field>
-        /// Called after the Months1Template content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        Months1Template_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("Months1Template"); }]
+        SubProject_postRender: [$element, function () { return new lightSwitchApplication.AddEditEmployeeProject().findContentItem("SubProject"); }]
     });
 
     lightSwitchApplication.BrowseEmployeeProjects.prototype._$contentItems = {
@@ -8113,21 +8042,21 @@
             data: lightSwitchApplication.ProjectDetail,
             value: lightSwitchApplication.ProjectDetail
         },
-        Property1: {
+        MonthDropDown: {
             _$class: msls.ContentItem,
-            _$name: "Property1",
+            _$name: "MonthDropDown",
             _$parentName: "Group",
             screen: lightSwitchApplication.BrowseUtilization,
             data: lightSwitchApplication.BrowseUtilization,
-            value: lightSwitchApplication.Months
+            value: String
         },
-        Property1Template: {
+        YearDropDown: {
             _$class: msls.ContentItem,
-            _$name: "Property1Template",
-            _$parentName: "Property1",
+            _$name: "YearDropDown",
+            _$parentName: "Group",
             screen: lightSwitchApplication.BrowseUtilization,
-            data: lightSwitchApplication.Months,
-            value: lightSwitchApplication.Months
+            data: lightSwitchApplication.BrowseUtilization,
+            value: Number
         },
         Parameters: {
             _$class: msls.ContentItem,
@@ -8244,6 +8173,14 @@
             screen: lightSwitchApplication.BrowseUtilization,
             data: lightSwitchApplication.UtilizationCalculation,
             value: String
+        },
+        Year: {
+            _$class: msls.ContentItem,
+            _$name: "Year",
+            _$parentName: "rows",
+            screen: lightSwitchApplication.BrowseUtilization,
+            data: lightSwitchApplication.UtilizationCalculation,
+            value: Number
         },
         WeekDays: {
             _$class: msls.ContentItem,
@@ -8486,15 +8423,15 @@
         /// </field>
         Property2Template_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("Property2Template"); }],
         /// <field>
-        /// Called after the Property1 content item has been rendered.
+        /// Called after the MonthDropDown content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        Property1_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("Property1"); }],
+        MonthDropDown_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("MonthDropDown"); }],
         /// <field>
-        /// Called after the Property1Template content item has been rendered.
+        /// Called after the YearDropDown content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        Property1Template_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("Property1Template"); }],
+        YearDropDown_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("YearDropDown"); }],
         /// <field>
         /// Called after the Parameters content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -8560,6 +8497,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         MonthName_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("MonthName"); }],
+        /// <field>
+        /// Called after the Year content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Year_postRender: [$element, function () { return new lightSwitchApplication.BrowseUtilization().findContentItem("Year"); }],
         /// <field>
         /// Called after the WeekDays content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

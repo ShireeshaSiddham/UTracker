@@ -223,6 +223,7 @@
     <Property Name="TotalHours" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="WorkingDays" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="Year" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="MonthYear" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="EmployeeMonths" Relationship="LightSwitchApplication.Months_EmployeeMonth" ToRole="EmployeeMonth" FromRole="Months" />
     <NavigationProperty Name="EmployeeProjects" Relationship="LightSwitchApplication.Months_EmployeeProject" ToRole="EmployeeProject" FromRole="Months" />
   </EntityType>
@@ -437,6 +438,7 @@
       <PropertyRef Name="MonthID" />
       <PropertyRef Name="MonthName" />
       <PropertyRef Name="Holidays" />
+      <PropertyRef Name="Year" />
     </Key>
     <Property Name="UtilizationPercentage" Type="Edm.Decimal" Precision="10" Scale="2" ConcurrencyMode="Fixed" />
     <Property Name="WeekDays" Type="Edm.Int32" Nullable="false" />
@@ -446,6 +448,7 @@
     <Property Name="MonthID" Type="Edm.Int32" Nullable="false" />
     <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
     <Property Name="Holidays" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Year" Type="Edm.Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="UtilizationTracker">
     <Key>
@@ -454,6 +457,7 @@
       <PropertyRef Name="WeekDays" />
       <PropertyRef Name="MonthName" />
       <PropertyRef Name="Holidays" />
+      <PropertyRef Name="Year" />
     </Key>
     <Property Name="WorkedHours" Type="Edm.Decimal" Nullable="false" Precision="38" Scale="0" ConcurrencyMode="Fixed" />
     <Property Name="EmpID" Type="Edm.Int32" Nullable="false" />
@@ -463,6 +467,7 @@
     <Property Name="WorkingDays" Type="Edm.Int32" ConcurrencyMode="Fixed" />
     <Property Name="MonthName" Type="Edm.String" Nullable="false" MaxLength="20" />
     <Property Name="Holidays" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Year" Type="Edm.Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK_EmployeeDetails_ManagerID">
     <End Role="EmployeeDetails" Type="LightSwitchApplication.EmployeeDetail" Multiplicity="1" />

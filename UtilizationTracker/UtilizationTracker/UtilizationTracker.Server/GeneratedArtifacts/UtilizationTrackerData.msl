@@ -188,6 +188,7 @@
           <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
           <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
           <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="MonthYear" ColumnName="MonthYear" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -391,6 +392,7 @@
           <ScalarProperty Name="MonthID" ColumnName="MonthID" />
           <ScalarProperty Name="MonthName" ColumnName="MonthName" />
           <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -405,6 +407,7 @@
           <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
           <ScalarProperty Name="MonthName" ColumnName="MonthName" />
           <ScalarProperty Name="Holidays" ColumnName="Holidays" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

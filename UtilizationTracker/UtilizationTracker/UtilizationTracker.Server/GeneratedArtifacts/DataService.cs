@@ -832,6 +832,21 @@ namespace LightSwitchApplication
         partial void CandidateMonthDetails_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MonthID_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void MonthID_Executing(string MonthName);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MonthID_PreprocessQuery(string MonthName, ref global::System.Linq.IQueryable<global::LightSwitchApplication.EmployeeProject> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void MonthID_Executed(string MonthName, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.EmployeeProject> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void MonthID_ExecuteFailed(string MonthName, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Parameters_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -2765,6 +2780,40 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.EmployeeMonth> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.EmployeeMonth>)args[0];
                 d.CandidateMonthDetails_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.UtilizationTrackerDataService, global::LightSwitchApplication.EmployeeProject>
+                __MonthIDEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.UtilizationTrackerDataService, global::LightSwitchApplication.EmployeeProject>(
+                    "MonthID",
+                    global::LightSwitchApplication.UtilizationTrackerDataService.DetailsClass.__MonthID_CanExecute,
+                    global::LightSwitchApplication.UtilizationTrackerDataService.DetailsClass.__MonthID_Executing,
+                    global::LightSwitchApplication.UtilizationTrackerDataService.DetailsClass.__MonthID_Executed,
+                    global::LightSwitchApplication.UtilizationTrackerDataService.DetailsClass.__MonthID_Failed,
+                    global::LightSwitchApplication.UtilizationTrackerDataService.DetailsClass.__MonthID_PreprocessQuery);
+            private static bool __MonthID_CanExecute(global::LightSwitchApplication.UtilizationTrackerDataService d, bool r)
+            {
+                d.MonthID_CanExecute(ref r);
+                return r;
+            }
+            private static void __MonthID_Executing(global::LightSwitchApplication.UtilizationTrackerDataService d, object[] args)
+            {
+                d.MonthID_Executing((string)args[0]);
+            }
+            private static void __MonthID_Executed(global::LightSwitchApplication.UtilizationTrackerDataService d, object[] args)
+            {
+                d.MonthID_Executed((string)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.EmployeeProject>)args[1]);
+            }
+            private static void __MonthID_Failed(global::LightSwitchApplication.UtilizationTrackerDataService d, object[] args, global::System.Exception ex)
+            {
+                d.MonthID_ExecuteFailed((string)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __MonthID_PreprocessQuery(global::LightSwitchApplication.UtilizationTrackerDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.EmployeeProject> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.EmployeeProject>)args[1];
+                d.MonthID_PreprocessQuery((string)args[0], ref query);
                 return query;
             }
             

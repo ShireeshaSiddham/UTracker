@@ -240,7 +240,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showAddEditMonths1]">
+                        Target="!module/Methods[showAddEditMonths]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
                             Collection="BrowseMonths/Properties[Months]" />

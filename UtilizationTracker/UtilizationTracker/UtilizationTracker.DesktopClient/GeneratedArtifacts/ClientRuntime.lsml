@@ -1190,7 +1190,7 @@
       </QueryOperationParameter>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -1221,7 +1221,7 @@
       </QueryOperationParameter>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -1500,6 +1500,19 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
+      Name="MonthID"
+      ReturnType="EmployeeProject*">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EmployeeProjects" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="MonthName"
+        ParameterType=":String?" />
+    </QueryOperation>
+    <QueryOperation
       Name="Parameters"
       ReturnType="EmployeeProject*">
       <QueryOperation.Source>
@@ -1753,7 +1766,7 @@
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -1776,7 +1789,7 @@
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -3186,6 +3199,14 @@
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
       Name="UtilizationCalculations_SingleOrDefault"
@@ -3239,6 +3260,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -3309,6 +3338,14 @@
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
       Name="UtilizationTrackers_SingleOrDefault"
@@ -3362,6 +3399,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -3606,6 +3651,14 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
+      <KeyProperty
+        Name="Year"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -3679,6 +3732,14 @@
       </KeyProperty>
       <KeyProperty
         Name="Holidays"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="Year"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
           <Required />
@@ -5796,6 +5857,14 @@
             Value="2024" />
           <SupportedValue
             Value="2025" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MonthYear"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

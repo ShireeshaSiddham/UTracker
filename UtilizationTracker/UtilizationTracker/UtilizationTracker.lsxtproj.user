@@ -7,6 +7,6 @@
     <SchemaManagementSchemaBuildState>0</SchemaManagementSchemaBuildState>
     <SchemaManagementDatabaseIncludesSecurityObjects>True</SchemaManagementDatabaseIncludesSecurityObjects>
     <GrantedPermissions>Microsoft.LightSwitch.Security:SecurityAdministration,LightSwitchApplication:getProjectTables</GrantedPermissions>
-    <SchemaManagementLastSsdlWriteTime>636130137072120167</SchemaManagementLastSsdlWriteTime>
+    <SchemaManagementLastSsdlWriteTime>636165516031059357</SchemaManagementLastSsdlWriteTime>
   </PropertyGroup>
 </Project>

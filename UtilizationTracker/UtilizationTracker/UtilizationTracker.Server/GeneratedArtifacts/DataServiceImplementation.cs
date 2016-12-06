@@ -157,6 +157,15 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.EmployeeProject> MonthID(string MonthName)
+        {
+            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.EmployeeProject> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::LightSwitchApplication.Implementation.EmployeeProject>("EmployeeProjects"),
+                (e) => (e.Months.MonthName.CompareTo(MonthName) == 0));
+            return query;
+        }
+    
         public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.EmployeeProject> Parameters(string MonthName, string ProjectName)
         {
             global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.EmployeeProject> query;

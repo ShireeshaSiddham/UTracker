@@ -123,7 +123,7 @@
       </QueryOperationParameter>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -191,7 +191,7 @@
       </QueryOperationParameter>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />

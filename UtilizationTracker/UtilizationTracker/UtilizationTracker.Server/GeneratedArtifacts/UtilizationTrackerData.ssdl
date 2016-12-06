@@ -279,6 +279,7 @@
     <Property Name="TotalHours" Type="int" />
     <Property Name="WorkingDays" Type="int" />
     <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="MonthYear" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PMTeamProject">
     <Key>
@@ -487,6 +488,7 @@
       <PropertyRef Name="MonthID" />
       <PropertyRef Name="MonthName" />
       <PropertyRef Name="Holidays" />
+      <PropertyRef Name="Year" />
     </Key>
     <Property Name="UtilizationPercentage" Type="decimal" Precision="10" Scale="2" />
     <Property Name="WeekDays" Type="int" Nullable="false" />
@@ -496,6 +498,7 @@
     <Property Name="MonthID" Type="int" Nullable="false" />
     <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Holidays" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UtilizationTracker">
     <Key>
@@ -504,6 +507,7 @@
       <PropertyRef Name="WeekDays" />
       <PropertyRef Name="MonthName" />
       <PropertyRef Name="Holidays" />
+      <PropertyRef Name="Year" />
     </Key>
     <Property Name="WorkedHours" Type="decimal" Nullable="false" Precision="38" />
     <Property Name="EmpID" Type="int" Nullable="false" />
@@ -513,6 +517,7 @@
     <Property Name="WorkingDays" Type="int" />
     <Property Name="MonthName" Type="nvarchar" Nullable="false" MaxLength="20" />
     <Property Name="Holidays" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_EmployeeDetails_ManagerID">
     <End Role="EmployeeDetails" Type="UtilizationTrackerDataStore.EmployeeDetail" Multiplicity="1">

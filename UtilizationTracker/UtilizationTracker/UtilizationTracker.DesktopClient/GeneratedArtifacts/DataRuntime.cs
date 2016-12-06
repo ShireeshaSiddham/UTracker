@@ -1126,6 +1126,17 @@ namespace LightSwitchApplication
         /// <param name="MonthName">
         /// No Modeled Description Available
         /// </param>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.EmployeeProject> MonthID(string MonthName)
+        {
+            return this.Details.Methods.MonthID.CreateInvocation(MonthName).Execute();
+        }
+        
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        /// <param name="MonthName">
+        /// No Modeled Description Available
+        /// </param>
         /// <param name="ProjectName">
         /// No Modeled Description Available
         /// </param>
@@ -1838,9 +1849,12 @@ namespace LightSwitchApplication
         /// <param name="Holidays">
         /// The value of the 'Holidays' key property of the entity to retrieve.
         /// </param>
-        public global::LightSwitchApplication.UtilizationCalculation UtilizationCalculations_Single(global::System.Nullable<int> WeekDays, global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, string MonthName, global::System.Nullable<int> Holidays)
+        /// <param name="Year">
+        /// The value of the 'Year' key property of the entity to retrieve.
+        /// </param>
+        public global::LightSwitchApplication.UtilizationCalculation UtilizationCalculations_Single(global::System.Nullable<int> WeekDays, global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, string MonthName, global::System.Nullable<int> Holidays, global::System.Nullable<int> Year)
         {
-            return this.Details.Methods.UtilizationCalculations_Single.CreateInvocation(WeekDays, EmpID, MonthID, MonthName, Holidays).Execute();
+            return this.Details.Methods.UtilizationCalculations_Single.CreateInvocation(WeekDays, EmpID, MonthID, MonthName, Holidays, Year).Execute();
         }
         
         /// <summary>
@@ -1861,9 +1875,12 @@ namespace LightSwitchApplication
         /// <param name="Holidays">
         /// The value of the 'Holidays' key property of the entity to retrieve.
         /// </param>
-        public global::LightSwitchApplication.UtilizationCalculation UtilizationCalculations_SingleOrDefault(global::System.Nullable<int> WeekDays, global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, string MonthName, global::System.Nullable<int> Holidays)
+        /// <param name="Year">
+        /// The value of the 'Year' key property of the entity to retrieve.
+        /// </param>
+        public global::LightSwitchApplication.UtilizationCalculation UtilizationCalculations_SingleOrDefault(global::System.Nullable<int> WeekDays, global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, string MonthName, global::System.Nullable<int> Holidays, global::System.Nullable<int> Year)
         {
-            return this.Details.Methods.UtilizationCalculations_SingleOrDefault.CreateInvocation(WeekDays, EmpID, MonthID, MonthName, Holidays).Execute();
+            return this.Details.Methods.UtilizationCalculations_SingleOrDefault.CreateInvocation(WeekDays, EmpID, MonthID, MonthName, Holidays, Year).Execute();
         }
         
         /// <summary>
@@ -1892,9 +1909,12 @@ namespace LightSwitchApplication
         /// <param name="Holidays">
         /// The value of the 'Holidays' key property of the entity to retrieve.
         /// </param>
-        public global::LightSwitchApplication.UtilizationTracker UtilizationTrackers_Single(global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, global::System.Nullable<int> WeekDays, string MonthName, global::System.Nullable<int> Holidays)
+        /// <param name="Year">
+        /// The value of the 'Year' key property of the entity to retrieve.
+        /// </param>
+        public global::LightSwitchApplication.UtilizationTracker UtilizationTrackers_Single(global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, global::System.Nullable<int> WeekDays, string MonthName, global::System.Nullable<int> Holidays, global::System.Nullable<int> Year)
         {
-            return this.Details.Methods.UtilizationTrackers_Single.CreateInvocation(EmpID, MonthID, WeekDays, MonthName, Holidays).Execute();
+            return this.Details.Methods.UtilizationTrackers_Single.CreateInvocation(EmpID, MonthID, WeekDays, MonthName, Holidays, Year).Execute();
         }
         
         /// <summary>
@@ -1915,9 +1935,12 @@ namespace LightSwitchApplication
         /// <param name="Holidays">
         /// The value of the 'Holidays' key property of the entity to retrieve.
         /// </param>
-        public global::LightSwitchApplication.UtilizationTracker UtilizationTrackers_SingleOrDefault(global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, global::System.Nullable<int> WeekDays, string MonthName, global::System.Nullable<int> Holidays)
+        /// <param name="Year">
+        /// The value of the 'Year' key property of the entity to retrieve.
+        /// </param>
+        public global::LightSwitchApplication.UtilizationTracker UtilizationTrackers_SingleOrDefault(global::System.Nullable<int> EmpID, global::System.Nullable<int> MonthID, global::System.Nullable<int> WeekDays, string MonthName, global::System.Nullable<int> Holidays, global::System.Nullable<int> Year)
         {
-            return this.Details.Methods.UtilizationTrackers_SingleOrDefault.CreateInvocation(EmpID, MonthID, WeekDays, MonthName, Holidays).Execute();
+            return this.Details.Methods.UtilizationTrackers_SingleOrDefault.CreateInvocation(EmpID, MonthID, WeekDays, MonthName, Holidays, Year).Execute();
         }
         
         #endregion
@@ -2213,6 +2236,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.UtilizationTrackerData.DetailsClass.MethodSetProperties.EmployeeProjects_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject> MonthID
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.UtilizationTrackerData.DetailsClass.MethodSetProperties.MonthID) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>;
                     }
                 }
                 
@@ -3241,6 +3272,16 @@ namespace LightSwitchApplication
                 private static void _EmployeeProjects_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Data> c, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass d, object sf)
                 {
                     c(d, ref d._EmployeeProjects_SingleOrDefault, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Entry
+                    MonthID = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Entry(
+                        "MonthID",
+                        global::LightSwitchApplication.UtilizationTrackerData.DetailsClass.MethodSetProperties._MonthID_Stub);
+                private static void _MonthID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Data> c, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MonthID, sf);
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -4311,6 +4352,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Data _EmployeeProjects_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Data _MonthID;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.UtilizationTrackerData, global::LightSwitchApplication.UtilizationTrackerData.DetailsClass, global::LightSwitchApplication.EmployeeProject>.Data _Parameters;

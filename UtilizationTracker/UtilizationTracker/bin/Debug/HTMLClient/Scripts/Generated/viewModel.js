@@ -231,9 +231,6 @@
         /// <field name="Property1" type="msls.application.Months">
         /// Gets or sets the property1 for this screen.
         /// </field>
-        /// <field name="Months" type="msls.VisualCollection" elementType="msls.application.Months">
-        /// Gets the months for this screen.
-        /// </field>
         /// <field name="details" type="msls.application.AddEditEmployeeProject.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -1073,6 +1070,12 @@
         /// <field name="PMTeamProjectList" type="msls.VisualCollection" elementType="msls.application.PMTeamProject">
         /// Gets the pMTeamProjectList for this screen.
         /// </field>
+        /// <field name="MonthDropDown" type="String">
+        /// Gets or sets the monthDropDown for this screen.
+        /// </field>
+        /// <field name="YearDropDown" type="Number">
+        /// Gets or sets the yearDropDown for this screen.
+        /// </field>
         /// <field name="details" type="msls.application.BrowseUtilization.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -1361,13 +1364,7 @@
                     return this.dataWorkspace.UtilizationTrackerData.GetSelfProjects();
                 }
             },
-            { name: "Property1", kind: "local", type: lightSwitchApplication.Months },
-            {
-                name: "Months", kind: "collection", elementType: lightSwitchApplication.Months,
-                createQuery: function () {
-                    return this.dataWorkspace.UtilizationTrackerData.Months.filter("MonthName eq 'April'");
-                }
-            }
+            { name: "Property1", kind: "local", type: lightSwitchApplication.Months }
         ], [
             { name: "Back" }
         ]),
@@ -1726,14 +1723,14 @@
         BrowseUtilization: $defineScreen(BrowseUtilization, [
             {
                 name: "Utilization", kind: "collection", elementType: lightSwitchApplication.UtilizationCalculation,
-                createQuery: function (MonthID) {
-                    return this.dataWorkspace.UtilizationTrackerData.Utilization().filter("" + ((MonthID === undefined || MonthID === null) ? "true" : "(MonthID eq " + $toODataString(MonthID, "Int32?") + ")") + "");
+                createQuery: function (MonthName, Year) {
+                    return this.dataWorkspace.UtilizationTrackerData.Utilization().filter("" + ((MonthName === undefined || MonthName === null) ? "true" : "(MonthName eq " + $toODataString(MonthName, "String?") + ")") + " and " + ((Year === undefined || Year === null) ? "true" : "(Year eq " + $toODataString(Year, "Int32?") + ")") + "").orderBy("MonthID");
                 }
             },
             {
                 name: "Parameters", kind: "collection", elementType: lightSwitchApplication.EmployeeProject,
-                createQuery: function (MonthName, ProjectName, c_Date, c_Date1) {
-                    return this.dataWorkspace.UtilizationTrackerData.Parameters(MonthName, ProjectName).filter("" + ((c_Date === undefined || c_Date === null) ? "true" : ((c_Date1 === undefined || c_Date1 === null) ? "true" : "((c_Date ge " + $toODataString(c_Date, "DateTime?") + ") and (c_Date le " + $toODataString(c_Date1, "DateTime?") + "))")) + "").orderByDescending("c_Date").expand("ProjectDetail").expand("Months");
+                createQuery: function (MonthName, ProjectName, c_Date, c_Date1, Year) {
+                    return this.dataWorkspace.UtilizationTrackerData.Parameters(MonthName, ProjectName).filter("((" + ((c_Date === undefined || c_Date === null) ? "true" : ((c_Date1 === undefined || c_Date1 === null) ? "true" : "((c_Date ge " + $toODataString(c_Date, "DateTime?") + ") and (c_Date le " + $toODataString(c_Date1, "DateTime?") + "))")) + " and " + ((Year === undefined || Year === null) ? "true" : "(Months/Year eq " + $toODataString(Year, "Int32?") + ")") + ") and " + ((MonthName === undefined || MonthName === null) ? "true" : "(Months/MonthName eq " + $toODataString(MonthName, "String?") + ")") + ") and " + ((ProjectName === undefined || ProjectName === null) ? "true" : "(ProjectDetail/ProjectName eq " + $toODataString(ProjectName, "String?") + ")") + "").orderBy("Months/MonthID").expand("ProjectDetail").expand("Months");
                 }
             },
             { name: "Property1", kind: "local", type: lightSwitchApplication.Months },
@@ -1759,7 +1756,9 @@
                 createQuery: function () {
                     return this.dataWorkspace.UtilizationTrackerData.PMTeamProjectList();
                 }
-            }
+            },
+            { name: "MonthDropDown", kind: "local", type: String },
+            { name: "YearDropDown", kind: "local", type: Number }
         ], [
             { name: "Add" },
             { name: "Back" },

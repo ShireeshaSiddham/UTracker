@@ -4427,6 +4427,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _Year;
         partial void OnYearChanging(global::System.Int32 value);
         partial void OnYearChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MonthYear
+        {
+            get
+            {
+                return _MonthYear;
+            }
+            set
+            {
+                OnMonthYearChanging(value);
+                ReportPropertyChanging("MonthYear");
+                _MonthYear = value;
+                ReportPropertyChanged("MonthYear");
+                OnMonthYearChanged();
+            }
+        }
+        private global::System.String _MonthYear;
+        partial void OnMonthYearChanging(global::System.String value);
+        partial void OnMonthYearChanged();
 
         #endregion
 
@@ -7527,7 +7551,8 @@ namespace LightSwitchApplication.Implementation
         /// <param name="monthID">Initial value of the MonthID property.</param>
         /// <param name="monthName">Initial value of the MonthName property.</param>
         /// <param name="holidays">Initial value of the Holidays property.</param>
-        public static UtilizationCalculation CreateUtilizationCalculation(global::System.Int32 weekDays, global::System.Decimal workedHours, global::System.Int32 empID, global::System.Int32 monthID, global::System.String monthName, global::System.Int32 holidays)
+        /// <param name="year">Initial value of the Year property.</param>
+        public static UtilizationCalculation CreateUtilizationCalculation(global::System.Int32 weekDays, global::System.Decimal workedHours, global::System.Int32 empID, global::System.Int32 monthID, global::System.String monthName, global::System.Int32 holidays, global::System.Int32 year)
         {
             UtilizationCalculation utilizationCalculation = new UtilizationCalculation();
             utilizationCalculation.WeekDays = weekDays;
@@ -7536,6 +7561,7 @@ namespace LightSwitchApplication.Implementation
             utilizationCalculation.MonthID = monthID;
             utilizationCalculation.MonthName = monthName;
             utilizationCalculation.Holidays = holidays;
+            utilizationCalculation.Year = year;
             return utilizationCalculation;
         }
 
@@ -7749,6 +7775,33 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _Holidays;
         partial void OnHolidaysChanging(global::System.Int32 value);
         partial void OnHolidaysChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Year
+        {
+            get
+            {
+                return _Year;
+            }
+            set
+            {
+                if (_Year != value)
+                {
+                    OnYearChanging(value);
+                    ReportPropertyChanging("Year");
+                    _Year = value;
+                    ReportPropertyChanged("Year");
+                    OnYearChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Year;
+        partial void OnYearChanging(global::System.Int32 value);
+        partial void OnYearChanged();
 
         #endregion
 
@@ -7774,7 +7827,8 @@ namespace LightSwitchApplication.Implementation
         /// <param name="weekDays">Initial value of the WeekDays property.</param>
         /// <param name="monthName">Initial value of the MonthName property.</param>
         /// <param name="holidays">Initial value of the Holidays property.</param>
-        public static UtilizationTracker CreateUtilizationTracker(global::System.Decimal workedHours, global::System.Int32 empID, global::System.Int32 monthID, global::System.Int32 weekDays, global::System.String monthName, global::System.Int32 holidays)
+        /// <param name="year">Initial value of the Year property.</param>
+        public static UtilizationTracker CreateUtilizationTracker(global::System.Decimal workedHours, global::System.Int32 empID, global::System.Int32 monthID, global::System.Int32 weekDays, global::System.String monthName, global::System.Int32 holidays, global::System.Int32 year)
         {
             UtilizationTracker utilizationTracker = new UtilizationTracker();
             utilizationTracker.WorkedHours = workedHours;
@@ -7783,6 +7837,7 @@ namespace LightSwitchApplication.Implementation
             utilizationTracker.WeekDays = weekDays;
             utilizationTracker.MonthName = monthName;
             utilizationTracker.Holidays = holidays;
+            utilizationTracker.Year = year;
             return utilizationTracker;
         }
 
@@ -7996,6 +8051,33 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _Holidays;
         partial void OnHolidaysChanging(global::System.Int32 value);
         partial void OnHolidaysChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Year
+        {
+            get
+            {
+                return _Year;
+            }
+            set
+            {
+                if (_Year != value)
+                {
+                    OnYearChanging(value);
+                    ReportPropertyChanging("Year");
+                    _Year = value;
+                    ReportPropertyChanged("Year");
+                    OnYearChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Year;
+        partial void OnYearChanging(global::System.Int32 value);
+        partial void OnYearChanged();
 
         #endregion
 

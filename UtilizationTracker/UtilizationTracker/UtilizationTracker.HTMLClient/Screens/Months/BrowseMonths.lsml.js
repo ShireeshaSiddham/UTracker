@@ -13,3 +13,4 @@ myapp.BrowseMonths.Back_postRender = function (element, contentItem) {
     $(element).children().addClass("Back");
     $(element).css({ "min-width": 1 });
 };
+

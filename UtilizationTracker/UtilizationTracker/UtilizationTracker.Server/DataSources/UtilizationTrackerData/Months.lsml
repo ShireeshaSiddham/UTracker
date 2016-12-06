@@ -162,6 +162,14 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="MonthYear"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -258,7 +266,7 @@
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -298,7 +306,7 @@
       </QueryOperation.Source>
       <QueryOperationParameter
         Name="MonthID"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'MonthID' key property of the entity to retrieve." />
@@ -359,6 +367,12 @@
           Nullable="False"
           Type="int"
           Property="Months/Properties[Year]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="MonthYear"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Months/Properties[MonthYear]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

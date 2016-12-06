@@ -531,6 +531,9 @@ window.myapp = msls.application;
         /// <field name="Year" type="Number">
         /// Gets or sets the year for this months.
         /// </field>
+        /// <field name="MonthYear" type="String">
+        /// Gets or sets the monthYear for this months.
+        /// </field>
         /// <field name="details" type="msls.application.Months.Details">
         /// Gets the details for this months.
         /// </field>
@@ -1064,6 +1067,9 @@ window.myapp = msls.application;
         /// <field name="Holidays" type="Number">
         /// Gets or sets the holidays for this utilizationCalculation.
         /// </field>
+        /// <field name="Year" type="Number">
+        /// Gets or sets the year for this utilizationCalculation.
+        /// </field>
         /// <field name="details" type="msls.application.UtilizationCalculation.Details">
         /// Gets the details for this utilizationCalculation.
         /// </field>
@@ -1100,6 +1106,9 @@ window.myapp = msls.application;
         /// </field>
         /// <field name="Holidays" type="Number">
         /// Gets or sets the holidays for this utilizationTracker.
+        /// </field>
+        /// <field name="Year" type="Number">
+        /// Gets or sets the year for this utilizationTracker.
         /// </field>
         /// <field name="details" type="msls.application.UtilizationTracker.Details">
         /// Gets the details for this utilizationTracker.
@@ -1399,7 +1408,8 @@ window.myapp = msls.application;
             { name: "Holidays", type: Number },
             { name: "TotalHours", type: Number },
             { name: "WorkingDays", type: Number },
-            { name: "Year", type: Number }
+            { name: "Year", type: Number },
+            { name: "MonthYear", type: String }
         ]),
 
         PMTeamProject: $defineEntity(PMTeamProject, [
@@ -1554,7 +1564,8 @@ window.myapp = msls.application;
             { name: "EmpID", type: Number },
             { name: "MonthID", type: Number },
             { name: "MonthName", type: String },
-            { name: "Holidays", type: Number }
+            { name: "Holidays", type: Number },
+            { name: "Year", type: Number }
         ]),
 
         UtilizationTracker: $defineEntity(UtilizationTracker, [
@@ -1565,7 +1576,8 @@ window.myapp = msls.application;
             { name: "WeekDays", type: Number },
             { name: "WorkingDays", type: Number },
             { name: "MonthName", type: String },
-            { name: "Holidays", type: Number }
+            { name: "Holidays", type: Number },
+            { name: "Year", type: Number }
         ]),
 
         UtilizationTrackerData: $defineDataService(UtilizationTrackerData, lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc", [
@@ -1749,6 +1761,15 @@ window.myapp = msls.application;
                     return new $DataServiceQuery({ _entitySet: this.EmployeeProjects },
                         lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/EmployeeProjects(" + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "ProjectID=" + $toODataString(ProjectID, "Int32?") + "," + "TaskID=" + $toODataString(TaskID, "Int32?") + ")"
                     );
+                }
+            },
+            {
+                name: "MonthID", value: function (MonthName) {
+                    return new $DataServiceQuery({ _entitySet: this.EmployeeProjects },
+                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/MonthID()",
+                        {
+                            MonthName: $toODataString(MonthName, "String?")
+                        });
                 }
             },
             {
@@ -1983,9 +2004,9 @@ window.myapp = msls.application;
                 }
             },
             {
-                name: "UtilizationCalculations_SingleOrDefault", value: function (WeekDays, EmpID, MonthID, MonthName, Holidays) {
+                name: "UtilizationCalculations_SingleOrDefault", value: function (WeekDays, EmpID, MonthID, MonthName, Holidays, Year) {
                     return new $DataServiceQuery({ _entitySet: this.UtilizationCalculations },
-                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/UtilizationCalculations(" + "WeekDays=" + $toODataString(WeekDays, "Int32?") + "," + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "MonthID=" + $toODataString(MonthID, "Int32?") + "," + "MonthName=" + $toODataString(MonthName, "String?") + "," + "Holidays=" + $toODataString(Holidays, "Int32?") + ")"
+                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/UtilizationCalculations(" + "WeekDays=" + $toODataString(WeekDays, "Int32?") + "," + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "MonthID=" + $toODataString(MonthID, "Int32?") + "," + "MonthName=" + $toODataString(MonthName, "String?") + "," + "Holidays=" + $toODataString(Holidays, "Int32?") + "," + "Year=" + $toODataString(Year, "Int32?") + ")"
                     );
                 }
             },
@@ -1998,9 +2019,9 @@ window.myapp = msls.application;
                 }
             },
             {
-                name: "UtilizationTrackers_SingleOrDefault", value: function (EmpID, MonthID, WeekDays, MonthName, Holidays) {
+                name: "UtilizationTrackers_SingleOrDefault", value: function (EmpID, MonthID, WeekDays, MonthName, Holidays, Year) {
                     return new $DataServiceQuery({ _entitySet: this.UtilizationTrackers },
-                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/UtilizationTrackers(" + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "MonthID=" + $toODataString(MonthID, "Int32?") + "," + "WeekDays=" + $toODataString(WeekDays, "Int32?") + "," + "MonthName=" + $toODataString(MonthName, "String?") + "," + "Holidays=" + $toODataString(Holidays, "Int32?") + ")"
+                        lightSwitchApplication.rootUri + "/UtilizationTrackerData.svc" + "/UtilizationTrackers(" + "EmpID=" + $toODataString(EmpID, "Int32?") + "," + "MonthID=" + $toODataString(MonthID, "Int32?") + "," + "WeekDays=" + $toODataString(WeekDays, "Int32?") + "," + "MonthName=" + $toODataString(MonthName, "String?") + "," + "Holidays=" + $toODataString(Holidays, "Int32?") + "," + "Year=" + $toODataString(Year, "Int32?") + ")"
                     );
                 }
             }

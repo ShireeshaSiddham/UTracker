@@ -81,6 +81,14 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
+      <KeyProperty
+        Name="Year"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -114,16 +122,36 @@
                         NodeType="And">
                         <BinaryExpression.Left>
                           <BinaryExpression
-                            NodeType="Equal">
+                            NodeType="And">
                             <BinaryExpression.Left>
-                              <ChainExpression>
-                                <MemberExpression
-                                  Member="Holidays" />
-                              </ChainExpression>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Year" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Year" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Left>
                             <BinaryExpression.Right>
-                              <ParameterExpression
-                                Parameter="Holidays" />
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Holidays" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Holidays" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Right>
                           </BinaryExpression>
                         </BinaryExpression.Left>
@@ -240,6 +268,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -266,16 +302,36 @@
                         NodeType="And">
                         <BinaryExpression.Left>
                           <BinaryExpression
-                            NodeType="Equal">
+                            NodeType="And">
                             <BinaryExpression.Left>
-                              <ChainExpression>
-                                <MemberExpression
-                                  Member="Holidays" />
-                              </ChainExpression>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Year" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Year" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Left>
                             <BinaryExpression.Right>
-                              <ParameterExpression
-                                Parameter="Holidays" />
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Holidays" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Holidays" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Right>
                           </BinaryExpression>
                         </BinaryExpression.Left>
@@ -392,6 +448,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Holidays' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Year"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Year' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -450,6 +514,11 @@
           Nullable="False"
           Type="int"
           Property="UtilizationTracker/Properties[EmpID]" />
+        <SsdlProperty
+          Name="Year"
+          Nullable="False"
+          Type="int"
+          Property="UtilizationTracker/Properties[Year]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
